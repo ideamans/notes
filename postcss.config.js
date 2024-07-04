@@ -5,7 +5,8 @@ export default {
   plugins: [
     tailwind({
       content: ['./.vitepress/theme/**/*.vue'],
-      plugins: [tailwindTypography]
+      plugins: [tailwindTypography],
+      darkMode: 'class',
     })
   ]
 }

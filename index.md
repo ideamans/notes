@@ -1,5 +1,5 @@
 ---
-title: The Vue Point
-subtext: Updates, tips & opinions from the maintainers of Vue.js.
+title: ideaman's Research
+subtext: アイデアマンズ株式会社の研究ブログ
 index: true
 ---
