@@ -41,9 +41,15 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh-agent.sock
         run: |
           eval $(ssh-agent -a $SSH_AUTH_SOCK)
+          echo "Adding SSH key to agent..."
+          ls -al ~/.ssh
           ssh-add ~/.ssh/id_ed25519
+
+          echo "Deploying..."
 
           rsync -avz \
             -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
             .vitepress/dist/ $SSH_USER@$SSH_HOST:$SSH_PATH
+
+          rm -f ~/.ssh/id_ed25519
         shell: bash
