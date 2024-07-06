@@ -29,7 +29,7 @@ jobs:
           ID_ED25519: ${{ secrets.ID_ED25519 }}
         run: |
           mkdir -p ~/.ssh
-          echo "$ID_ED25519\n\n" > ~/.ssh/id_ed25519
+          echo "$ID_ED25519\n" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
         shell: bash
 
