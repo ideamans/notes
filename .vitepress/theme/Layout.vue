@@ -11,12 +11,12 @@ const { page, frontmatter } = useData()
   <div class="antialiased dark:bg-slate-900">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <nav class="flex justify-between items-center py-10 font-bold">
-        <a class="text-3xl flex flex-row items-center" href="/" aria-label="ideaman's Research">
+        <a class="text-3xl flex flex-row items-center" href="/" aria-label="ideaman's Notes">
           <img class="inline-block mr-2" style="width: 206px; height: 48px" alt="logo" src="/logo.svg" />
-          <span v-if="!frontmatter.index" class="hidden md:inline dark:text-white">Research</span>
+          <span v-if="!frontmatter.index" class="hidden md:inline dark:text-white">Notes</span>
         </a>
         <div class="text-sm text-gray-500 dark:text-white leading-5">
-          <a class="hover:text-gray-700 dark:hover:text-gray-200" href="https://github.com/ideamans/research"
+          <a class="hover:text-gray-700 dark:hover:text-gray-200" href="https://github.com/ideamans/notes"
             target="_blank" rel="noopener"><span class="hidden sm:inline">GitHub </span>Source</a>
           <span class="mr-2 ml-2">·</span>
           <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/feed.rss">RSS<span class="hidden sm:inline">

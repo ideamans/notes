@@ -33,5 +33,6 @@ export default defineConfig({
       }
     ]
   ],
-  buildEnd: genFeed
+  buildEnd: genFeed,
+  appearance: false
 })

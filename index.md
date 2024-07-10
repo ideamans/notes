@@ -1,5 +1,5 @@
 ---
-title: ideaman's Research
-subtext: アイデアマンズ株式会社の研究ブログ
+title: ideaman's Notes
+subtext: アイデアマンズ株式会社の研究ノート
 index: true
 ---
