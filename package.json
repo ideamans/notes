@@ -12,6 +12,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^20.11.27",
+    "daisyui": "^4.12.10",
     "dayjs": "^1.11.11",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
