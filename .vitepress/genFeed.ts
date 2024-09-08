@@ -13,7 +13,7 @@ export async function genFeed(config: SiteConfig) {
     link: baseUrl,
     language: 'en',
     image: 'https://vuejs.org/images/logo.png',
-    favicon: `${baseUrl}/favicon.ico`,
+    favicon: `${baseUrl}/notes.svg`,
     copyright:
       'Copyright (c) 2021-present, Yuxi (Evan) You and blog contributors'
   })
