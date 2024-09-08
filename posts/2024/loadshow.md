@@ -71,6 +71,14 @@ loadshow juxtapose -o ./compare.mp4 ./apple.com.mp4 ./microsoft.com.mp4
 
 ![ページスピードの比較動画](/posts/2024/loadshow/compare.webp)
 
+## 動画のカスタマイズ
+
+動画は細かくカスタマイズできるようにしてある。
+
+本サイトでも今後、解説を増やしていきたいが、詳しくはREADMEをご覧いただきたい。
+
+[loadshow - GitHub](https://github.com/ideamans/loadshow/)
+
 ## 開発の経緯
 
 弊社ではフロントエンドのページスピード改善を支援している。
