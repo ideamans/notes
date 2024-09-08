@@ -16,8 +16,8 @@ const { page, frontmatter } = useData()
           <span v-if="!frontmatter.index" class="hidden md:inline dark:text-white">Notes</span>
         </a>
         <div class="text-sm text-gray-500 dark:text-white leading-5">
-          <a class="hover:text-gray-700 dark:hover:text-gray-200" href="https://github.com/ideamans/notes"
-            target="_blank" rel="noopener"><span class="hidden sm:inline">GitHub </span>Source</a>
+          <!-- <a class="hover:text-gray-700 dark:hover:text-gray-200" href="https://github.com/ideamans/notes"
+            target="_blank" rel="noopener"><span class="hidden sm:inline">GitHub </span>Source</a> -->
           <span class="mr-2 ml-2">·</span>
           <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/feed.rss">RSS<span class="hidden sm:inline">
               Feed</span></a>
