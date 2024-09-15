@@ -1,18 +1,18 @@
 import { defineConfig } from 'vitepress'
-import { genFeed } from './genFeed.js'
+import { genNotesFeed } from './genFeed.js'
 
 export default defineConfig({
-  title: 'The Vue Point',
-  description: 'The official blog for the Vue.js project',
+  title: `ideaman's Notes`,
+  description: 'アイデアマンズ株式会社の研究ノート',
   cleanUrls: true,
   head: [
-    ['meta', { name: 'twitter:site', content: '@vuejs' }],
+    ['meta', { name: 'twitter:site', content: '@ideamans' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     [
       'meta',
       {
         name: 'twitter:image',
-        content: 'https://vuejs.org/images/logo.png'
+        content: 'https://logo.ideamans.com/ogp.svg?width=800&phrase=notes'
       }
     ],
     [
@@ -22,17 +22,17 @@ export default defineConfig({
         type: 'image/x-icon',
         href: '/notes.svg'
       }
-    ],
-    [
-      'script',
-      {
-        src: 'https://cdn.usefathom.com/script.js',
-        'data-site': 'NYHGSGQV',
-        'data-spa': 'auto',
-        defer: ''
-      }
     ]
+    // [
+    //   'script',
+    //   {
+    //     src: 'https://cdn.usefathom.com/script.js',
+    //     'data-site': 'NYHGSGQV',
+    //     'data-spa': 'auto',
+    //     defer: ''
+    //   }
+    // ]
   ],
-  buildEnd: genFeed,
+  buildEnd: genNotesFeed,
   appearance: false
 })
