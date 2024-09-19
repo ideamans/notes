@@ -22,7 +22,7 @@ export default defineConfig({
         type: 'image/x-icon',
         href: '/notes.svg'
       }
-    ]
+    ],
     // [
     //   'script',
     //   {
@@ -32,6 +32,24 @@ export default defineConfig({
     //     defer: ''
     //   }
     // ]
+    [
+      'script',
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-YQBLSY0PKS',
+        async: '1'
+      }
+    ],
+    [
+      'script',
+      {},
+      `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-YQBLSY0PKS');
+`
+    ]
   ],
   buildEnd: genNotesFeed,
   appearance: false
