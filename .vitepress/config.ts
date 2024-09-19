@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import { genNotesFeed } from './genFeed.js'
 
-export default defineConfig({
+export default withMermaid({
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
   cleanUrls: true,
