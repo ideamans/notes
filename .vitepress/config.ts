@@ -5,7 +5,7 @@ import { genNotesFeed } from './genFeed.js'
 export default withMermaid({
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
-  cleanUrls: true,
+  cleanUrls: process.env.NODE_ENV === 'development',
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
@@ -53,5 +53,8 @@ gtag('config', 'G-YQBLSY0PKS');
     ]
   ],
   buildEnd: genNotesFeed,
+  // transformHead: ({ head, pageData }) => {
+  //   console.log({ head, pageData })
+  // },
   appearance: false
 })

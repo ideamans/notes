@@ -29,10 +29,10 @@ export default createContentLoader('posts/**/*.md', {
 
 function formatDate(raw: string): Post['date'] {
   const date = new Date(raw)
-  date.setUTCHours(12)
+  date.setUTCHours(9)
   return {
     time: +date,
-    string: date.toLocaleDateString('en-US', {
+    string: date.toLocaleDateString('ja-JP', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
