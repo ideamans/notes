@@ -8,13 +8,17 @@ title: GitLabのよくある操作を半自動化するCLIツール
 
 よくある操作を毎回GUIから行うのが手間なので、Go言語によるCLIツールを作り、せっかくなのでオープンソースにした。
 
-[gitlab-op - GitHub](https://github.com/ideamans/gitlab-op)
+[[toc]]
 
 ---
 
 ## セットアップ
 
-こちらから最新版をダウンロードし、`/usr/local/bin/gitlab-op`などPATHの通ったディレクトリに実行権限付きで配置する。
+こちらから最新版をダウンロードし、
+
+[gitlab-op - GitHub](https://github.com/ideamans/gitlab-op)
+
+`/usr/local/bin/gitlab-op`などPATHの通ったディレクトリに実行権限付きで配置する。
 
 ```bash
 sudo cp downloadeds/gitlab-op /usr/local/bin/gitlab-op
