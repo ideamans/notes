@@ -1,3 +1,4 @@
+import Dayjs from 'dayjs'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { genNotesFeed } from './genFeed.js'
@@ -53,8 +54,28 @@ gtag('config', 'G-YQBLSY0PKS');
     ]
   ],
   buildEnd: genNotesFeed,
-  // transformHead: ({ head, pageData }) => {
-  //   console.log({ head, pageData })
-  // },
+  transformHead: ({ head, pageData }) => {
+    const title = pageData.frontmatter.title
+    const id = pageData.frontmatter.id
+    const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
+
+    const ogp = new URL('https://banners.ideamans.com/banners/type-a')
+    ogp.searchParams.set(
+      'bgUrl',
+      'https://notes.ideamans.com/ogp-background.jpg'
+    )
+    ogp.searchParams.set('text0', `ideaman's Notes`)
+    ogp.searchParams.set('text0width', '60%')
+    ogp.searchParams.set('text1', title)
+    ogp.searchParams.set('texts[1].fontSize', '5%')
+    ogp.searchParams.set('texts[1].minWidth', '60%')
+    ogp.searchParams.set('texts[1].maxWidth', '90%')
+    ogp.searchParams.set('text2', `${date} ${id}`)
+    ogp.searchParams.set(`text[2].fontSize`, '3%')
+    ogp.searchParams.set(`text[2].minWidth`, '30%')
+    ogp.searchParams.set(`text[2].maxWidth`, '40%')
+
+    head.push(['meta', { property: 'og:image', content: ogp.href }])
+  },
   appearance: false
 })
