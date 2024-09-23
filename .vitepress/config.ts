@@ -55,18 +55,24 @@ gtag('config', 'G-YQBLSY0PKS');
   ],
   buildEnd: genNotesFeed,
   transformHead: ({ head, pageData }) => {
-    const title = pageData.frontmatter.title
-    const id = pageData.frontmatter.id
-    const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
+    const ogp = new URL('https://banners.ideamans.com/banners/type-a')
+    ogp.searchParams.set(
+      'bgUrl',
+      'https://notes.ideamans.com/ogp-background.jpg'
+    )
+    ogp.searchParams.set('text0', `ideaman's Notes`)
+    ogp.searchParams.set('text0width', '60%')
 
-    {
-      const ogp = new URL('https://banners.ideamans.com/banners/type-a')
-      ogp.searchParams.set(
-        'bgUrl',
-        'https://notes.ideamans.com/ogp-background.jpg'
-      )
-      ogp.searchParams.set('text0', `ideaman's Notes`)
-      ogp.searchParams.set('text0width', '60%')
+    if (pageData.frontmatter.index) {
+      // トップページ
+      ogp.searchParams.set('text1', pageData.frontmatter.subtext)
+      ogp.searchParams.set('text1width', '60%')
+    } else {
+      // 記事ページ
+      const title = pageData.frontmatter.title
+      const id = pageData.frontmatter.id
+      const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
+
       ogp.searchParams.set('text1', title)
       ogp.searchParams.set('texts[1].fontSize', '5%')
       ogp.searchParams.set('texts[1].minWidth', '60%')
