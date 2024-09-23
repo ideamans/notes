@@ -1,12 +1,12 @@
 import Dayjs from 'dayjs'
-import { defineConfig } from 'vitepress'
+// import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { genNotesFeed } from './genFeed.js'
 
 export default withMermaid({
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
-  cleanUrls: process.env.NODE_ENV === 'development',
+  cleanUrls: false,
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
@@ -71,7 +71,7 @@ gtag('config', 'G-YQBLSY0PKS');
       ogp.searchParams.set('texts[1].fontSize', '5%')
       ogp.searchParams.set('texts[1].minWidth', '60%')
       ogp.searchParams.set('texts[1].maxWidth', '90%')
-      ogp.searchParams.set('text2', `${date} ${id}`)
+      ogp.searchParams.set('text2', `${date} @${id}`)
       ogp.searchParams.set(`text[2].fontSize`, '3%')
       ogp.searchParams.set(`text[2].minWidth`, '30%')
       ogp.searchParams.set(`text[2].maxWidth`, '40%')

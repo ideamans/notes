@@ -120,7 +120,7 @@ AWS_SECRET_ACCESS_KEY= # IAMユーザのシークレットアクセスキー
 
 例えば、ドメインは`www.example.com`、証明書は`*.example.com`で取得した場合、
 
-```conf
+```nginx
     server_name nginx.ideamans.com;
     ssl_certificate /var/lib/lego/certificates/_.ideamans.com.crt;
     ssl_certificate_key /var/lib/lego/certificates/_.ideamans.com.key;
@@ -130,7 +130,7 @@ AWS_SECRET_ACCESS_KEY= # IAMユーザのシークレットアクセスキー
     ssl_certificate_key /var/lib/lego/certificates/_.example.com.key;
 ```
 
-```conf
+```nginx
     server_name nginx.ideamans.com;
     ↓
     server_name www.example.com;
