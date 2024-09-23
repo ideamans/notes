@@ -81,9 +81,9 @@ gtag('config', 'G-YQBLSY0PKS');
       ogp.searchParams.set(`text[2].fontSize`, '3%')
       ogp.searchParams.set(`text[2].minWidth`, '30%')
       ogp.searchParams.set(`text[2].maxWidth`, '40%')
-
-      head.push(['meta', { property: 'og:image', content: ogp.href }])
     }
+
+    head.push(['meta', { property: 'og:image', content: ogp.href }])
   },
   appearance: false
 })
