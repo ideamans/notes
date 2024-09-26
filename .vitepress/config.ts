@@ -41,7 +41,7 @@ export default withMermaid({
   cleanUrls: false,
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     // [
     //   'meta',
     //   {
@@ -93,31 +93,33 @@ gtag('config', 'G-YQBLSY0PKS');
     if (pageData.frontmatter?.index) {
       // インデックスページ
       const subTitle = pageData.frontmatter.subtext
+
       head.push([
         'meta',
         {
           property: 'og:image',
-          content: indexImageUrl(ogpBgUrl, pageData.frontmatter.subtext)
+          content: indexImageUrl(ogpBgUrl, subTitle)
         }
       ])
       head.push([
         'meta',
         {
           property: 'twitter:image',
-          content: indexImageUrl(xBgUrl, pageData.frontmatter.subtext)
+          content: indexImageUrl(xBgUrl, subTitle)
         }
       ])
     } else {
       // 記事ページ
-      const title = pageData.frontmatter.title
       const id = pageData.frontmatter.id
       const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
+      const title = pageData.frontmatter.title
 
+      // Twitter Card
       head.push([
         'meta',
         {
-          property: 'og:image',
-          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          name: 'twitter:title',
+          content: title
         }
       ])
       head.push([
@@ -125,6 +127,15 @@ gtag('config', 'G-YQBLSY0PKS');
         {
           property: 'twitter:image',
           content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
+        }
+      ])
+
+      // OGP
+      head.push([
+        'meta',
+        {
+          property: 'og:image',
+          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
         }
       ])
     }
