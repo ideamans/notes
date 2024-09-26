@@ -90,7 +90,7 @@ gtag('config', 'G-YQBLSY0PKS');
     const ogpBgUrl = 'https://notes.ideamans.com/ogp-background.jpg'
     const xBgUrl = 'https://notes.ideamans.com/x-background.jpg'
 
-    if (pageData.frontmatter?.index) {
+    if (pageData.frontmatter?.index || !pageData.frontmatter?.title) {
       // インデックスページ
       const subTitle = pageData.frontmatter.subtext
 
@@ -110,9 +110,9 @@ gtag('config', 'G-YQBLSY0PKS');
       ])
     } else {
       // 記事ページ
+      const title = pageData.frontmatter.title
       const id = pageData.frontmatter.id
       const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
-      const title = pageData.frontmatter.title
 
       // Twitter Card
       head.push([
