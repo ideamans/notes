@@ -16,6 +16,16 @@ LLMアプリの開発プラットフォーム[Dify](https://dify.ai/jp)を使い
 
 ---
 
+## まずはLLMモデル登録
+
+Difyは、当然であるのだが、LLMモデルを内蔵していない。ChatGPTをはじめ外部のAPIを利用する。
+
+何はなくともまずは右上のメニューから`設定`を開き、`モデルプロバイダー`に自身の持っているAPIを登録する。
+
+<img src="https://assets.ideamans.com/miyanaga/images/2024/10/model-provider.png" alt="モデルプロバイダー" width="1600" height="865" />
+
+複数のモデルを登録して、同じチャットメッセージにどう反応するか比較することもできる。
+
 ## Difyはワークフローエンジン・中核の「スタジオ」
 
 Difyは本質的には、LLM特化型のワークフローエンジンという印象である。[n8n](https://n8n.io/)や[Zapier](https://zapier.com/)に近い。
