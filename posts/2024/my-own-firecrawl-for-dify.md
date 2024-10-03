@@ -1,7 +1,7 @@
 ---
 title: 自分専用DifyにFirecrawlもセルフホスト
 id: miyanaga
-date: 2024-10-04 07:25:00
+date: 2024-10-04 07:30:00
 ---
 
 この記事は[VPSでお安く自分専用のDifyを持つ方法](./my-own-dify)の続きだ。
