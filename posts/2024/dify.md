@@ -214,8 +214,26 @@ ChatGPTのビジネス利用が進んでいると言われているが、まだ�
 しかし実際はケースバイケースであろう。
 
 - **アプリケーションへの組み込み** 小規模な仕掛けであれば最終的に対象の業務アプリケーションの機能として組み込んだ方がよいこともある。
-- **パフォーマンス** Difyには[性能の上限](https://dify.ai/pricing)がある。特に大規模RAGは専用のベクトルデータベースが必要になりそうだ。
+- **パフォーマンスとスケーラビリティ** Difyには[性能の上限](https://dify.ai/pricing)がある。特に大規模RAGは専用のベクトルデータベースが必要になりそうだ。
 - **依存先の増加** Dify自体が落ちると共倒れになる。クリティカルなシステムを増やすリスクを抱えるか。
+
+:::info 2024年10月4日追記
+ベクトルデータベースはweaviate以外にも選択できるようだ。
+
+<https://github.com/langgenius/dify/blob/main/docker/.env.example>
+
+<pre>
+# Supported values are `weaviate`, `qdrant`, `milvus`, `myscale`, `relyt`, `pgvector`, `pgvecto-rs`, `chroma`,`opensearch`,`tidb_vector`,`oracle`,`tencent`,`elasticsearch`,`analyticdb`
+</pre>
+
+また、ストレージシステムも外部を利用できる。
+
+<pre>
+# Supported values are `local` and `s3` and `azure-blob` and `google-storage` and `tencent-cos` and `huawei-obs`
+</pre>
+
+スケーラビリティの点はどうにかなりそうだ。
+:::
 
 ## まとめ
 
