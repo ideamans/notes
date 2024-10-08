@@ -20,6 +20,63 @@ Difyのソースコードは本当にセルフホストに親切で、[Docker Co
 
 これに加えてストレージも抽象化されており、S3などを選択できる。
 
+### AWS上では
+
+だいぶ複雑だが、ざっくりこんな感じにマッピングできるだろう。
+
+```mermaid
+flowchart LR
+  subgraph "Dify ECSサービス"
+    dify_sandbox[sandbox]
+    dify_api[api]
+    dify_worker[worker]
+    dify_web[web]
+    dify_ssrf_proxy[ssrf_proxy]
+  end
+
+  subgraph "Firecrawl ECSサービス"
+    firecrawl_api[api]
+    firecrawl_worker[worker]
+    firecrawl_pw[playwrite-service]
+  end
+
+  db[RDS/Aurora]
+  redis[ElastiCache]
+  vs[OpenSearch/RDS]
+  s3[S3]
+  ses[SES]
+
+  alb[ALB / WAF]
+  acm[ACM]
+
+  user(ユーザー) -->|Webアクセス| alb
+
+  dify_api -->|メインDB| db
+  dify_worker -->|メインDB| db
+
+  dify_api -->|Redis| redis
+  dify_worker -->|Redis| redis
+
+  dify_api -->|ベクトルストア| vs
+  dify_worker -->|ベクトルストア| vs
+
+  dify_api -->|ストレージ| s3
+  dify_worker -->|ストレージ| s3
+
+  dify_api -->|メール送信| ses
+  dify_worker -->|メール送信| ses
+
+  alb -.-|SSL証明書| acm
+  alb -->|ルーティング| dify_api
+  alb -->|ルーティング| dify_web
+
+  dify_api -->|Webクローラー| firecrawl_api
+  dify_worker -->|Webクローラー| firecrawl_api
+
+  firecrawl_api -->|Redis| redis
+  firecrawl_worker -->|Redis| redis
+```
+
 ## データベース・ストレージ
 
 ### DB - RDS or Aurora
