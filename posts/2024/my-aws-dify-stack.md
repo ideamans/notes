@@ -65,7 +65,7 @@ nginxが次の役割を担っている。
 
 ここはALB + ACMに代替可能だろう。
 
-WAFやCloudFrontも組み合わせるとよいかもしれない。
+WAFやCloudFrontも組み合わせるとさらによいかもしれない。
 
 ### メール送信 - SES
 
