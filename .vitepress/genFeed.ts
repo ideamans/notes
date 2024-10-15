@@ -60,7 +60,7 @@ export async function genNotesFeed(config: SiteConfig) {
     id: notesUrl,
     link: notesUrl,
     language: 'ja',
-    image: 'https://logo.ideamans.com/ogp.svg?width=800&phrase=notesg',
+    image: 'https://alogorithm2.ideamans.com/v2/rect.svg?width=800&seed=notes',
     favicon: `${baseUrl}/notes.svg`,
     copyright: `Copyright (c) 2024-present, ideaman's Inc.`
   })

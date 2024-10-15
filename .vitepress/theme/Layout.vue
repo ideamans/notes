@@ -12,7 +12,7 @@ const { page, frontmatter } = useData()
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <nav class="flex justify-between items-center py-10 font-bold">
         <a class="text-3xl flex flex-row items-center" href="/" aria-label="ideaman's Notes">
-          <img class="inline-block mr-2" style="width: 196px; height: 46px" alt="logo" src="/logo.svg" />
+          <img class="inline-block mr-2" style="width: 196px; height: 43px" alt="logo" src="/logo.svg" />
           <span v-if="!frontmatter.index" class="hidden md:inline dark:text-white">Notes</span>
         </a>
         <div class="text-sm text-gray-500 dark:text-white leading-5">
