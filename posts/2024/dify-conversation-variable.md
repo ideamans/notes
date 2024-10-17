@@ -1,5 +1,5 @@
 ---
-title: Difyの会話変数でcanvasのような共同作業を実現
+title: Dify会話変数でcanvasのような共同作業を実現
 id: miyanaga
 date: 2024-10-18 07:18:00
 ---
