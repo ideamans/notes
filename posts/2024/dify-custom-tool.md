@@ -1,6 +1,6 @@
 ---
 id: miyanaga
-title: Difyのカスタムツール機能で自作APIと連携
+title: Difyでの自前APIとの連携方法と注意点
 date: 2024-10-19 09:43:00
 ---
 
