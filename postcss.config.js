@@ -12,6 +12,17 @@ export default {
         darkTheme: 'light',
         themes: ['light']
       },
+      theme: {
+        extend: {
+          typography: (theme) => ({
+            DEFAULT: {
+              css: {
+                fontSize: '1.1em'
+              }
+            }
+          })
+        }
+      }
     })
   ]
 }
