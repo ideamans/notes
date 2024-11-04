@@ -42,9 +42,15 @@ jobs:
         run: |
           echo "Deploying..."
 
-          rsync -avz \
-            -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
-            .vitepress/dist/ $SSH_USER@$SSH_HOST:$SSH_PATH
+          for i in {1..5}; do
+            rsync -avz \
+              -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+              .vitepress/dist/ $SSH_USER@$SSH_HOST:$SSH_PATH
+            if [ $? -eq 0 ]; then
+              break
+            fi
+            sleep 5
+          done
 
           rm -f ~/.ssh/id_ed25519
         shell: bash
