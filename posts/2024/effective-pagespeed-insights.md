@@ -139,7 +139,7 @@ PageSpeed Insightsのレポートで最も目立つのがパフォーマンス�
 
 例えばLCPは以下のような曲線でスコアが決まる。
 
-<img src="https://assets.ideamans.com/miyanaga/images/2024/11/lcp-score-value-graph.png" alt="LCPのスコアと値の関係を示すグラフ" width="1288" height="1530" />
+<img src="https://assets.ideamans.com/miyanaga/images/2024/11/lcp-score-value-graph.png" alt="LCPのスコアと値の関係を示すグラフ" width="644" />
 
 それらの平均点(実際は重みの違う加重平均)がスコアとして表示される。
 
