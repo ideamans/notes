@@ -1,6 +1,6 @@
 ---
 id: miyanaga
-title: Core Web Vitals INPの改善提案サービスを開始
+title: INPの収集および改善提案サービスを開始
 date: 2024-11-14 19:28:00
 ---
 
