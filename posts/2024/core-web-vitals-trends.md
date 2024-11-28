@@ -1,14 +1,14 @@
 ---
 id: miyanaga
-title: 通販サイトのCore Web Vitalsは改善されているか
+title: Core Web Vitalsの改善は本当に進んでいるか
 date: 2024-11-28 10:17:00
 ---
 
-GoogleはChromeユーザーから実際のサイト閲覧時の各種スピード関連指標を収集し、集計結果を公開している。それが[CrUX](https://developer.chrome.com/docs/crux?hl=ja)だ。
+Core Web Vitalsが検索順位に影響すると言われて数年が経った。SEOに関わらず、サイトスピードに関心のあるサイトは少なくないだろう。
 
-そのデータを元に、日本の主要なEC100サイトについてCore Web Vitalsが改善の方向に向かっているのか調査した。
+そこで日本の主要なECサイト100サイトについて、Core Web Vitalsが改善の方向に向かっているのか調査してみた。
 
-やはり感覚のとおり、CLSは多くのサイトで改善済みだがLCPはほとんど改善が進んでいない実状が見えた。
+やはり感覚のとおり、CLSは多くのサイトで改善済みだがLCPはほとんど改善が進んでいない実態が見えた。
 
 [[toc]]
 
@@ -89,6 +89,10 @@ CLSやLCPはページの読み込みプロセスで評価される値だが、IN
 - [国内通販 売上TOP100 (2023年夏) サイトスピードランキング | 無料 | サイトスピード簡単比較](https://sitespeed-hikaku.com/reports/YYrRMKgS6Lq92ueU2W0g)
 
 ## データについて
+
+GoogleはChromeユーザーから実際のサイト閲覧時の各種スピード関連指標を収集し、集計結果をCrUXとして公開している。
+
+- [CrUX の概要  |  Chrome UX Report  |  Chrome for Developers](https://developer.chrome.com/docs/crux?hl=ja)
 
 CrUXはBigQueryを用いて参照し、スマホについてのデータに絞り込んである。
 
