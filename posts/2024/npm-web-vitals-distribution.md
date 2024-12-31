@@ -32,7 +32,7 @@ Core Web Vitals に代表されるサイトスピード指標は実際にはユ�
 
 その集計結果は[PageSpeed Insights](https://pagespeed.web.dev/)でも参照できる。
 
-<img src="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-3-4-seconds.png" alt="LCPが3.4秒であることを示すウェブページの読み込み速度の測定結果" width="694" height="862" />
+<img src="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-3-4-seconds.png" alt="LCPが3.4秒であることを示すウェブページの読み込み速度の測定結果" width="350" />
 
 ### Chrome UX Report からの対数正規分布の推定
 
