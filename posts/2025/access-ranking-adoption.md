@@ -22,6 +22,8 @@ date: 2025-04-16 16:41:00
 
 - [ニュース系メディアサイト アクセスランキング利用調査 2025年4月](https://docs.google.com/spreadsheets/d/1ldTw-apT69OTirMaPESrE0ehSi3_dFQUYxEaWOJvTIE/edit?usp=sharing)
 
+![ニュース系メディアサイト アクセスランキング利用調査 2025年4月](./access-ranking-adoption/spreadsheet.png)
+
 サイトの選定には、AIディープリサーチを利用した。300サイトほどがピックアップされたが、
 
 - [AIで300件ほどのメディアサイトを挙げてみた | ideaman's Notes](https://notes.ideamans.com/posts/2025/media-sites.html)
