@@ -1,12 +1,14 @@
 ---
 id: miyanaga
-title: AIとGitHub Actionsで定期的な記事の宣伝をXに投稿する
+title: AIとGitHub Actionsで定期的に記事の宣伝をXに投稿する
 date: 2025-05-02 15:00:00
 ---
 
 研究ノートと銘打ったこのブログもだいぶ記事が溜まってきた。以前に投稿した記事もXなどで露出を図るとよいのだが、文面を考えるのが面倒でつい放置してしまっていた。
 
 そこでAIに文面を考えてもらい、GitHub Actionsのスケジュールワークフローで定期的な宣伝を繰り返す仕組みを構築した。
+
+ひとまず1日2回、以下のような過去記事へ誘導する投稿が無人で行われるようになった。
 
 <img src="https://assets.ideamans.com/miyanaga/images/2025/05/site-speed-lognormal-distribution-verification.png" alt="サイトスピード指標の対数正規分布を確かめる検証結果" width="600" />
 
