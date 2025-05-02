@@ -126,7 +126,8 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'twitter:image',
-          content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
+          // content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
+          content: 'https://notes.ideamans.com/ogp-background.jpg'
         }
       ])
 
@@ -135,7 +136,8 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'og:image',
-          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          // content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          content: 'https://notes.ideamans.com/ogp-background.jpg'
         }
       ])
     }
