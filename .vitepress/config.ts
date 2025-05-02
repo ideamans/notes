@@ -38,7 +38,8 @@ function articleImageUrl(bgUrl: string, title: string, meta: string): string {
 function articleTwitterImageUrl(slug: string): string {
   const image = new URL('https://alogorithm2.ideamans.com/v2/icon.png')
   image.searchParams.set('seed', [slug, 'notes'].join('@'))
-
+  image.searchParams.set('width', '256')
+  image.searchParams.set('height', '256')
   return image.href
 }
 

@@ -31,7 +31,7 @@ async function getRandomPost() {
   const selectedFile = markdownFiles[randomIndex]
 
   // Read and return the content
-  const relativePath = relative(postsDir, selectedFile)
+  const relativePath = relative(process.cwd(), selectedFile)
   const content = await readFile(selectedFile, 'utf-8')
 
   return { content, relativePath }
@@ -40,7 +40,10 @@ async function getRandomPost() {
 async function main() {
   const { content, relativePath } = await getRandomPost()
 
-  const entryUrl = `https://notes.ideamans.com/${relativePath}`
+  const entryUrl = `https://notes.ideamans.com/${relativePath.replace(
+    '.md',
+    '.html'
+  )}`
 
   const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
