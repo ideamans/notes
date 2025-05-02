@@ -127,7 +127,7 @@ gtag('config', 'G-YQBLSY0PKS');
         {
           property: 'twitter:image',
           content:
-            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg'
+            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&_b=G1YBABwJNk5yI9fAkW1gni0NZJKyT4eWqZMD5j8sTAIKviDIip7Bc75og4FOcY%2FkexXQrycJ0rduU3BP7BCPMis7%2Fe8X9XlrLK%2FX4wXgHIAN4R46IatV7rr95YZ2YnNYHIlQ5ykScMOMXjsBrHTB2p088%2F4XE%2BlUoM7E3eV67rDexd42Lv83NT4VRfH%2F4p%2F7RsdeJlFp6mHLCyC4DCD4ZA3d7rsDAWAFa3arfZtthap7UmXGsjQrELQ7ZzCAp3erV7fvFh33gOCyKQlnYbKUszBZwAM%3D'
           // content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
         }
       ])
@@ -138,7 +138,7 @@ gtag('config', 'G-YQBLSY0PKS');
         {
           property: 'og:image',
           content:
-            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg'
+            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&_b=G1YBABwJNk5yI9fAkW1gni0NZJKyT4eWqZMD5j8sTAIKviDIip7Bc75og4FOcY%2FkexXQrycJ0rduU3BP7BCPMis7%2Fe8X9XlrLK%2FX4wXgHIAN4R46IatV7rr95YZ2YnNYHIlQ5ykScMOMXjsBrHTB2p088%2F4XE%2BlUoM7E3eV67rDexd42Lv83NT4VRfH%2F4p%2F7RsdeJlFp6mHLCyC4DCD4ZA3d7rsDAWAFa3arfZtthap7UmXGsjQrELQ7ZzCAp3erV7fvFh33gOCyKQlnYbKUszBZwAM%3D'
           // content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
         }
       ])
