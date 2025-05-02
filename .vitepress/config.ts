@@ -35,6 +35,13 @@ function articleImageUrl(bgUrl: string, title: string, meta: string): string {
   return ogp.href
 }
 
+function articleTwitterImageUrl(slug: string): string {
+  const image = new URL('https://alogorithm2.ideamans.com/v2/icon.png')
+  image.searchParams.set('seed', [slug, 'notes'].join('@'))
+
+  return image.href
+}
+
 export default withMermaid({
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
@@ -118,6 +125,13 @@ gtag('config', 'G-YQBLSY0PKS');
       head.push([
         'meta',
         {
+          name: 'twitter:card',
+          content: 'summary'
+        }
+      ])
+      head.push([
+        'meta',
+        {
           name: 'twitter:title',
           content: title
         }
@@ -126,9 +140,9 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'twitter:image',
-          content:
-            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&_b=G1YBABwJNk5yI9fAkW1gni0NZJKyT4eWqZMD5'
-          // content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
+          content: articleTwitterImageUrl(
+            pageData.relativePath ?? pageData.filePath ?? ''
+          )
         }
       ])
 
@@ -137,9 +151,7 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'og:image',
-          content:
-            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&_b=G1YBABwJNk5yI9fAkW1gni0NZJKyT4eWqZMD5'
-          // content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
         }
       ])
     }
