@@ -1,0 +1,33 @@
+name: Scheduled AI Posting
+
+on:
+  schedule:
+    # 日本時間 09:00 (UTC 01:00)
+    - cron: '0 0 * * *'
+    # 日本時間 15:00 (UTC 06:00)
+    - cron: '0 6 * * *'
+
+jobs:
+  build-and-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run AI posting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TWITTER_APP_KEY: ${{ secrets.TWITTER_APP_KEY }}
+          TWITTER_APP_SECRET: ${{ secrets.TWITTER_APP_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          X_AI_POSTING_PROD: ${{ secrets.X_AI_POSTING_PROD }}
+        run: yarn x-ai-posting
