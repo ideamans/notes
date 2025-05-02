@@ -126,7 +126,9 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'twitter:image',
-          content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
+          content:
+            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg'
+          // content: articleImageUrl(xBgUrl, title, `${date} @${id}`)
         }
       ])
 
@@ -135,7 +137,9 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'og:image',
-          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          content:
+            'https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg'
+          // content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
         }
       ])
     }
