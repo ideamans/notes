@@ -8,9 +8,11 @@ date: 2025-05-06 10:43:00
 
 - [ideaman's Blog](https://blog.ideamans.com/)
 
-長らくこれをリニューアルしたいと考えていたが、このゴールデンウィークの連休にやっと実現した。
+長らくこれをリニューアルしたいと考えていたが、このゴールデンウィークにやっと実現した。
 
 <img src="https://assets.ideamans.com/miyanaga/images/2025/05/ideamans-blog-webpage.png" alt="アイデアマンズブログのWebページ" width="1600" height="592" />
+
+最近は[Cursor](https://www.cursor.com/ja)であらゆる作業を行うため、Movable TypeからVitePress + GitHub Actionsにシステムを移行した。構成をシンプルにしたのもあるが、ビルド(再構築)時間も1分41秒から5.66秒に短縮した。
 
 いろいろと悩んだ技術選定の経緯や、[VitePress](https://vitepress.dev/)で本格ブログを構築するノウハウを共有したい。
 
