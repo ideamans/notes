@@ -2,6 +2,11 @@
 id: miyanaga
 title: PageSpeed Insightsの正しい読み方・活かし方
 date: 2024-11-08 23:15:00
+categories:
+  - sitespeed
+  - development
+  - technology
+
 ---
 
 PageSpeed InsightsはWebページのスピードを評価する際に便利なツールではあるが、非常にミスリードを起こしやすい。

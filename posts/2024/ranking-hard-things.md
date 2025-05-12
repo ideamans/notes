@@ -2,6 +2,12 @@
 id: miyanaga
 title: 自前アクセスランキング実現のつらみ
 date: 2024-11-02 19:44:00
+categories:
+  - development
+  - infrastructure
+  - technology
+  - research
+
 ---
 
 アクセスランキングはWebサイトの人気機能のひとつであるが、弊社ではGA4を活用したアクセスランキング表示のWebサービス [Ranklet4](https://ranklet4.com/) を提供している。

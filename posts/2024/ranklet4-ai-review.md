@@ -2,6 +2,12 @@
 id: miyanaga
 title: Ranklet4 アクセスランキングの AIレビュー登場！
 date: 2024-12-15 20:43:00
+categories:
+  - ai
+  - technology
+  - development
+  - automation
+
 ---
 
 弊社が提供するアクセスランキング機能運用サービス [Rankelt4](https://ranklet4.com/) に、**AIレビュー機能** を追加した。

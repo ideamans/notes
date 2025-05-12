@@ -2,6 +2,11 @@
 id: miyanaga
 title: AIで300件ほどのメディアサイトを挙げてみた
 date: 2025-04-10 10:25:00
+categories:
+  - research
+  - technology
+  - content-management
+
 ---
 
 メディアサイトについて横断的な調査をしたいと思い、AIでリストを作ってみた。ディープリサーチによるリスト作成がどのくらいの分量まで行ってくれるのかも確かめたかった。

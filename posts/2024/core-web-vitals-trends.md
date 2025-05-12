@@ -2,6 +2,9 @@
 id: miyanaga
 title: Core Web Vitalsの改善は本当に進んでいるか
 date: 2024-11-28 10:17:00
+categories:
+  - sitespeed
+  - technology
 ---
 
 Core Web Vitalsが検索順位に影響すると言われて数年が経った。SEOに関わらず、サイトスピードに関心のあるサイトは少なくないだろう。
@@ -92,11 +95,11 @@ CLSやLCPはページの読み込みプロセスで評価される値だが、IN
 
 GoogleはChromeユーザーから実際のサイト閲覧時の各種スピード関連指標を収集し、集計結果をCrUXとして公開している。
 
-- [CrUX の概要  |  Chrome UX Report  |  Chrome for Developers](https://developer.chrome.com/docs/crux?hl=ja)
+- [CrUX の概要  |  Chrome UX Report  |  Chrome for Developers](https://developer.chrome.com/docs/crux?hl=ja)
 
 CrUXはBigQueryを用いて参照し、スマホについてのデータに絞り込んである。
 
-- [BigQuery での CrUX  |  Chrome UX Report  |  Chrome for Developers](https://developer.chrome.com/docs/crux/bigquery?hl=ja)
+- [BigQuery での CrUX  |  Chrome UX Report  |  Chrome for Developers](https://developer.chrome.com/docs/crux/bigquery?hl=ja)
 
 主要ECサイトは、以下のデータを元に上位100サイトを対象とした。
 

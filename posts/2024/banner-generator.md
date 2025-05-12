@@ -2,6 +2,11 @@
 title: OGP画像を自動生成するプログラムをOSSで公開
 id: miyanaga
 date: 2024-09-23 11:16:00
+categories:
+  - development
+  - technology
+  - automation
+
 ---
 
 このブログでも、[はてなブログ](https://hatena.blog/)や[Qiita](https://qiita.com/)のようにタイトルなどからOGP画像(SNSシェア用のアイキャッチ画像)を自動生成するようにした。

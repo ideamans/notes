@@ -2,6 +2,12 @@
 id: miyanaga
 title: Appleサイトはサードパーティタグを使っていない
 date: 2024-09-16 08:32:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 いろいろなサイトのフロントエンドを観察していて面白いことに気づいた。

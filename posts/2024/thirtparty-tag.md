@@ -2,6 +2,12 @@
 id: miyanaga
 title: Core Web Vitalsの改善術 - サードパーティタグ編
 date: 2024-11-20 08:48:00
+categories:
+  - sitespeed
+  - technology
+  - development
+  - research
+
 ---
 
 Core Web Vitals改善術の一環としてサードパーティタグの扱いについて解説する。

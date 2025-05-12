@@ -2,6 +2,9 @@
 id: miyanaga
 title: WebアプリのためのSSLをサクッと立てる
 date: 2024-09-20 07:46:00
+categories:
+  - infrastructure
+  - development
 ---
 
 VPSなどの素のサーバでWebアプリを公開するとき、SSLをどうするかという問題がある。

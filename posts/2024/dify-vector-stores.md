@@ -2,6 +2,9 @@
 title: Difyが対応しているベクトルデータベース
 id: miyanaga
 date: 2024-10-07 13:30:00
+categories:
+  - ai
+  - technology
 ---
 
 Difyでナレッジを取り込むと、その内容はベクトルデータベースに格納される。

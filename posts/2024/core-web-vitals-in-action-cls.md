@@ -2,6 +2,12 @@
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - CLS編
 date: 2024-11-09 18:29:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 Core Web Vitalsのひとつ、CLS(Cumulative Layout Shift)の改善方法について解説する。

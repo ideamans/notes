@@ -2,6 +2,11 @@
 title: 要約「サイトスピードと幸福の心理学」
 date: 2024-09-25 14:51:00
 id: miyanaga
+categories:
+  - sitespeed
+  - technology
+  - research
+
 ---
 
 以前こちらの記事「サイトスピードと幸福の心理学」の要約をXに載せた。サイトスピードに関する心理学的エピソード集で大変面白かった。

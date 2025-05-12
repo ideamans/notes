@@ -2,6 +2,12 @@
 id: miyanaga
 title: スピード指標の確率分布ユーティリティをNPMで公開
 date: 2024-12-31 08:12:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 Core Web Vitals をはじめとする多くサイトスピード指標は対数正規分布に基づくとされている。

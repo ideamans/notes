@@ -2,6 +2,10 @@
 id: miyanaga
 title: 高速な通販サイトのための設計と実装
 date: 2025-03-17 09:00:00
+categories:
+  - sitespeed
+  - development
+  - technology
 ---
 
 体感スピードの速い通販サイトを実現するにはどうすべきか、これまでの経験をもとに設計と実装のプラクティスを紹介する。

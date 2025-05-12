@@ -2,6 +2,12 @@
 id: miyanaga
 date: 2024-07-11 09:32:00
 title: サイトスピードの最も重要な指標とは？
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 この記事では、**サイトスピードに関する指標のうち、どの指標が売上に最も影響するか？** という疑問に対する事例とアクセス解析の過程を解説する。

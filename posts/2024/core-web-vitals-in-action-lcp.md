@@ -2,6 +2,12 @@
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - LCP編
 date: 2024-11-17 16:29:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 Core Web Vitalsのひとつ、LCP(Largest Contentful Paint)の改善手法について解説する。

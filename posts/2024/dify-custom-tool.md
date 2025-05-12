@@ -2,6 +2,12 @@
 id: miyanaga
 title: Difyでの自前APIとの連携方法と注意点
 date: 2024-10-19 09:43:00
+categories:
+  - ai
+  - development
+  - technology
+  - automation
+
 ---
 
 Difyには外部サービスと連携するツール機能があり、**カスタムツール**として自前のAPIを連携対象に追加できる。

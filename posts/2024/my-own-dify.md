@@ -2,6 +2,9 @@
 title: VPSでお安く自分専用のDifyを持つ方法
 id: miyanaga
 date: 2024-10-04 07:25:00
+categories:
+  - ai
+  - infrastructure
 ---
 
 LLMアプリ開発が楽しいDifyだが、無料だとできることが限られ、有料プランは個人にはちと高い。3アカウントも手に余る。

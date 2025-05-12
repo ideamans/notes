@@ -2,6 +2,11 @@
 title: 自動生成するロゴマークを刷新 "alogorithm2"
 id: miyanaga
 date: 2024-10-15 12:10:00
+categories:
+  - development
+  - technology
+  - ideas
+
 ---
 
 アイデアマンズ株式会社のロゴマークはプログラムで自動生成している。

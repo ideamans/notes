@@ -2,6 +2,9 @@
 title: Dify - この素晴らしきLLMアプリ開発環境
 id: miyanaga
 date: 2024-10-02 05:20:00
+categories:
+  - ai
+  - technology
 ---
 
 LLMアプリの開発プラットフォーム[Dify](https://dify.ai/jp)を使い始めた。もう楽しすぎる。
