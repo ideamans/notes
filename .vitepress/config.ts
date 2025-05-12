@@ -1,7 +1,7 @@
 import Dayjs from 'dayjs'
 // import { defineConfig } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
-import { genNotesFeed } from './genFeed.js'
+import { defineConfig } from 'vitepress'
+import { genFeed } from './genFeed.js'
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -43,13 +43,24 @@ function articleTwitterImageUrl(slug: string): string {
   return image.href
 }
 
-export default withMermaid({
+function indexTwitterImageUrl(): string {
+  const image = new URL('https://alogorithm2.ideamans.com/v2/rect.png')
+  image.searchParams.set('seed', 'notes')
+  image.searchParams.set('width', '256')
+  image.searchParams.set('height', '256')
+  return image.href
+}
+
+export default defineConfig({
+  mpa: true,
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
   cleanUrls: false,
+  ignoreDeadLinks: true,
+  rewrites: {},
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
     // [
     //   'meta',
     //   {
@@ -91,12 +102,18 @@ gtag('js', new Date());
 
 gtag('config', 'G-YQBLSY0PKS');
 `
+    ],
+    [
+      'script',
+      {
+        async: '1',
+        src: 'https://free.ranklet4.com/widgets/JEfB8ZpuktdYw2GQ2auB.js'
+      }
     ]
   ],
-  buildEnd: genNotesFeed,
+  buildEnd: genFeed,
   transformHead: ({ head, pageData }) => {
     const ogpBgUrl = 'https://notes.ideamans.com/ogp-background.jpg'
-    const xBgUrl = 'https://notes.ideamans.com/x-background.jpg'
 
     if (pageData.frontmatter?.index || !pageData.frontmatter?.title) {
       // インデックスページ
@@ -113,23 +130,16 @@ gtag('config', 'G-YQBLSY0PKS');
         'meta',
         {
           property: 'twitter:image',
-          content: indexImageUrl(xBgUrl, subTitle)
+          content: indexTwitterImageUrl()
         }
       ])
     } else {
       // 記事ページ
       const title = pageData.frontmatter.title
       const id = pageData.frontmatter.id
-      const date = Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD')
+      const date = Dayjs(pageData.frontmatter.date).format('YYYY/MM/DD')
 
       // Twitter Card
-      head.push([
-        'meta',
-        {
-          name: 'twitter:card',
-          content: 'summary'
-        }
-      ])
       head.push([
         'meta',
         {

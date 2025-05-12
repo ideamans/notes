@@ -1,20 +1,24 @@
 import path from 'path'
 import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
+import Dayjs from 'dayjs'
 import { createContentLoader, type SiteConfig } from 'vitepress'
+import { authors } from '../authors.js'
 
-const notesUrl = 'https://notes.ideamans.com'
+const baseUrl = `https://notes.ideamans.com`
 
-export async function genNotesFeed(config: SiteConfig) {
+export async function genFeed(config: SiteConfig) {
+  const authorsMap = new Map(authors.map((author) => [author.username, author]))
+
   const feed = new Feed({
     title: `ideaman's Notes`,
     description: 'アイデアマンズ株式会社の研究ノート',
-    id: notesUrl,
-    link: notesUrl,
+    id: baseUrl,
+    link: baseUrl,
     language: 'ja',
     image: 'https://alogorithm2.ideamans.com/v2/rect.svg?width=800&seed=notes',
-    favicon: `${notesUrl}/notes.svg`,
-    copyright: `Copyright (c) 2024-present, ideaman's Inc.`
+    favicon: `${baseUrl}/notes.svg`,
+    copyright: `Copyright (c) 2024- ideaman's Inc.`
   })
 
   const posts = await createContentLoader('posts/**/*.md', {
@@ -22,25 +26,29 @@ export async function genNotesFeed(config: SiteConfig) {
     render: true
   }).load()
 
-  posts.sort(
-    (a, b) =>
-      +new Date(b.frontmatter.date as string) -
-      +new Date(a.frontmatter.date as string)
-  )
+  const sorted = posts
+    .sort((a, b) => +Dayjs(b.frontmatter?.date) - +Dayjs(a.frontmatter?.date))
+    .slice(0, 10)
 
-  for (const { url, excerpt, frontmatter, html } of posts) {
+  for (const { url, frontmatter, html } of sorted) {
+    const text =
+      (html || '')
+        .replaceAll(/<[^>]*>/g, '')
+        .replaceAll(/\n/g, '')
+        .replaceAll('&ZeroWidthSpace;', '')
+        .slice(0, 200) + '...'
+    const rewriteUrl = url.replace(/^\/posts\//, '/')
+    const author = authorsMap.get(frontmatter.author)
+
     feed.addItem({
       title: frontmatter.title,
-      id: `${notesUrl}${url}`,
-      link: `${notesUrl}${url}`,
-      description: excerpt,
-      content: excerpt, // html?.replaceAll('&ZeroWidthSpace;', ''),
+      id: `${baseUrl}${rewriteUrl}`,
+      link: `${baseUrl}${rewriteUrl}`,
+      description: text,
+      content: text,
       author: [
         {
-          name: frontmatter.author || frontmatter.id,
-          link: frontmatter.twitter
-            ? `https://twitter.com/${frontmatter.twitter}`
-            : undefined
+          name: author?.username
         }
       ],
       date: frontmatter.date
