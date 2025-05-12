@@ -2,6 +2,10 @@
 id: miyanaga
 title: Mastra + ローカルLLM経由でMCPする
 date: 2025-05-01 19:30:00
+categories:
+  - ai
+  - development
+  - technology
 ---
 
 最近、Macbook ProをM1 ProからM4 Proにアップグレードしたので、[LM Studio](https://lmstudio.ai/) でローカルLLMを動かしてみたらさすがに早い。

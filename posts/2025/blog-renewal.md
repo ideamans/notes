@@ -2,6 +2,10 @@
 id: miyanaga
 title: 広報ブログをリニューアル・VitePressカスタマイズのコツ
 date: 2025-05-06 10:43:00
+categories:
+  - development
+  - content-management
+  - technology
 ---
 
 この技術ブログと別に、以前から運用している広報ブログがある。

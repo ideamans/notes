@@ -2,6 +2,12 @@
 id: miyanaga
 date: 2024-09-08 21:17:00
 title: ページの読み込みを動画化するOSSツールを公開
+categories:
+  - sitespeed
+  - development
+  - technology
+  - automation
+
 ---
 
 Webページの読み込み過程を動画化し、比較できるツールをオープンソースで公開した。

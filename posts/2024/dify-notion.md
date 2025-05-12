@@ -2,6 +2,9 @@
 title: セルフホストしたDifyとNotionを接続する方法
 id: miyanaga
 date: 2024-10-07 12:25:00
+categories:
+  - ai
+  - content-management
 ---
 
 セルフホストしたDifyから[Notion](https://www.notion.so/ja)に接続するには少し工夫が必要だった。

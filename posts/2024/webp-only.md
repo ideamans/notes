@@ -2,6 +2,9 @@
 title: そろそろWeb画像はWebPだけでよいか
 id: miyanaga
 date: 2024-09-15 10:13:00
+categories:
+  - image-fitness
+  - technology
 ---
 
 そろそろWeb画像はWebPのみの配信でよいのではないか？

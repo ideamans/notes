@@ -2,6 +2,9 @@
 title: DifyをAWSでガチ目に動かすには？〜理論編
 id: miyanaga
 date: 2024-10-08 06:58:00
+categories:
+  - ai
+  - infrastructure
 ---
 
 DifyのソースコードにはDocker Composeプロジェクトが同梱されている。

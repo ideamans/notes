@@ -2,6 +2,10 @@
 id: miyanaga
 title: Googleスプレッドシートを簡易データベースにするNPMモジュールを公開
 date: 2025-04-25 15:15:00
+categories:
+  - development
+  - automation
+  - technology
 ---
 
 TypeScriptによるプログラムで、Zodで型を規定しつつ、Googleスプレッドシートを簡易的なデータベースとして利用できるモジュールを開発した。

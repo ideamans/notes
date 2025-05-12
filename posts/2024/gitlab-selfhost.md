@@ -2,6 +2,11 @@
 id: miyanaga
 date: 2024-09-11 11:35:00
 title: GitLabセルフホスティングの話
+categories:
+  - infrastructure
+  - development
+  - technology
+
 ---
 
 弊社ではクライアントとのソースコード共有や、Wikiによるドキュメントの共有のためにGitLabをセルフホスティングしている。

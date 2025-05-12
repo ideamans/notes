@@ -2,6 +2,10 @@
 id: miyanaga
 title: アイデアマンズのミッションは「Webフィットネス」
 date: 2025-04-30 12:20:00
+categories:
+  - business
+  - sitespeed
+  - image-fitness
 ---
 
 弊社アイデアマンズ株式会社のミッションについて少し言語化をしたい。

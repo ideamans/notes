@@ -2,6 +2,12 @@
 id: miyanaga
 title: Core Web Vitalsの超実践的な改善術 - 総集編
 date: 2024-11-23 16:41:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 このブログでは最近、Core Web VitalsやPageSpeed Insightsに関する記事を続けて書いた。

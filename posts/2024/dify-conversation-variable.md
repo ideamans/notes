@@ -2,6 +2,12 @@
 title: Dify会話変数でcanvasのような共同作業を実現
 id: miyanaga
 date: 2024-10-18 07:18:00
+categories:
+  - ai
+  - development
+  - technology
+  - automation
+
 ---
 
 [ChatGPT with canvas](https://openai.com/index/introducing-canvas/)をご存知だろうか。AIとともに、ソースコードや文章を編集できる機能だ。

@@ -2,6 +2,12 @@
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - INP編
 date: 2024-11-21 09:42:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 [INP(Interaction to Next Paint)](https://web.dev/articles/inp?hl=ja)は、2023年4月に[FID(First Input Delay)](https://web.dev/articles/fid?hl=ja)と置き換わる形でCore Web Vitalsに昇格した指標だ。

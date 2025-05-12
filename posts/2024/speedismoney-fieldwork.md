@@ -2,6 +2,12 @@
 id: miyanaga
 title: INPの収集および改善提案サービスを開始
 date: 2024-11-14 19:28:00
+categories:
+  - sitespeed
+  - development
+  - technology
+  - research
+
 ---
 
 Core Web Vitalsの中で [INP(Interaction to Next Paint)](https://web.dev/articles/inp?hl=ja) は、**実際のユーザーがWebページを操作して初めて計測される指標**だ。

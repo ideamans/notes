@@ -2,6 +2,9 @@
 id: miyanaga
 date: 2024-09-09 07:26:00
 title: GitLabのよくある操作を半自動化するCLIツール
+categories:
+  - infrastructure
+  - development
 ---
 
 弊社ではクライアントとのソースコードやWikiによるドキュメント共有に、自前のGitLabを使うことがある。

@@ -2,6 +2,12 @@
 id: miyanaga
 title: WebP変換の適切なタイミングについて
 date: 2025-02-14 19:38:00
+categories:
+  - image-fitness
+  - sitespeed
+  - technology
+  - development
+
 ---
 
 Web 画像データを WebP や AVIF などの次世代画像フォーマットにすると、同じ画質でもそのデータ量を大幅に削減できる。AWS などの海外クラウドサービスではデータ送信料金を削減でき、ユーザーの通信負担も軽くなる。その効果は小さくない。
