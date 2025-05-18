@@ -2,8 +2,6 @@ name: Scheduled AI Posting
 
 on:
   schedule:
-    # 日本時間 09:00 (UTC 01:00)
-    - cron: '0 0 * * *'
     # 日本時間 15:00 (UTC 06:00)
     - cron: '0 6 * * *'
 
