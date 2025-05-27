@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 # 記事のfrontmatter作成
 
-Markdown(.md)の上部に、次のブロックを挿入または存在する場合は更新する。
+Markdown(.md)の上部に、次のブロックを挿入または存在する場合は更新してください。
 
 ---
 title: (Markdown文章のタイトル 10〜30文字程度)
