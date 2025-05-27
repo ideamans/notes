@@ -9,9 +9,9 @@ Vibe Coding (ヴァイブコーディング)が賑わっている。生成AIを�
 
 まさにこのネットミームが相応しい。
 
-<img src="https://assets.ideamans.com/miyanaga/images/2025/05/coding-wakaranai-man.png" alt="コーディングが全然わからない男性" width="600" height="360" />
+<img src="https://assets.ideamans.com/miyanaga/images/2025/05/programming-wakaranai-man.png" alt="プログラミングが全然わからない男性" width="600" height="360" />
 
-- [雰囲気で株をやっているジェネレーター](https://potato4d.github.io/huniki_generator/?text=%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)
+- [雰囲気で株をやっているジェネレーター](https://potato4d.github.io/huniki_generator/?text=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)
 
 自分も古いプログラマーなので、中身がよくわからないものを残す勇気は未だない。しかし使い捨てのプログラム、PoC的なプロトタイプ、個性のない小さなライブラリ開発などには今後、積極的に使っていこうと思う。
 
