@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 記事のfrontmatter作成
+
+Markdown(.md)の上部に、次のブロックを挿入または存在する場合は更新する。
+
+---
+title: (Markdown文章のタイトル 10〜30文字程度)
+id: miyanaga
+date: (現在の日付。形式は 2025-05-27 13:56:00)
+categories: [カテゴリの文字列配列]
+---
+
+## カテゴリの文字列配列
+
+@categories.ts で定義されたカテゴリから文章に相応しいものを選び、`basename`を用いる。
+
+例: ['ai', 'development']
