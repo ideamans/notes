@@ -2,6 +2,7 @@ import Dayjs from 'dayjs'
 // import { defineConfig } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { genFeed } from './genFeed.js'
+import { genLLMs } from './genLLMs.js'
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -111,7 +112,10 @@ gtag('config', 'G-YQBLSY0PKS');
       }
     ]
   ],
-  buildEnd: genFeed,
+  buildEnd: async (config) => {
+    await genFeed(config)
+    await genLLMs(config)
+  },
   transformHead: ({ head, pageData }) => {
     const ogpBgUrl = 'https://notes.ideamans.com/ogp-background.jpg'
 
