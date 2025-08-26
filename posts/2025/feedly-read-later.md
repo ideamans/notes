@@ -5,15 +5,19 @@ date: 2025-08-26 13:56:00
 categories: ['automation', 'technology']
 ---
 
-RSS リーダーの[Feedly](https://feedly.com)には長い間お世話になってきたし、UI も今も最高に使いやすいのだが、API が Enterprise プランしか対応していない。
+RSS リーダーの[Feedly](https://feedly.com)には長い間お世話になってきたし、有償の Pro プランを使っている。今でも UI は最高に使いやすいのだが、API が Enterprise プランしか対応しておらず使えない。
 
-自分がブックマークした記事を AI でもっと活用したいのに、これでは不便なので[inoreader](https://www.inoreader.com/)への移行を検討している。
+自分がブックマークした記事を AI でもっと活用したいのに、これでは不便なので[inoreader](https://www.inoreader.com/)への移行に着手した。
 
-そうなると Feedly に溜めた「あとで読む」記事くらいは移行したい。というわけで、Web GUI から抜き出してみた方法を共有する。
+そうなると Feedly に溜まった「あとで読む」記事くらいは取っておきたい。というわけで、Web GUI から抜き出してみた方法を共有する。
 
 ---
 
 ## 「あとで読む」のリストをスプレッドシートに抜き出す手順
+
+Chrome の Developer Tools には JavaScript コンソールがある。これを使うと、現在見ているページから簡易的にスクレイピングができる。
+
+最近はそのスクリプトも AI が考案してくれるので、プログラマーでなくても覚えておいて損はない。
 
 ### Feedly の Web GUI を Chrome で開く
 
