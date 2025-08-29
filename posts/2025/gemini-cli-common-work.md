@@ -237,7 +237,7 @@ done
 
 実際に手元で動かしてみた動画がこちら(60 倍速)。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ovPyi44V1sE?si=1tGWGFa6pfK2Fopg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/67eeWJhO4vQ?si=qNwx3yrjSI4qnzBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 16 サイトの調査に 20 分ほどかかった。これはプロンプトやスクリプトの問題かもしれない。あるいは並列化を検討するのもよいだろう。
 
