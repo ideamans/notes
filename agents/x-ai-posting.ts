@@ -51,7 +51,7 @@ async function main() {
   const config = {
     responseMimeType: 'text/plain'
   }
-  const model = 'gemini-3.0-pro'
+  const model = 'gemini-3-pro-preview'
   const contents = [
     {
       role: 'user',
