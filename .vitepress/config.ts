@@ -59,6 +59,9 @@ export default defineConfig({
   cleanUrls: false,
   ignoreDeadLinks: true,
   rewrites: {},
+  vite: {
+    assetsInclude: ['**/*.mp4']
+  },
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
