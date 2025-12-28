@@ -2,11 +2,17 @@
 import { computed } from 'vue'
 import type { Post } from './posts.data.js'
 import Dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+
+Dayjs.extend(utc)
+Dayjs.extend(timezone)
 
 const props = defineProps<{ date: Post['date'] }>()
 
 const formattedDate = computed(() => {
-  return Dayjs(props.date).format('YYYY-MM-DD')
+  // frontmatterの日付は日本時間（JST）として扱う
+  return Dayjs.tz(props.date, 'Asia/Tokyo').format('YYYY-MM-DD')
 })
 </script>
 

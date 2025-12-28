@@ -1,5 +1,15 @@
 import { createContentLoader } from 'vitepress'
 import Dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+
+Dayjs.extend(utc)
+Dayjs.extend(timezone)
+
+// frontmatterの日付は日本時間（JST）として扱う
+const parseJstDate = (dateStr: string) => {
+  return Dayjs.tz(dateStr, 'Asia/Tokyo')
+}
 
 export interface Post {
   url: string
@@ -26,6 +36,6 @@ export default createContentLoader('posts/**/*.md', {
         excerpt: excerpt || '',
         url
       }))
-      .sort((a, b) => +Dayjs(b.date) - +Dayjs(a.date))
+      .sort((a, b) => +parseJstDate(b.date) - +parseJstDate(a.date))
   }
 })
