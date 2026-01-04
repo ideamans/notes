@@ -1,6 +1,6 @@
 ---
 id: miyanaga
-title: さくらのCDN料金体系の裏をかいた「ずるい使い方」
+title: さくらのCDN料金体系の裏をかいた激安AWS Firehoseとして使う「ずるい使い方」
 date: 2025-12-28 19:30:00
 categories:
   - infrastructure
