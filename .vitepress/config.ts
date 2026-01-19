@@ -80,32 +80,12 @@ export default defineConfig({
         href: '/notes.svg'
       }
     ],
-    // [
-    //   'script',
-    //   {
-    //     src: 'https://cdn.usefathom.com/script.js',
-    //     'data-site': 'NYHGSGQV',
-    //     'data-spa': 'auto',
-    //     defer: ''
-    //   }
-    // ]
     [
       'script',
       {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-YQBLSY0PKS',
-        async: '1'
+        src: 'https://tags.ideamans.com/scripts/notes.js',
+        async: ''
       }
-    ],
-    [
-      'script',
-      {},
-      `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-YQBLSY0PKS');
-`
     ],
     [
       'script',
