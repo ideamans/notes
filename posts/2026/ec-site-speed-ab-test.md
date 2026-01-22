@@ -7,7 +7,7 @@ categories: [sitespeed, business]
 
 実際の通販サイトにおいて一部のユーザーの体験を **わざと遅くする** 禁断のA/Bテストを実施した。遅い体験を強いられたユーザーの行動にどんな違いが現れたか、衝撃的な結果を報告する。
 
-<img src="/posts/2026/ec-site-speed-ab-test/ab-test-cvr.png" alt="A/BテストによるCVR比較グラフ" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/ab-test-cvr.png" alt="A/BテストによるCVR比較グラフ" width="1600" height="800" />
 
 [[toc]]
 
@@ -24,7 +24,7 @@ categories: [sitespeed, business]
 
 この2つのグループでユーザーの行動にどんな違いが現れるかを測定した。
 
-<img src="/posts/2026/ec-site-speed-ab-test/ab-test-design.png" alt="A/Bテストの仕様" width="1200" height="630" />
+<img src="./ec-site-speed-ab-test/ab-test-design.png" alt="A/Bテストの仕様" width="1200" height="630" />
 
 ### 対象サイトについて
 
@@ -40,7 +40,7 @@ categories: [sitespeed, business]
 
 まずはコンバージョンレートの比較結果だ。
 
-<img src="/posts/2026/ec-site-speed-ab-test/ab-test-cvr.png" alt="A/BテストによるCVR比較グラフ" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/ab-test-cvr.png" alt="A/BテストによるCVR比較グラフ" width="1600" height="800" />
 
 | グループ | 条件 | CVR |
 |:--|:--|--:|
@@ -61,14 +61,14 @@ LCP 2.5秒は決して「良い」とは言えない。ユーザーは本当に�
 
 ここでいう **再訪問率** とは、ひとりのユーザーが複数の日にちをまたいでサイトを訪れたかどうかの比率である。
 
-<img src="/posts/2026/ec-site-speed-ab-test/ab-test-retension.png" alt="A/Bテストによる再訪問率比較グラフ" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/ab-test-retension.png" alt="A/Bテストによる再訪問率比較グラフ" width="1600" height="800" />
 
 | グループ | 条件 | 再訪問率 |
 |:--|:--|--:|
 | グループA（約30%） | LCPが1.5秒より早くならないよう調整 | **7.52%** |
 | グループB（約70%） | 自然なスピード体験 | **34.34%** |
 
-**約4.5倍の差**が生じた。
+再訪問のされやすさにも**約4.5倍の差**が生じた。
 
 ---
 
@@ -107,13 +107,13 @@ LCP 2.5秒は決して「良い」とは言えない。ユーザーは本当に�
 
 サイトスピード、ページスピードは、閲覧者によってかなり大きく左右される。以下は同じトップページのLCPをページビューごとに集計した分布（ヒストグラム）だ。
 
-<img src="/posts/2026/ec-site-speed-ab-test/lcp-distribution.png" alt="LCP分布のヒストグラム" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/lcp-distribution.png" alt="LCP分布のヒストグラム" width="1600" height="800" />
 
 このように、同じページであってもユーザーによって体験スピードは大きなばらつきを持つ。0.75秒〜1秒あたりがボリュームゾーンだが、 **遅い体験をしているユーザーもかなり幅広く存在** している。
 
 LCPに限らず、サイトスピードに関する時間の指標は **対数正規分布** に従うとされており、一定のボリュームゾーンはあるものの、遅い方向には長いテールが伸びている。
 
-<img src="/posts/2026/ec-site-speed-ab-test/lcp-distribution-and-log-normal-dist.png" alt="LCPの対数正規分布との比較グラフ" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/lcp-distribution-and-log-normal-dist.png" alt="LCPの対数正規分布との比較グラフ" width="1600" height="800" />
 
 理論値と多少の誤差はあるが、大まかな特徴は一致している。サイトスピードのばらつきは数学モデルを適用できる、ありふれた現象なのだ。
 
@@ -121,7 +121,7 @@ LCPに限らず、サイトスピードに関する時間の指標は **対数�
 
 Webページの表示は一見シンプルだが、ひも解いてみると技術的にかなり多くの要素が複雑に絡み合った処理を行っている。
 
-<img src="/posts/2026/ec-site-speed-ab-test/speed-variance-factors.png" alt="表示速度のばらつき要因" width="1200" height="630" />
+<img src="./ec-site-speed-ab-test/speed-variance-factors.png" alt="表示速度のばらつき要因" width="1200" height="630" />
 
 たとえば通信も瞬間的に行われるように見えて、一般的に10〜20台程度の通信機器を経由してサーバーから端末にデータが送信されている。このように複雑な要素の一つ一つに確率的なスピードの揺れがあり、それが積み重なることで、遅い方向に広がる対数正規分布上のばらつきが生じる。
 
@@ -165,7 +165,7 @@ Webページの表示は一見シンプルだが、ひも解いてみると技�
 
 では、この最小LCPの数値によってCVRがどう異なるか確認しよう。
 
-<img src="/posts/2026/ec-site-speed-ab-test/min-lcp-cvr.png" alt="最小LCPとCVRの関係グラフ" width="1600" height="800" />
+<img src="./ec-site-speed-ab-test/min-lcp-cvr.png" alt="最小LCPとCVRの関係グラフ" width="1600" height="800" />
 
 最小LCPの値が良いほどCVRが高く、最小LCPの値が悪化するほどCVRも低下する——明らかに強い相関性が見られる。
 
