@@ -21,7 +21,7 @@ categories:
 
 以下のグラフを見ていただきたい。これは実際の通販サイトにおける過去90日間のデータで、横軸に最小LCP、縦軸にCVR(成約率)をプロットしたものだ。
 
-![最小LCPとCVRの関係](/posts/2025/speedismoney-modeling-v4/lcp-cvr.png)
+![最小LCPとCVRの関係](./speedismoney-modeling-v4/lcp-cvr.png)
 
 グラフを見ると、LCPの体験が良かったユーザーではCVRが2%近くに達している。しかしLCPが悪化するにつれてCVRは急激に低下し、1秒を超えるあたりからほぼ0%に近づいてその後は横ばいになる。
 
@@ -33,7 +33,7 @@ categories:
 
 ## 従来モデルの問題点と解決策
 
-![平均LCPと最小LCP](/posts/2025/speedismoney-modeling-v4/lcp-avg-and-min.png)
+![平均LCPと最小LCP](./speedismoney-modeling-v4/lcp-avg-and-min.png)
 
 従来のSpeed is Moneyでは、セッションのLCP代表値として**平均LCP**を採用していた。しかし平均値を代表値にすることには重大な問題があり、今回その問題を**最小LCP**を採用することで解決した。
 
@@ -82,7 +82,7 @@ LCPは同じユーザーの体験であっても、ページやタイミング�
 
 実は最小LCPと平均LCPには非常に強い相関関係がある。以下はセッションごとの最小LCPと平均LCPの関係をヒートマップでプロットしたものだ。
 
-<img src="/posts/2025/speedismoney-modeling-v4/lcp-min-and-avg-corr.png" alt="最小LCPと平均LCPの相関" style="width: 50%;" />
+<img src="./speedismoney-modeling-v4/lcp-min-and-avg-corr.png" alt="最小LCPと平均LCPの相関" style="width: 50%;" />
 
 **相関係数は0.9188**と非常に強い相関が見られる。したがって、最小LCPを使っても平均LCPが持つ因果関係を受け継ぎつつ、先述の逆転問題を回避できる。
 
@@ -92,7 +92,7 @@ LCPは同じユーザーの体験であっても、ページやタイミング�
 
 そこでSpeed is Moneyの関係性調査に協力いただいた**14の通販サイト**について、同様のグラフを作成した。
 
-![14サイトのLCP-CVR関係](/posts/2025/speedismoney-modeling-v4/sites-lcp-cvr-tiles.png)
+![14サイトのLCP-CVR関係](./speedismoney-modeling-v4/sites-lcp-cvr-tiles.png)
 
 **ほぼすべてのサイトで同様の傾向が見られる。** LCPが悪化するほどCVRは急激に低下していく。
 
@@ -106,7 +106,7 @@ LCPは同じユーザーの体験であっても、ページやタイミング�
 
 Core Web Vitalsのもう一つの指標である**INP**についても同様の分析を行った。
 
-![14サイトのINP-CVR関係](/posts/2025/speedismoney-modeling-v4/sites-inp-cvr-tiles.png)
+![14サイトのINP-CVR関係](./speedismoney-modeling-v4/sites-inp-cvr-tiles.png)
 
 INPについては先述の逆転現象がほぼ見られない。**INPが良ければCVRも良い、INPが悪ければ離脱してCVRが低い**という関係が、より素直に表れている。
 
@@ -118,7 +118,7 @@ INPについては先述の逆転現象がほぼ見られない。**INPが良け
 
 先ほどのグラフでは、セッションを10%ずつの階級に分割し、それぞれの階級でCVRを算出していた。ここにセッション数を書き加えると以下のようになる。
 
-![最小LCP・CVR・セッション数](/posts/2025/speedismoney-modeling-v4/min-lcp-cvr-sessions.png)
+![最小LCP・CVR・セッション数](./speedismoney-modeling-v4/min-lcp-cvr-sessions.png)
 
 セッション数はほぼ横一列で同じ値を取っている。これは10等分したので当然の結果だ。
 
@@ -128,7 +128,7 @@ INPについては先述の逆転現象がほぼ見られない。**INPが良け
 
 この**セッションの再配分**をシミュレーションし、再配分後のCVRを加重平均で計算することで、サイトスピード改善による収益改善を予測できる。
 
-![LCP改善によるCVR予測](/posts/2025/speedismoney-modeling-v4/lcp-cvr-prediction.png)
+![LCP改善によるCVR予測](./speedismoney-modeling-v4/lcp-cvr-prediction.png)
 
 緑のヒストグラムが10%LCP改善時のセッション再配分を示している。LCPが良くCVRも高い領域のセッション数が増加した。
 
@@ -140,7 +140,7 @@ INPについては先述の逆転現象がほぼ見られない。**INPが良け
 
 同じ予測モデルを14サイトに適用した結果が以下だ。
 
-![14サイトのLCP改善シミュレーション](/posts/2025/speedismoney-modeling-v4/sites-lcp-cvr-simulations.png)
+![14サイトのLCP改善シミュレーション](./speedismoney-modeling-v4/sites-lcp-cvr-simulations.png)
 
 いくつかの発見がある。
 
