@@ -45,6 +45,14 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 - `/categories.ts` - カテゴリ定義（`basename`と`name`のペア）
 - `/authors.ts` - 著者情報定義
 
+### 画像の配置ルール
+
+記事で使用する画像は `/public/posts/{year}/{slug}/` に配置する。
+
+- 配置先: `/public/posts/{year}/{slug}/*.png`
+- マークダウンでの参照パス: `/posts/{year}/{slug}/image.png`（`/public` プレフィックスは不要）
+- VitePressの `public` ディレクトリはビルド時にそのままルートとして配信される
+
 ### VitePressカスタム構成
 
 - `/.vitepress/config.ts` - VitePress設定、OGP画像の動的生成（banners.ideamans.comを使用）、ビルドフック
@@ -69,6 +77,8 @@ date: 2025-05-27 13:56:00
 categories: [sitespeed, ai]
 ---
 ```
+
+- `date`は`date`コマンドで現在日時を確認して設定する
 
 カテゴリは`/categories.ts`で定義された`basename`を使用。
 
