@@ -1,0 +1,6 @@
+[Compare Result]
+Baseline: ./tmp/leadtime0.png
+Current: ./tmp/leadtime3.png
+Output: ./tmp/diff.png
+Diff Pixels: 2938 / 329160
+Diff Percent: 0.8926%
