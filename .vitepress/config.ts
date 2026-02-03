@@ -3,6 +3,7 @@ import Dayjs from 'dayjs'
 import { defineConfig } from 'vitepress'
 import { genFeed } from './genFeed.js'
 import { genLLMs } from './genLLMs.js'
+import { crosslinkPlugin } from './crosslink-plugin.js'
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -59,6 +60,17 @@ export default defineConfig({
   cleanUrls: false,
   ignoreDeadLinks: true,
   rewrites: {},
+  markdown: {
+    config: (md) => {
+      md.use(crosslinkPlugin, {
+        getSlug: (env) => {
+          // posts/2025/example.md → example
+          const match = env.relativePath?.match(/\/([^/]+)\.md$/)
+          return match ? match[1] : 'unknown'
+        }
+      })
+    }
+  },
   vite: {
     assetsInclude: ['**/*.mp4']
   },
