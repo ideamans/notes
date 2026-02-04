@@ -163,6 +163,7 @@ export default defineConfig({
       const title = pageData.frontmatter.title
       const id = pageData.frontmatter.id
       const date = Dayjs(pageData.frontmatter.date).format('YYYY/MM/DD')
+      const customOgp = pageData.frontmatter.ogp
 
       // Twitter Card
       head.push([
@@ -172,24 +173,51 @@ export default defineConfig({
           content: title
         }
       ])
-      head.push([
-        'meta',
-        {
-          property: 'twitter:image',
-          content: articleTwitterImageUrl(
-            pageData.relativePath ?? pageData.filePath ?? ''
-          )
-        }
-      ])
 
-      // OGP
-      head.push([
-        'meta',
-        {
-          property: 'og:image',
-          content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
-        }
-      ])
+      // カスタムOGP画像が指定されている場合
+      if (customOgp) {
+        const ogpUrl = `https://notes.ideamans.com${customOgp}`
+        head.push([
+          'meta',
+          {
+            property: 'og:image',
+            content: ogpUrl
+          }
+        ])
+        head.push([
+          'meta',
+          {
+            property: 'twitter:image',
+            content: ogpUrl
+          }
+        ])
+        // Twitter Cardをsummary_large_imageに変更
+        head.push([
+          'meta',
+          {
+            name: 'twitter:card',
+            content: 'summary_large_image'
+          }
+        ])
+      } else {
+        // デフォルトのOGP画像生成
+        head.push([
+          'meta',
+          {
+            property: 'twitter:image',
+            content: articleTwitterImageUrl(
+              pageData.relativePath ?? pageData.filePath ?? ''
+            )
+          }
+        ])
+        head.push([
+          'meta',
+          {
+            property: 'og:image',
+            content: articleImageUrl(ogpBgUrl, title, `${date} @${id}`)
+          }
+        ])
+      }
     }
   },
   appearance: false

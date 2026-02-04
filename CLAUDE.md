@@ -60,11 +60,13 @@ title: 記事タイトル（10〜30文字程度）
 id: miyanaga
 date: 2025-05-27 13:56:00
 categories: [sitespeed, ai]
+ogp: /ogp/2025/slug.jpg
 ---
 ```
 
 - `date`は`date`コマンドで現在日時を確認して設定する
 - 日付はJST（日本標準時）として解釈される
+- `ogp`はOGP画像のパス（`/ogp/{year}/{slug}.jpg`形式）。`/ogp-image`スキルで生成
 
 **カテゴリ一覧**（`/categories.ts`で定義）:
 

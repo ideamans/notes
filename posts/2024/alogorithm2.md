@@ -6,7 +6,7 @@ categories:
   - development
   - technology
   - ideas
-
+ogp: /ogp/2024/alogorithm2.jpg
 ---
 
 アイデアマンズ株式会社のロゴマークはプログラムで自動生成している。

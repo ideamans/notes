@@ -5,6 +5,7 @@ date: 2025-12-15 13:00:00
 categories:
   - sitespeed
   - business
+ogp: /ogp/2025/speedismoney-modeling-v4.jpg
 ---
 
 弊社ではサイトスピードと通販サイトの収益性の関係を定量的にモデル化することに多大な情熱を注いでいる。その成果を反映したアクセス解析ツールが [Speed is Money](https://speedis.money/) だ。

@@ -23,12 +23,18 @@ async function main() {
   const args = process.argv.slice(2)
 
   if (args.length < 2) {
-    console.error('Usage: node generate.mjs "<prompt>" "<output_path>" [system_prompt_file]')
+    console.error(
+      'Usage: node generate.mjs "<prompt>" "<output_path>" [system_prompt_file]'
+    )
     console.error('')
     console.error('Arguments:')
-    console.error('  prompt              - User prompt or content for image generation')
+    console.error(
+      '  prompt              - User prompt or content for image generation'
+    )
     console.error('  output_path         - Output file path')
-    console.error('  system_prompt_file  - Optional: System prompt file (e.g., infographic.md)')
+    console.error(
+      '  system_prompt_file  - Optional: System prompt file (e.g., infographic.md)'
+    )
     process.exit(1)
   }
 
@@ -73,7 +79,7 @@ async function main() {
   }
 
   // Prepare the request
-  const model = 'gemini-2.0-flash-exp-image-generation'
+  const model = 'gemini-3-pro-image-preview'
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
 
   const requestBody = {
@@ -82,15 +88,15 @@ async function main() {
         role: 'user',
         parts: [
           {
-            text: finalPrompt,
-          },
-        ],
-      },
+            text: finalPrompt
+          }
+        ]
+      }
     ],
     generationConfig: {
       responseModalities: ['image', 'text'],
-      responseMimeType: 'text/plain',
-    },
+      responseMimeType: 'text/plain'
+    }
   }
 
   console.log('Generating image with Gemini API...')
@@ -99,9 +105,9 @@ async function main() {
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(requestBody)
     })
 
     if (!response.ok) {

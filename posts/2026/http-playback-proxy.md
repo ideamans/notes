@@ -7,6 +7,7 @@ categories:
   - development
   - technology
 qiita_id: dce8714bf245531d3367
+ogp: /ogp/2026/http-playback-proxy.jpg
 ---
 
 Webページの表示スピード改善は、やはり実際に変更して計測をしてみないと効果がわからないことがほとんどである。そのため、できれば本番環境には手を加えず、どこを変えたらどうなるかを何度も繰り返しシミュレーションしたい。そのための技術として「http-playback-proxy」をオープンソースで公開している。
