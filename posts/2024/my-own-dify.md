@@ -5,6 +5,7 @@ date: 2024-10-04 07:25:00
 categories:
   - ai
   - infrastructure
+ogp: /ogp/2024/my-own-dify.jpg
 ---
 
 LLMアプリ開発が楽しいDifyだが、無料だとできることが限られ、有料プランは個人にはちと高い。3アカウントも手に余る。

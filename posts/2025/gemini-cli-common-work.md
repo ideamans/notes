@@ -3,7 +3,7 @@ id: miyanaga
 title: Gemini CLIで寝ている間に仕事してくれる「小人のくつ屋さん」を手軽に実現する
 date: 2025-09-01 06:33:00
 categories: ['ai', 'automation', 'technology', 'business']
-
+ogp: /ogp/2025/gemini-cli-common-work.jpg
 ---
 
 AI に退屈な作業をまかせ、自分の時間を確保する自動化は個人的に大きなテーマだ。以前、こちらの記事に多くの反響をいただいた。

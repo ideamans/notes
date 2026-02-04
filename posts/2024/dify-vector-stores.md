@@ -5,6 +5,7 @@ date: 2024-10-07 13:30:00
 categories:
   - ai
   - technology
+ogp: /ogp/2024/dify-vector-stores.jpg
 ---
 
 Difyでナレッジを取り込むと、その内容はベクトルデータベースに格納される。

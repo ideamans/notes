@@ -6,7 +6,7 @@ categories:
   - sitespeed
   - development
   - technology
-
+ogp: /ogp/2024/effective-pagespeed-insights.jpg
 ---
 
 PageSpeed InsightsはWebページのスピードを評価する際に便利なツールではあるが、非常にミスリードを起こしやすい。

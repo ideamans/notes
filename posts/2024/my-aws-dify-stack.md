@@ -5,6 +5,7 @@ date: 2024-10-08 06:58:00
 categories:
   - ai
   - infrastructure
+ogp: /ogp/2024/my-aws-dify-stack.jpg
 ---
 
 DifyのソースコードにはDocker Composeプロジェクトが同梱されている。

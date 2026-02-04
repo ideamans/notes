@@ -6,7 +6,7 @@ categories:
   - infrastructure
   - development
   - technology
-
+ogp: /ogp/2024/gitlab-selfhost.jpg
 ---
 
 弊社ではクライアントとのソースコード共有や、Wikiによるドキュメントの共有のためにGitLabをセルフホスティングしている。

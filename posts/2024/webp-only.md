@@ -5,6 +5,7 @@ date: 2024-09-15 10:13:00
 categories:
   - image-fitness
   - technology
+ogp: /ogp/2024/webp-only.jpg
 ---
 
 そろそろWeb画像はWebPのみの配信でよいのではないか？

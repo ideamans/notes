@@ -5,6 +5,7 @@ date: 2024-10-04 07:30:00
 categories:
   - ai
   - infrastructure
+ogp: /ogp/2024/my-own-firecrawl-for-dify.jpg
 ---
 
 この記事は[VPSでお安く自分専用のDifyを持つ方法](./my-own-dify)の続きだ。

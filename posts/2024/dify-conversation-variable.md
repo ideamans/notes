@@ -7,7 +7,7 @@ categories:
   - development
   - technology
   - automation
-
+ogp: /ogp/2024/dify-conversation-variable.jpg
 ---
 
 [ChatGPT with canvas](https://openai.com/index/introducing-canvas/)をご存知だろうか。AIとともに、ソースコードや文章を編集できる機能だ。
