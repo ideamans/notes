@@ -1,9 +1,10 @@
 name: Scheduled AI Posting
 
 on:
-  schedule:
-    # 日本時間 15:00 (UTC 06:00)
-    - cron: '0 6 * * *'
+  # schedule:
+  #   # 日本時間 15:00 (UTC 06:00)
+  #   - cron: '0 6 * * *'
+  workflow_dispatch: # 手動実行のみ有効
 
 jobs:
   build-and-post:
