@@ -6,7 +6,7 @@ categories:
   - research
   - technology
   - content-management
-
+ogp: /ogp/2025/media-sites.jpg
 ---
 
 メディアサイトについて横断的な調査をしたいと思い、AIでリストを作ってみた。ディープリサーチによるリスト作成がどのくらいの分量まで行ってくれるのかも確かめたかった。

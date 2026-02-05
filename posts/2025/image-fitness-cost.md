@@ -4,6 +4,7 @@ title: 画像軽量化コストの妥当性「いくらまで適切？」を考�
 date: 2025-05-12 12:27:00
 categories:
   - image-fitness
+ogp: /ogp/2025/image-fitness-cost.jpg
 ---
 
 Webサイトの画像軽量化には、オープンソースによる内製から、さまざまな外部のサービスの活用まで多くの選択肢がある。

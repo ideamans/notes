@@ -6,6 +6,7 @@ categories:
   - research
   - business
   - technology
+ogp: /ogp/2025/access-ranking-adoption.jpg
 ---
 
 さまざまなサイトでアクセスランキングを目にするが、実際どのくらい採用されているのだろうか？ 記事コンテンツを中心としたいわゆるニュース系メディアサイト220サイトについて調査してみた。
