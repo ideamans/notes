@@ -6,6 +6,7 @@ categories:
   - development
   - technology
   - automation
+ogp: /ogp/2024/banner-generator.jpg
 
 ---
 

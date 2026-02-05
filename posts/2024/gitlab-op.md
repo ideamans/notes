@@ -5,6 +5,7 @@ title: GitLabのよくある操作を半自動化するCLIツール
 categories:
   - infrastructure
   - development
+ogp: /ogp/2024/gitlab-op.jpg
 ---
 
 弊社ではクライアントとのソースコードやWikiによるドキュメント共有に、自前のGitLabを使うことがある。

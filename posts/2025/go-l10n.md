@@ -3,6 +3,7 @@ title: Go言語のローカライゼーションパッケージ go-l10nを公開
 id: miyanaga
 date: 2025-05-31 15:56:00
 categories: ['development']
+ogp: /ogp/2025/go-l10n.jpg
 ---
 
 Go言語用のローカライゼーション(自然言語メッセージ翻訳)のためのパッケージをOSSとして公開した。

@@ -5,6 +5,7 @@ date: 2024-11-28 10:17:00
 categories:
   - sitespeed
   - technology
+ogp: /ogp/2024/core-web-vitals-trends.jpg
 ---
 
 Core Web Vitalsが検索順位に影響すると言われて数年が経った。SEOに関わらず、サイトスピードに関心のあるサイトは少なくないだろう。

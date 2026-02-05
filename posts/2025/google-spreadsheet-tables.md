@@ -6,6 +6,7 @@ categories:
   - development
   - automation
   - technology
+ogp: /ogp/2025/google-spreadsheet-tables.jpg
 ---
 
 TypeScriptによるプログラムで、Zodで型を規定しつつ、Googleスプレッドシートを簡易的なデータベースとして利用できるモジュールを開発した。

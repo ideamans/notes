@@ -5,6 +5,7 @@ date: 2024-12-29 09:51:00
 categories:
   - sitespeed
   - technology
+ogp: /ogp/2024/web-vitals-distribution.jpg
 ---
 
 Core Web Vitals をはじめとするサイトスピード指標の多くは、**対数正規分布** に基づくとされている。

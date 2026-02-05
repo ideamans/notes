@@ -7,6 +7,7 @@ categories:
   - development
   - technology
   - research
+ogp: /ogp/2024/apple-has-no-3rdparty.jpg
 
 ---
 

@@ -6,6 +6,7 @@ categories:
   - automation
   - ai
   - development
+ogp: /ogp/2025/x-ai-posting.jpg
 ---
 
 研究ノートと銘打ったこのブログもだいぶ記事が溜まってきた。以前に投稿した記事もXなどで露出を図るとよいのだが、文面を考えるのが面倒でつい放置してしまっていた。

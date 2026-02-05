@@ -6,6 +6,7 @@ categories:
   - image-fitness
   - cloud-cost
   - business
+ogp: /ogp/2025/digital-trade-deficit.jpg
 ---
 
 AWS に代表される海外クラウドサービスの利用は、貿易という観点では輸入になる。国内における海外サービスの利用は増す一方であり、IT 分野においては輸入超過の赤字が体質化している。それが「デジタル赤字」の問題だ。

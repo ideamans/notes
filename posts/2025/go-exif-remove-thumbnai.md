@@ -3,6 +3,7 @@ title: JPEGのEXIFサムネイルを削除するGo言語パッケージを公開
 id: miyanaga
 date: 2025-06-03 09:40:00
 categories: ['image-fitness', 'development']
+ogp: /ogp/2025/go-exif-remove-thumbnai.jpg
 ---
 
 地味なツールだが、JPEGファイルのサムネイル(EXIF)を削除するGo言語のパッケージを公開した。

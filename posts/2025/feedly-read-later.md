@@ -3,6 +3,7 @@ title: Feedlyの「あとで読む」を一括で抜き出す方法
 id: miyanaga
 date: 2025-08-26 13:56:00
 categories: ['automation', 'technology']
+ogp: /ogp/2025/feedly-read-later.jpg
 ---
 
 RSS リーダーの[Feedly](https://feedly.com)には長い間お世話になってきたし、有償の Pro プランを使っている。今でも UI は最高に使いやすいのだが、API が Enterprise プランしか対応しておらず使えない。

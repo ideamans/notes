@@ -5,6 +5,7 @@ date: 2024-09-20 07:46:00
 categories:
   - infrastructure
   - development
+ogp: /ogp/2024/nginx-with-lego-ssl.jpg
 ---
 
 VPSなどの素のサーバでWebアプリを公開するとき、SSLをどうするかという問題がある。

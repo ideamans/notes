@@ -7,7 +7,7 @@ categories:
   - technology
   - development
   - automation
-
+ogp: /ogp/2024/ranklet4-ai-review.jpg
 ---
 
 弊社が提供するアクセスランキング機能運用サービス [Rankelt4](https://ranklet4.com/) に、**AIレビュー機能** を追加した。

@@ -19,6 +19,7 @@ export interface Post {
   id: string
   date: string
   categories?: string[]
+  ogp?: string
 }
 
 declare const data: Post[]
@@ -33,6 +34,7 @@ export default createContentLoader('posts/**/*.md', {
         id: frontmatter.id,
         date: frontmatter.date,
         categories: frontmatter.categories || [],
+        ogp: frontmatter.ogp,
         excerpt: excerpt || '',
         url
       }))

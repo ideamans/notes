@@ -7,6 +7,7 @@ categories:
   - technology
   - development
   - research
+ogp: /ogp/2024/thirtparty-tag.jpg
 
 ---
 

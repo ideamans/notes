@@ -5,6 +5,7 @@ date: 2024-10-07 12:25:00
 categories:
   - ai
   - content-management
+ogp: /ogp/2024/dify-notion.jpg
 ---
 
 セルフホストしたDifyから[Notion](https://www.notion.so/ja)に接続するには少し工夫が必要だった。

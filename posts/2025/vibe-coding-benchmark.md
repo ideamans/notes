@@ -3,6 +3,7 @@ title: Vibe Codingでライブラリ選定のための簡易ベンチマーク�
 id: miyanaga
 date: 2025-05-27 13:56:00
 categories: ['ai', 'development']
+ogp: /ogp/2025/vibe-coding-benchmark.jpg
 ---
 
 Vibe Coding (ヴァイブコーディング)が賑わっている。生成AIを積極的に利用し、自然言語によるVibe(雰囲気)でコーディングを進行する潮流だ。

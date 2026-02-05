@@ -6,6 +6,7 @@ categories:
   - sitespeed
   - technology
   - research
+ogp: /ogp/2024/psychology-site-speed.jpg
 
 ---
 

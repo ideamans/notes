@@ -5,6 +5,7 @@ date: 2024-10-02 05:20:00
 categories:
   - ai
   - technology
+ogp: /ogp/2024/dify.jpg
 ---
 
 LLMアプリの開発プラットフォーム[Dify](https://dify.ai/jp)を使い始めた。もう楽しすぎる。

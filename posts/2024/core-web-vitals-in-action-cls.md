@@ -7,7 +7,7 @@ categories:
   - development
   - technology
   - research
-
+ogp: /ogp/2024/core-web-vitals-in-action-cls.jpg
 ---
 
 Core Web Vitalsのひとつ、CLS(Cumulative Layout Shift)の改善方法について解説する。

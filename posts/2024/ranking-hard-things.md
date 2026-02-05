@@ -7,6 +7,7 @@ categories:
   - infrastructure
   - technology
   - research
+ogp: /ogp/2024/ranking-hard-things.jpg
 
 ---
 

@@ -7,6 +7,7 @@ categories:
   - development
   - technology
   - automation
+ogp: /ogp/2024/loadshow.jpg
 
 ---
 

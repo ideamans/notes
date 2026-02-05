@@ -4,6 +4,7 @@ import { useData, useRoute } from 'vitepress'
 import Home from './Home.vue'
 import Article from './Article.vue'
 import Category from './Category.vue'
+import OgpGallery from './OgpGallery.vue'
 import NotFound from './NotFound.vue'
 import { data as categories } from './categories.data.js'
 import Dayjs from 'dayjs'
@@ -63,6 +64,7 @@ const category = computed(() => {
     <main class="max-w-4xl mx-auto px-4 sm:px-6 xl:max-w-6xl xl:px-0">
       <Home v-if="frontmatter.index" />
       <Category v-else-if="category" :category="category" />
+      <OgpGallery v-else-if="frontmatter.pageType === 'ogps'" />
       <NotFound v-else-if="page.isNotFound" />
       <Article v-else />
     </main>
