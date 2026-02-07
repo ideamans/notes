@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Date from './Date.vue'
 import Author from './Author.vue'
+import BudouX from './BudouX.vue'
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { data as posts } from './posts.data.js'
@@ -29,7 +30,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
       <h1
         class="text-2xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14"
       >
-        {{ data.title }}
+        <BudouX :text="data.title" />
       </h1>
       <CategoryTags :categories="data.categories" class="flex justify-center" />
     </header>
@@ -59,7 +60,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
             次の記事
           </h2>
           <div class="link">
-            <a :href="nextPost.url">{{ nextPost.title }}</a>
+            <a :href="nextPost.url"><BudouX :text="nextPost.title" /></a>
           </div>
         </div>
         <div v-if="prevPost" class="py-8">
@@ -69,7 +70,7 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
             前の記事
           </h2>
           <div class="link">
-            <a :href="prevPost.url">{{ prevPost.title }}</a>
+            <a :href="prevPost.url"><BudouX :text="prevPost.title" /></a>
           </div>
         </div>
         <AllCategoriesWidget />

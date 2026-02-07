@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Post } from './posts.data.js'
 import Date from './Date.vue'
+import BudouX from './BudouX.vue'
 import CategoryTags from './CategoryTags.vue'
 import AllCategoriesWidget from './AllCategoriesWidget.vue'
 import Ranklet4Widget from './Ranklet4Widget.vue'
@@ -31,9 +32,9 @@ const props = defineProps<{
                 <div class="flex flex-col gap-2">
                   <Date :date="date" />
                   <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                    <a class="text-gray-900 dark:text-white" :href="url">{{
-                      title
-                    }}</a>
+                    <a class="text-gray-900 dark:text-white" :href="url">
+                      <BudouX :text="title" />
+                    </a>
                   </h2>
                   <CategoryTags :categories="categories || []" />
                 </div>

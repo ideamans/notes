@@ -57,6 +57,11 @@ const categories: Category[] = [
   {
     basename: 'research',
     name: '研究'
+  },
+
+  {
+    basename: 'claude-code',
+    name: 'Claude Code'
   }
 ]
 
