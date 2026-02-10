@@ -61,6 +61,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   rewrites: {},
   markdown: {
+    math: true,
     config: (md) => {
       md.use(crosslinkPlugin, {
         getSlug: (env) => {
