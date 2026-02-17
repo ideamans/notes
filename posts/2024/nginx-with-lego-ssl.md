@@ -6,6 +6,8 @@ categories:
   - infrastructure
   - development
 ogp: /ogp/2024/nginx-with-lego-ssl.jpg
+ads:
+  - id: ai-coaching
 ---
 
 VPSなどの素のサーバでWebアプリを公開するとき、SSLをどうするかという問題がある。

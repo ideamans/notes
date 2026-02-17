@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2024/effective-pagespeed-insights.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 PageSpeed InsightsはWebページのスピードを評価する際に便利なツールではあるが、非常にミスリードを起こしやすい。

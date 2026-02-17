@@ -8,7 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/npm-web-vitals-distribution.jpg
-
+ads:
+  - id: sitespeed-chronicle
 ---
 
 Core Web Vitals をはじめとする多くサイトスピード指標は対数正規分布に基づくとされている。

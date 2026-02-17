@@ -5,6 +5,8 @@ date: 2025-05-12 12:27:00
 categories:
   - image-fitness
 ogp: /ogp/2025/image-fitness-cost.jpg
+ads:
+  - id: lightfile-simulator
 ---
 
 Webサイトの画像軽量化には、オープンソースによる内製から、さまざまな外部のサービスの活用まで多くの選択肢がある。

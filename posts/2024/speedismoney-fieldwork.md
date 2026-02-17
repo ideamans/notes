@@ -8,7 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/speedismoney-fieldwork.jpg
-
+ads:
+  - id: speedismoney
 ---
 
 Core Web Vitalsの中で [INP(Interaction to Next Paint)](https://web.dev/articles/inp?hl=ja) は、**実際のユーザーがWebページを操作して初めて計測される指標**だ。

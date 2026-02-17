@@ -8,7 +8,8 @@ categories:
   - technology
   - automation
 ogp: /ogp/2024/loadshow.jpg
-
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 Webページの読み込み過程を動画化し、比較できるツールをオープンソースで公開した。

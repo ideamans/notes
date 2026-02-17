@@ -6,6 +6,8 @@ categories:
   - sitespeed
   - technology
 ogp: /ogp/2024/web-vitals-distribution.jpg
+ads:
+  - id: sitespeed-chronicle
 ---
 
 Core Web Vitals をはじめとするサイトスピード指標の多くは、**対数正規分布** に基づくとされている。

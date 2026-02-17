@@ -4,6 +4,8 @@ id: miyanaga
 date: 2026-02-10 07:30:00
 categories: [sitespeed, research]
 ogp: /ogp/2026/speed-cvr-modeling.jpg
+ads:
+  - id: speedismoney
 ---
 
 「読み込みが1秒速くなるとCVRが○%上がる」——サイトスピードとコンバージョンレート（CVR）の関係について、これまで耳にしてきたのはこうした断片的なフレーズばかりだった。しかし、両者の関係をもっと全体的に、**シンプルな数式で記述**できないだろうか。

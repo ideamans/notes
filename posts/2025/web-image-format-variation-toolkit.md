@@ -6,6 +6,8 @@ categories:
   - image-fitness
   - technology
 ogp: /ogp/2025/web-image-format-variation-toolkit.jpg
+ads:
+  - id: lightfile-next
 ---
 
 弊社ではWeb画像に関するサービスを展開しているが、一言にJPEG、PNG、GIFといっても内部的に多くのバリエーションがある。例えばJPEGであれば、Exifの有無や圧縮方式の違いなどだ。

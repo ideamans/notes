@@ -8,6 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/core-web-vitals-in-action.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 このブログでは最近、Core Web VitalsやPageSpeed Insightsに関する記事を続けて書いた。

@@ -8,7 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/apple-has-no-3rdparty.jpg
-
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 いろいろなサイトのフロントエンドを観察していて面白いことに気づいた。

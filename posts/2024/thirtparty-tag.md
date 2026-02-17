@@ -8,7 +8,8 @@ categories:
   - development
   - research
 ogp: /ogp/2024/thirtparty-tag.jpg
-
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 Core Web Vitals改善術の一環としてサードパーティタグの扱いについて解説する。

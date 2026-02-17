@@ -4,6 +4,8 @@ id: miyanaga
 date: 2025-07-02 09:53:00
 categories: ['development', 'image-fitness']
 ogp: /ogp/2025/next-gen-image-accept-controller.jpg
+ads:
+  - id: lightfile-proxy
 ---
 
 WebPやAVIFといった次世代画像フォーマットと、従来フォーマット(JPEG・PNG・GIF)に両対応し、ブラウザの対応状況によって出し分けるサイトが増えている。

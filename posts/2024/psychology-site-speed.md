@@ -7,7 +7,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/psychology-site-speed.jpg
-
+ads:
+  - id: speedismoney
 ---
 
 以前こちらの記事「サイトスピードと幸福の心理学」の要約をXに載せた。サイトスピードに関する心理学的エピソード集で大変面白かった。

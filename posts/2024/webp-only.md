@@ -6,6 +6,8 @@ categories:
   - image-fitness
   - technology
 ogp: /ogp/2024/webp-only.jpg
+ads:
+  - id: lightfile-simulator
 ---
 
 そろそろWeb画像はWebPのみの配信でよいのではないか？

@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2025/ec-speed-practice.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 体感スピードの速い通販サイトを実現するにはどうすべきか、これまでの経験をもとに設計と実装のプラクティスを紹介する。

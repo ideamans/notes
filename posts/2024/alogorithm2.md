@@ -7,6 +7,8 @@ categories:
   - technology
   - ideas
 ogp: /ogp/2024/alogorithm2.jpg
+ads:
+  - id: ai-coaching
 ---
 
 アイデアマンズ株式会社のロゴマークはプログラムで自動生成している。

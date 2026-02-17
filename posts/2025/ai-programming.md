@@ -4,6 +4,8 @@ id: miyanaga
 date: 2025-05-27 13:56:00
 categories: ['ai', 'development']
 ogp: /ogp/2025/ai-programming.jpg
+ads:
+  - id: ai-coaching
 ---
 
 [Claude](https://claude.ai/)と[Claude Code](https://docs.anthropic.com/ja/docs/claude-code/overview)を使ったAIコーディング(Vibe Coding)に夢中になっている。止められない時代の変化を感じた。

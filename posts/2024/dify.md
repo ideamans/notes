@@ -6,6 +6,8 @@ categories:
   - ai
   - technology
 ogp: /ogp/2024/dify.jpg
+ads:
+  - id: ai-coaching
 ---
 
 LLMアプリの開発プラットフォーム[Dify](https://dify.ai/jp)を使い始めた。もう楽しすぎる。

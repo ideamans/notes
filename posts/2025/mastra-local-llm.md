@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2025/mastra-local-llm.jpg
+ads:
+  - id: ai-coaching
 ---
 
 最近、Macbook ProをM1 ProからM4 Proにアップグレードしたので、[LM Studio](https://lmstudio.ai/) でローカルLLMを動かしてみたらさすがに早い。

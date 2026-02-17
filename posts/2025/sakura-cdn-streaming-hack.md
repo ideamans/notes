@@ -7,6 +7,8 @@ categories:
   - development
   - ideas
 ogp: /ogp/2025/sakura-cdn-streaming-hack.jpg
+ads:
+  - id: ai-coaching
 ---
 
 CDNといえば、大量のアクセスを高速・安定的にさばくためのインフラである。しかし、さくらインターネットのCDNサービス「[ウェブアクセラレータ](https://cdn.sakura.ad.jp/)」には、料金体系の特性を活かした「ずるい使い方」がある。

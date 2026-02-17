@@ -4,6 +4,8 @@ id: miyanaga
 date: 2025-05-31 15:56:00
 categories: ['development']
 ogp: /ogp/2025/go-l10n.jpg
+ads:
+  - id: ai-coaching
 ---
 
 Go言語用のローカライゼーション(自然言語メッセージ翻訳)のためのパッケージをOSSとして公開した。

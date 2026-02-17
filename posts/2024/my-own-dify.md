@@ -6,6 +6,8 @@ categories:
   - ai
   - infrastructure
 ogp: /ogp/2024/my-own-dify.jpg
+ads:
+  - id: ai-coaching
 ---
 
 LLMアプリ開発が楽しいDifyだが、無料だとできることが限られ、有料プランは個人にはちと高い。3アカウントも手に余る。

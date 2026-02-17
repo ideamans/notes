@@ -6,6 +6,8 @@ categories:
   - ai
   - technology
 ogp: /ogp/2024/dify-vector-stores.jpg
+ads:
+  - id: ai-coaching
 ---
 
 Difyでナレッジを取り込むと、その内容はベクトルデータベースに格納される。

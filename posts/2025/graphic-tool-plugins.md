@@ -4,6 +4,8 @@ title: Web技術で作るグラフィックツールの拡張機能
 date: 2025-01-14 10:54:00
 categories: ['development', 'technology']
 ogp: /ogp/2025/graphic-tool-plugins.jpg
+ads:
+  - id: ai-coaching
 ---
 
 次のグラフィックツールの拡張機能(プラグイン、アドオン、アプリなどの呼称)について軽く調査した。

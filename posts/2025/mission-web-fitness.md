@@ -7,6 +7,8 @@ categories:
   - sitespeed
   - image-fitness
 ogp: /ogp/2025/mission-web-fitness.jpg
+ads:
+  - id: lightfile-simulator
 ---
 
 弊社アイデアマンズ株式会社のミッションについて少し言語化をしたい。

@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2024/gitlab-selfhost.jpg
+ads:
+  - id: ai-coaching
 ---
 
 弊社ではクライアントとのソースコード共有や、Wikiによるドキュメントの共有のためにGitLabをセルフホスティングしている。

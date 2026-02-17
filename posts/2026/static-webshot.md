@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2026/static-webshot.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 Webページのビジュアルリグレッションテストを行う際、最大の敵はアニメーションだ。カルーセルスライダー、CSSアニメーション、フェードイン効果...これらの動的要素があると、撮影のたびにスクリーンショットが異なり、まともなピクセル比較ができない。

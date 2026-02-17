@@ -8,6 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/core-web-vitals-in-actino-inp.jpg
+ads:
+  - id: speedismoney
 ---
 
 [INP(Interaction to Next Paint)](https://web.dev/articles/inp?hl=ja)は、2023年4月に[FID(First Input Delay)](https://web.dev/articles/fid?hl=ja)と置き換わる形でCore Web Vitalsに昇格した指標だ。

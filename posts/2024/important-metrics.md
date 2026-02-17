@@ -8,7 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/important-metrics.jpg
-
+ads:
+  - id: speedismoney
 ---
 
 この記事では、**サイトスピードに関する指標のうち、どの指標が売上に最も影響するか？** という疑問に対する事例とアクセス解析の過程を解説する。

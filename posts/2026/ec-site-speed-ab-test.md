@@ -4,6 +4,8 @@ id: miyanaga
 date: 2026-01-21
 categories: [sitespeed, business]
 ogp: /ogp/2026/ec-site-speed-ab-test.jpg
+ads:
+  - id: speedismoney
 ---
 
 実際の通販サイトにおいて一部のユーザーの体験を **わざと遅くする** 禁断のA/Bテストを実施した。遅い体験を強いられたユーザーの行動にどんな違いが現れたか、衝撃的な結果を報告する。

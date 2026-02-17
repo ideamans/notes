@@ -7,6 +7,8 @@ categories:
   - content-management
   - technology
 ogp: /ogp/2025/blog-renewal.jpg
+ads:
+  - id: ai-coaching
 ---
 
 この技術ブログと別に、以前から運用している広報ブログがある。

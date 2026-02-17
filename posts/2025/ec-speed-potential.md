@@ -4,6 +4,8 @@ id: miyanaga
 date: 2025-06-26 17:30:00
 categories: [sitespeed, business]
 ogp: /ogp/2025/ec-speed-potential.jpg
+ads:
+  - id: speedismoney
 ---
 
 ::: warning 📢 モデルの改訂について

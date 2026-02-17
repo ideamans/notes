@@ -6,6 +6,8 @@ categories:
   - ai
   - infrastructure
 ogp: /ogp/2024/my-own-firecrawl-for-dify.jpg
+ads:
+  - id: ai-coaching
 ---
 
 この記事は[VPSでお安く自分専用のDifyを持つ方法](./my-own-dify)の続きだ。

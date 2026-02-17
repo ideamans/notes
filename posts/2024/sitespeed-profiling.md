@@ -6,6 +6,8 @@ categories:
   - sitespeed
   - business
 ogp: /ogp/2024/sitespeed-profiling.jpg
+ads:
+  - id: speedismoney
 ---
 
 サイトスピードが遅いとサイトの収益性が悪化し、逆に早ければ儲かる。それはよく知られている。しかし **なぜそうなるのか説明** するには、少し高い解像度で理解していないと難しい。

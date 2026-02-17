@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 import { genFeed } from './genFeed.js'
 import { genLLMs } from './genLLMs.js'
 import { crosslinkPlugin } from './crosslink-plugin.js'
+import { adPlugin } from './ad-plugin.js'
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -70,6 +71,7 @@ export default defineConfig({
           return match ? match[1] : 'unknown'
         }
       })
+      md.use(adPlugin)
     }
   },
   vite: {

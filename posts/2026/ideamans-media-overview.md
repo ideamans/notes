@@ -8,6 +8,8 @@ categories:
   - automation
   - content-management
 ogp: /ogp/2026/ideamans-media-overview.jpg
+ads:
+  - id: ai-coaching
 ---
 
 **AIエージェントによる自社メディア運営プロジェクトのセカンドフェーズが完成し、安定稼働を始めた。**

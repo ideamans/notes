@@ -8,6 +8,8 @@ categories:
   - technology
   - automation
 ogp: /ogp/2024/dify-custom-tool.jpg
+ads:
+  - id: ai-coaching
 ---
 
 Difyには外部サービスと連携するツール機能があり、**カスタムツール**として自前のAPIを連携対象に追加できる。

@@ -7,6 +7,8 @@ categories:
   - automation
   - technology
 ogp: /ogp/2025/go-file-cleaner.jpg
+ads:
+  - id: ai-coaching
 ---
 
 システムにおいて、キャッシュファイルやバックアップファイルはできるだけ長く保持しておきたいが、それによりストレージの空き容量が枯渇することは避けたい。

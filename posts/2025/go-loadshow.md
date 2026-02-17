@@ -7,6 +7,8 @@ categories:
   - development
   - technology
 ogp: /ogp/2025/go-loadshow.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 PageSpeed InsightsやLighthouseでWebサイトの表示スピードを計測すると、スコアやLCP、Speed Indexなどの専門的な指標が数値で示される。しかし正直なところ、これらの数値だけを見て「このサイトは速い」「遅い」と直感的に理解できる人は少ないのではないだろうか。

@@ -8,7 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/ranking-hard-things.jpg
-
+ads:
+  - id: ranklet4
 ---
 
 アクセスランキングはWebサイトの人気機能のひとつであるが、弊社ではGA4を活用したアクセスランキング表示のWebサービス [Ranklet4](https://ranklet4.com/) を提供している。

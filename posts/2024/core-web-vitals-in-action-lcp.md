@@ -8,6 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/core-web-vitals-in-action-lcp.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 Core Web Vitalsのひとつ、LCP(Largest Contentful Paint)の改善手法について解説する。

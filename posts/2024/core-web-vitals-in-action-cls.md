@@ -8,6 +8,8 @@ categories:
   - technology
   - research
 ogp: /ogp/2024/core-web-vitals-in-action-cls.jpg
+ads:
+  - id: pagespeed-rehearsal
 ---
 
 Core Web Vitalsのひとつ、CLS(Cumulative Layout Shift)の改善方法について解説する。
