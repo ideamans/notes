@@ -30,7 +30,7 @@ const trackedUrl = computed(() => {
   const url = new URL(service.value.url)
   url.searchParams.set('utm_source', 'notes.ideamans.com')
   url.searchParams.set('utm_medium', 'owned_media')
-  url.searchParams.set('utm_campaign', 'regular')
+  url.searchParams.set('utm_campaign', 'banner')
   url.searchParams.set('utm_content', getSlug(route.path))
   return url.toString()
 })
