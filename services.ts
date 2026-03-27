@@ -60,4 +60,11 @@ export const services: Service[] = [
     url: 'https://ai-coaching.ideamans.com/',
     defaultLead: '自走するAI中心チームをあなたの組織に。週1回の継続セッションでAI活用を組織に定着させます。',
   },
+  {
+    id: 'b2b-top-research',
+    name: 'B2Bトップページ研究 — 設計の定石',
+    url: 'https://b2b-top.whitepapers.ideamans.com/',
+    defaultLead:
+      'B2B SaaSサービス62サイトのトップページ構成を横断分析。6つの構成パターン、34種類のセクション採用率、300枚以上のスクリーンショット付き実例集を収録した無料の調査レポートです。',
+  },
 ]
