@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの改善は本当に進んでいるか
+description: 国内主要ECサイト100社のCrUXデータ月次推移を分析。CLSは2021〜2022年に大幅改善したがLCPはほぼ横ばい、INPは緩やかな改善傾向を確認。データが示すサイトスピード改善の現実と、各指標の改善が難しい理由を解説する。
 date: 2024-11-28 10:17:00
 categories:
   - sitespeed

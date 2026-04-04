@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: アニメーションを抑制したWebスクリーンショットを撮るCLIツール static-webshot
+description: CSSアニメーション・カルーセルスライダー・乱数を徹底的に制御し、再現性のある決定論的スクリーンショットを撮影するCLIツール static-webshot の設計と実装を解説する。
 date: 2026-02-04 08:07:00
 categories:
   - sitespeed

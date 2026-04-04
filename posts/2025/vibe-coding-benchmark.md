@@ -1,5 +1,6 @@
 ---
 title: Vibe Codingでライブラリ選定のための簡易ベンチマークを頼む
+description: Go言語でKVSライブラリ（LevelDB・BBolt・Badger・Pebble・SQLite）を比較するベンチマークプログラムをClaude Codeに丸投げし、30分のプロンプト作成で一日がかりの作業を完了した体験を紹介。Vibe Codingが使い捨てツールやPoC開発で威力を発揮する実例を示す。
 id: miyanaga
 date: 2025-05-27 13:56:00
 categories: ['ai', 'development']

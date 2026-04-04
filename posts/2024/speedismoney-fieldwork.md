@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: INPの収集および改善提案サービスを開始
+description: INP悪化の根本原因を特定するため、web-vitalsのattribution buildで実ユーザーのInput delay・Processing time・Presentation delayをBigQueryに収集する仕組みを構築。憶測ではなく実データに基づくINP改善提案サービスの仕組みと背景を解説する。
 date: 2024-11-14 19:28:00
 categories:
   - sitespeed

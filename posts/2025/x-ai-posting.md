@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: AIとGitHub Actionsで定期的に記事の宣伝をXに投稿する
+description: 過去のブログ記事をランダムに抽出し、GeminiがSNS投稿文を自動生成してGitHub ActionsのCronワークフローで1日2回Xに投稿する仕組みを構築。文面パターン23種類のプロンプト設計からX APIの認証設定まで実装の全体像を紹介する。
 date: 2025-05-02 15:00:00
 categories:
   - automation

@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Appleサイトはサードパーティタグを使っていない
+description: Appleの公式サイトにはGoogle AnalyticsどころかサードパーティJavaScriptが一切存在しない。自社スクリプトが計測を一元管理するアーキテクチャは、サイトスピード観点から理想的な設計であり、その技術的根拠と示唆を解説する。
 date: 2024-09-16 08:32:00
 categories:
   - sitespeed

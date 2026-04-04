@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Mastra + ローカルLLM経由でMCPする
+description: LM StudioでQwen3をOpenAI互換APIとして起動し、MastraのAI SDKからローカルLLMに差し替えてPlaywright MCPサーバーでブラウザを操作する実験を紹介。クラウドLLMとの精度差の現実と、手元のMacBook Proでオフラインにアクティブなモデルが動く意義を考察する。
 date: 2025-05-01 19:30:00
 categories:
   - ai

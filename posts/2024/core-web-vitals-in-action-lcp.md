@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - LCP編
+description: LCP改善の最大の誤解は「画像軽量化が効く」という思い込みだ。LCPはFCP+最大要素遅延の構造で理解すべきで、FCPを阻害するCSS・JavaScript問題と、メイン画像の読み込み優先制御が実践的な改善の核心であることを詳しく解説する。
 date: 2024-11-17 16:29:00
 categories:
   - sitespeed

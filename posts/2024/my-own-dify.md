@@ -1,5 +1,6 @@
 ---
 title: VPSでお安く自分専用のDifyを持つ方法
+description: オープンソース版DifyをVPSに月1,500円程度でセルフホストする手順を解説。Docker ComposeプロジェクトのクローンからSSL証明書の取得・nginx設定・管理者アカウント作成まで、Ubuntu上での一連の構築手順を詳細なコマンド付きで紹介する。
 id: miyanaga
 date: 2024-10-04 07:25:00
 categories:

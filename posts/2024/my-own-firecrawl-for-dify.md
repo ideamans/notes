@@ -1,5 +1,6 @@
 ---
 title: 自分専用DifyにFirecrawlもセルフホスト
+description: DifyのRAGをWebクローリングで強化するFirecrawlを同じVPSにセルフホストする手順を解説。Docker Composeのネットワーク接続でDifyとFirecrawlを連携し、APIキーとBase URLの設定でWebサイトのベクトル化を自前で実現できるようにする。
 id: miyanaga
 date: 2024-10-04 07:30:00
 categories:

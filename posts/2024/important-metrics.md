@@ -2,6 +2,7 @@
 id: miyanaga
 date: 2024-07-11 09:32:00
 title: サイトスピードの最も重要な指標とは？
+description: アパレルECサイトの実データでLCP・CLS・FCP・OnLoad・TTFBとCVRの相関を分析。OnLoadが良好なセッション群は全体平均の3倍以上のCVRを示し、20%改善で注文数22%増という試算も。サイトごとに最重要指標が異なる理由と調査手法を解説する。
 categories:
   - sitespeed
   - development

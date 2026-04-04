@@ -2,6 +2,7 @@
 id: miyanaga
 date: 2024-09-11 11:35:00
 title: GitLabセルフホスティングの話
+description: GitHubではなくGitLabをセルフホストする理由と、月500円程度で安定運用するシステム構成を解説。退役PCにProxmox+Dockerを構築しautosshで出島サーバ経由で外部公開、sameersbn/gitlabイメージとngbox+legoによるSSL対応までの知見を共有する。
 categories:
   - infrastructure
   - development

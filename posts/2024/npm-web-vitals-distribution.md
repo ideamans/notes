@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: スピード指標の確率分布ユーティリティをNPMで公開
+description: Core Web Vitalsなどサイトスピード指標が従う対数正規分布の計算ライブラリ「web-vitals-distribution」をNPMで公開。CrUXの良好・不良割合から分布を推定し、PDF描画・パーセンタイル計算・CDFなどを提供する実用的なユーティリティを解説する。
 date: 2024-12-31 08:12:00
 categories:
   - sitespeed

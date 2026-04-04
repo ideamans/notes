@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: AIエージェント × MCP × スプレッドシートで寝ている間に仕事をしてくれる「小人のくつ屋さん」を実現する
+description: Mastra・Playwright MCP・Googleスプレッドシートを組み合わせ、多数のWebサイトを自律的に調査するAIバッチ処理を実装する方法を解説。ソースコードも公開し、寝ている間にスプレッドシートが自動で埋まる仕組みの構築手順を紹介する。
 date: 2025-04-20 06:33:00
 categories: ['ai', 'automation', 'technology', 'business']
 ogp: /ogp/2025/agent-mcp-batch.jpg

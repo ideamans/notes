@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: AIで300件ほどのメディアサイトを挙げてみた
+description: ChatGPTでジャンル分類を得た後、GensparkとGemini Deep Researchのディープリサーチを活用して日本国内のメディアサイト約300件をURLつきでリスト化する手順を紹介。AIによる大規模リサーチの実力と限界、収集データをGoogleスプレッドシートで公開。
 date: 2025-04-10 10:25:00
 categories:
   - research

@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Web技術で作るグラフィックツールの拡張機能
+description: Figma・Canva・PhotoshopのプラグインはすべてHTML/CSS/JavaScriptで開発できる。各ツールのプラグインSDKと開発環境の概要を紹介し、AIのビジネス統合に向けてプラグイン・エンジニアというキャリアが今後注目される理由を考察する。
 date: 2025-01-14 10:54:00
 categories: ['development', 'technology']
 ogp: /ogp/2025/graphic-tool-plugins.jpg

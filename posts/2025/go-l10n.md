@@ -1,5 +1,6 @@
 ---
 title: Go言語のローカライゼーションパッケージ go-l10nを公開
+description: Movable Typeのローカライゼーション設計にインスパイアされた、英語メッセージ自体をキーとするシンプルなGo言語向け多言語対応パッケージgo-l10nを公開。認知負荷の低い辞書設計と環境変数による言語自動判別の実装アプローチを紹介する。
 id: miyanaga
 date: 2025-05-31 15:56:00
 categories: ['development']

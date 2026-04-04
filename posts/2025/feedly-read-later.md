@@ -1,5 +1,6 @@
 ---
 title: Feedlyの「あとで読む」を一括で抜き出す方法
+description: FeedlyのAPIがPro版で使えない問題を回避し、ChromeデベロッパーツールのJavaScriptコンソールから「あとで読む」記事の公開日時・URL・タイトルをタブ区切りでスプレッドシートに抽出するスクリプトを紹介する。データの自己所有権についても考察。
 id: miyanaga
 date: 2025-08-26 13:56:00
 categories: ['automation', 'technology']

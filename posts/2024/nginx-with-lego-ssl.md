@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: WebアプリのためのSSLをサクッと立てる
+description: VPS上のWebアプリにSSLを手軽に設定する方法として、Route53+lego+nginx+Dockerの組み合わせによる汎用SSLゲートウェイを解説。ワイルドカード証明書の自動取得・更新、シェルスクリプトによるサイドカー処理の仕組みをOSSリポジトリとともに公開する。
 date: 2024-09-20 07:46:00
 categories:
   - infrastructure

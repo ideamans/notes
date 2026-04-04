@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - INP編
+description: INP（Interaction to Next Paint）はシミュレーションできず改善が難しいCore Web Vitals指標だ。Input delay・Processing time・Presentation delayの構造を理解し、ロングタスク分解やTBT改善、実ユーザーデータ収集を活用した実践的な改善手法を解説する。
 date: 2024-11-21 09:42:00
 categories:
   - sitespeed

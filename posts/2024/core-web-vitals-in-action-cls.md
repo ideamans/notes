@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの実践的な改善術 - CLS編
+description: CLS（Cumulative Layout Shift）改善の実践的手法を解説。画像のwidth/height明示、JavaScriptによるコンテンツ挿入への領域確保、カルーセルスライダーのHTMLとCSSによるモックアップ化など、丁寧なコーディングでほぼ解決できる方法を紹介する。
 date: 2024-11-09 18:29:00
 categories:
   - sitespeed

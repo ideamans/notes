@@ -2,6 +2,7 @@
 id: miyanaga
 date: 2024-09-08 21:17:00
 title: ページの読み込みを動画化するOSSツールを公開
+description: Webページの読み込み過程を動画化し視覚的に比較できるOSSツール「loadshow」を公開。Puppeteerとffmpegを組み合わせ、URLを指定するだけで読み込み動画を生成・左右比較できる。専門家以外にもスピード改善の成果を直感的に伝えるための開発経緯も紹介する。
 categories:
   - sitespeed
   - development

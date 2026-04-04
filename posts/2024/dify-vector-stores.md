@@ -1,5 +1,6 @@
 ---
 title: Difyが対応しているベクトルデータベース
+description: DifyのRAG機能が対応するベクトルデータベースを網羅的に調査。Weaviate・Qdrant・Milvus・pgvector・OpenSearch・Elasticsearch・TiDBなど13種類以上を一覧し、AWS本番環境ではOpenSearchまたはpgvectorが有力という考察を示す。
 id: miyanaga
 date: 2024-10-07 13:30:00
 categories:

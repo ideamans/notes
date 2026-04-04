@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの超実践的な改善術 - 総集編
+description: MTDDC Meetup Tokyo 2024での登壇を機にまとめたCore Web Vitals改善の集大成。CLS・LCP・INPの改善手法とサードパーティタグ対策をPageSpeed Questを活用した弊社独自のフレームワークで体系的に解説し、サイトスピードが収益に直結する理由も示す。
 date: 2024-11-23 16:41:00
 categories:
   - sitespeed

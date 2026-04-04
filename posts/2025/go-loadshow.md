@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: ページ読み込みプロセスを動画化するCLIツール「Loadshow」をGo言語でリニューアル
+description: Webページの読み込みプロセスをMP4動画に録画し、最適化前後を横並び比較できるCLIツール「Loadshow」をGo言語で全面リニューアル。単一バイナリ配布、OS標準H.264エンコーダ活用、Playwright自動ブラウザ調達など技術的な課題の解決方法も解説する。
 date: 2025-12-27 14:26:00
 categories:
   - sitespeed

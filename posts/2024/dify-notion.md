@@ -1,5 +1,6 @@
 ---
 title: セルフホストしたDifyとNotionを接続する方法
+description: セルフホスト版DifyにNotionのナレッジを取り込む設定手順を解説。Notion側で内部インテグレーションを作成しIDとシークレットを取得、DifyのdockerのENV変数に反映して再起動する具体的な手順と、手動再同期の方法まで網羅する。
 id: miyanaga
 date: 2024-10-07 12:25:00
 categories:

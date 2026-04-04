@@ -2,6 +2,7 @@
 id: miyanaga
 date: 2024-09-09 07:26:00
 title: GitLabのよくある操作を半自動化するCLIツール
+description: GitLabのグループ作成・プロジェクト作成・メンバー招待をコマンドラインから行えるGo言語製OSSツール「gitlab-op」を公開。GUIでの繰り返し操作を削減し、go-gitlabライブラリでスラグとIDの変換も自動化した実装の背景と使い方を紹介する。
 categories:
   - infrastructure
   - development

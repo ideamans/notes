@@ -1,5 +1,6 @@
 ---
 title: DifyをAWSでガチ目に動かすには？〜理論編
+description: DifyのDocker Compose構成をAWSに本番移行するアーキテクチャ設計を解説。ECSでコンテナを展開し、RDS/Aurora・ElastiCache・OpenSearch・S3・SESにマッピングする全体像と、Firecrawlの組み込み方・ECSのスケーリング戦略まで理論的に考察する。
 id: miyanaga
 date: 2024-10-08 06:58:00
 categories:

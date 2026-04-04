@@ -1,5 +1,6 @@
 ---
 title: 自動生成するロゴマークを刷新 "alogorithm2"
+description: アイデアマンズのロゴマークを自動生成するプログラムをalogorithm2として刷新。seedパラメータで無数に変化する幾何学模様をNode.js・trianglify・blobsライブラリで実現する仕組みと、動的ビジュアルアイデンティティの設計思想を紹介する。
 id: miyanaga
 date: 2024-10-15 12:10:00
 categories:

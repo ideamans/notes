@@ -1,5 +1,6 @@
 ---
 title: WebPやAVIFに対応していない旧ブラウザのふりをするChrome拡張機能
+description: 次世代画像フォーマットの出し分けをデバッグするため、HTTP Acceptヘッダを書き換えてWebP/AVIF非対応ブラウザをシミュレートするChrome拡張機能を開発・公開。旧ブラウザの実機調達が困難な現在の代替検証手法として活用できる。
 id: miyanaga
 date: 2025-07-02 09:53:00
 categories: ['development', 'image-fitness']

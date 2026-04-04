@@ -1,5 +1,6 @@
 ---
 title: 通販サイトのスピードを遅くする悪魔のA/Bテスト - CVRに19倍の差
+description: 服飾系ECサイトで実施した自然実験により、LCP 1.5秒の壁でCVRが19倍・再訪問率が4.5倍異なることを実証。サイトスピードが短期収益と長期LTVの両方に与える影響をデータで示す。
 id: miyanaga
 date: 2026-01-21
 categories: [sitespeed, business]

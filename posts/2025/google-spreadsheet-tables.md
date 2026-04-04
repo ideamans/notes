@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Googleスプレッドシートを簡易データベースにするNPMモジュールを公開
+description: TypeScript + ZodでGoogleスプレッドシートをドキュメントデータベースとして扱えるNPMモジュール「google-spreadsheet-tables」を公開。RDBMSを用意するほどでもない小規模データ管理に最適で、GUIでのデータ総覧や前後工程との連携がしやすい利点を解説する。
 date: 2025-04-25 15:15:00
 categories:
   - development

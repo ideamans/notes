@@ -1,5 +1,6 @@
 ---
 title: OGP画像を自動生成するプログラムをOSSで公開
+description: ヘッドレスブラウザに頼らずNode.jsのsharpとtext-to-svgでOGP画像を自動生成するOSSを開発・公開。背景画像への文字合成をURLパラメータで制御でき、フォントサイズ自動調整など実用的な工夫も解説する。
 id: miyanaga
 date: 2024-09-23 11:16:00
 categories:

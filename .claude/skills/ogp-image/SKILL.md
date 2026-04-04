@@ -41,23 +41,34 @@
 
 3. **記事で使用されている画像の特定と取得**
 
-   記事内の画像参照を解析:
+   記事内の画像参照をすべて解析する:
    - `![...](...)` 形式
    - `<img src="...">` 形式
 
-   **ローカル画像の場合:**
-   - `/public/posts/{year}/{slug}/` に配置されている想定
+   画像URLを収集し、以下のルールで分類・取得する:
 
-   **外部URL画像の場合:**
-   - 一時ディレクトリにダウンロードしてから使用
-   - SVG画像は画像生成モデルには不向きなのでスキップ
-   - 代表的な画像を2〜3枚程度選んでダウンロード
+   **スキップする画像:**
+   - SVG画像（`.svg`）→ 画像生成モデルに不向き
+   - 極小アイコン（明らかにバッジやファビコン等）
+
+   **ローカル画像の場合（`/posts/...` で始まるパス）:**
+   - `public/` プレフィックスを付けた実ファイルパスで参照
+   - 例: `/posts/2025/slug/photo.png` → `public/posts/2025/slug/photo.png`
+
+   **外部URL画像の場合（`https://` で始まるURL）:**
+   - curlで一時ディレクトリにダウンロードして使用する
+   - **代表的な画像を最大3枚まで**選んでダウンロード（記事の内容を最もよく表すものを優先）
+   - ダウンロードに失敗した場合はスキップして続行
 
    ```bash
    # 外部画像のダウンロード例
-   curl -L -o /tmp/image1.jpg "https://example.com/image.jpg"
-   curl -L -o /tmp/image2.png "https://example.com/image.png"
+   mkdir -p /tmp/ogp-images
+   curl -L -s -o /tmp/ogp-images/image1.jpg "https://example.com/image.jpg"
+   curl -L -s -o /tmp/ogp-images/image2.png "https://example.com/image.png"
    ```
+
+   **取得した画像をgenerate.mjsの引数に渡す:**
+   - ローカルパス・ダウンロード済みパスをすべてgenerate.mjsの末尾引数として列挙する
 
 4. **OGP画像の生成**
 

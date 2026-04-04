@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: PageSpeed Insightsの正しい読み方・活かし方
+description: PageSpeed Insightsのスコアは意思決定の根拠にならず、指摘事項の多くは10年前の話だ。真に重要なのはCrUX Web VitalsとLighthouseの指標値だけであり、両者の役割の違いと正しい活用法をANAトップページの実例で詳解する。
 date: 2024-11-08 23:15:00
 categories:
   - sitespeed

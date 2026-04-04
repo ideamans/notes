@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Gemini CLIで寝ている間に仕事してくれる「小人のくつ屋さん」を手軽に実現する
+description: Gemini CLIとPlaywright・Brave Search MCPサーバーを組み合わせ、TSVファイルの空欄をAIが自動で埋めるバッチ処理を構築する方法を解説。プログラミング不要で単純な繰り返し調査作業をAI自動化できる「テキスト等価仮説」の考え方とシェルスクリプトによる自動再実行も紹介する。
 date: 2025-09-01 06:33:00
 categories: ['ai', 'automation', 'technology', 'business']
 ogp: /ogp/2025/gemini-cli-common-work.jpg

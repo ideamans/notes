@@ -1,5 +1,6 @@
 ---
 title: AIコーディングと新時代の開発スタイル
+description: Claude CodeによるAIコーディング（Vibe Coding）を実践し、テストコードやドキュメント生成を含むGoパッケージを3時間で完成させた体験から、AIをOSSとして信頼する意識転換やマイクロサービス的設計思想など新時代のプログラミング観を考察する。
 id: miyanaga
 date: 2025-05-27 13:56:00
 categories: ['ai', 'development']

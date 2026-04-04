@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Core Web Vitalsの改善術 - サードパーティタグ編
+description: サードパーティタグがTBTを1,530msから110msへ劇的に悪化させる実例を示し、棚卸し・削除・起動遅延の対策を解説。GTMの複数コンテナ問題、スクロール連動起動、ブラウザ言語による条件分岐など、実装可能な具体的コードを交えて解説する。
 date: 2024-11-20 08:48:00
 categories:
   - sitespeed

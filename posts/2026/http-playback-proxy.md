@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Webページのほぼ完全なコピー環境を作る http-playback-proxy
+description: Webページ表示に必要な全通信を記録・再生するRust製オープンソースツールhttp-playback-proxyの仕組みを解説。本番環境に触れずにサイトスピード改善施策をシミュレーションできる。
 date: 2026-01-26 09:52:00
 categories:
   - sitespeed

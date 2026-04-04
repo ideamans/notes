@@ -1,5 +1,6 @@
 ---
 title: サイトスピードとCVRの関係を数式で記述する - 指数減衰モデル
+description: 14の通販サイトのデータから、LCPとCVRの関係を指数減衰モデルで定量化。ポテンシャルCVR・減衰率・ロイヤルティCVRという3パラメータが持つビジネス的意味を解説する。
 id: miyanaga
 date: 2026-02-10 07:30:00
 categories: [sitespeed, research]

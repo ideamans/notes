@@ -1,5 +1,6 @@
 ---
 title: JPEGのEXIFサムネイルを削除するGo言語パッケージを公開
+description: JPEGのメタデータを無闇に削除するとICCプロファイルや向き情報が失われるが、EXIFサムネイルだけは積極的に削除すべき理由とそのGo言語製OSSツールを紹介。画像軽量化における副作用リスクとサムネイルデータの存在を解説する。
 id: miyanaga
 date: 2025-06-03 09:40:00
 categories: ['image-fitness', 'development']

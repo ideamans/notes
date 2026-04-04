@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: Difyでの自前APIとの連携方法と注意点
+description: DifyカスタムツールによるOpenAPI-Swaggerスキーマを使った自前API連携の手順を実例で解説。入力スキーマの活用法、出力がフラットテキストのみとなる制限への対処法、API認証設定（Basic/Bearer）まで、実装時の注意点を包括的にまとめる。
 date: 2024-10-19 09:43:00
 categories:
   - ai

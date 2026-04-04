@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: サイトスピード指標の対数正規分布を確かめる
+description: Core Web Vitalsなどサイトスピード指標が対数正規分布に従うという前提を実データで検証。ヒストグラム・Q-Qプロット・統計的検定を用い、OnLoad・LCP・INPは対数正規分布に近く、CLSはやや一致度が低い実態を視覚的・定量的に確認する。
 date: 2024-12-29 09:51:00
 categories:
   - sitespeed

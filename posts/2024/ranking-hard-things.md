@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: 自前アクセスランキング実現のつらみ
+description: アクセスランキングを自前実装するとDBへの書き込み負荷でパンクする。スケーラビリティの問題を解決するにはKinesisなどのストリーミングサービスか、GA4を活用する発想の転換が有効。Ranklet4がGA4データを使う技術的合理性を詳しく解説する。
 date: 2024-11-02 19:44:00
 categories:
   - development

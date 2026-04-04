@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: 広報ブログをリニューアル・VitePressカスタマイズのコツ
+description: Movable TypeのブログをVitePressで再構築し、ビルド時間を1分41秒から5.66秒に短縮した実例を紹介。Layout.vueでのテンプレート切り替え、データローダー、ダイナミックルート、RSSフィード生成など本格ブログ構築のノウハウを解説する。
 date: 2025-05-06 10:43:00
 categories:
   - development

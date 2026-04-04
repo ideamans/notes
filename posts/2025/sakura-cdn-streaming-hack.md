@@ -1,6 +1,7 @@
 ---
 id: miyanaga
 title: さくらのCDN料金体系の裏をかいた激安AWS Firehoseとして使う「ずるい使い方」
+description: さくらインターネットのウェブアクセラレータは「アウトバウンドのみ課金・リクエスト数は無料」という料金体系を持つ。GETパラメータでユーザー行動データを送信しログに記録する手法でAmazon Data Firehose相当のストリーミングデータ収集を月額数百円で実現する方法を紹介する。
 date: 2025-12-28 19:30:00
 categories:
   - infrastructure

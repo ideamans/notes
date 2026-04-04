@@ -1,5 +1,6 @@
 ---
 title: Dify会話変数でcanvasのような共同作業を実現
+description: DifyのチャットフローでChatGPT with canvasのような「共同作業」を実現する方法を解説。会話変数に成果物を保持し、パラメータ抽出ブロックと変数代入ブロックを組み合わせることで、AIとの継続的な共同編集を実装できる仕組みを俳句作成の例で紹介する。
 id: miyanaga
 date: 2024-10-18 07:18:00
 categories:
