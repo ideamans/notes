@@ -6,6 +6,7 @@ categories:
   - ai
   - development
 ogp: /ogp/2026/chartjs2img.jpg
+qiita_id: 4738d833aa00e23dd884
 ---
 
 AIエージェントによるレポート自動生成が当たり前になりつつある今、「見栄えの良いグラフをサクッと画像にしたい」という場面が増えている。そこで、Chart.jsの設定JSONを渡すだけでグラフ画像を生成できるCLIツール **chartjs2img** をOSSとして公開した。
