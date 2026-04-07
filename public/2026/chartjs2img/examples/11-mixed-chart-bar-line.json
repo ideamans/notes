@@ -1,0 +1,43 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ],
+    "datasets": [
+      {
+        "type": "bar",
+        "label": "Sales",
+        "data": [
+          10,
+          20,
+          15,
+          25,
+          22,
+          30
+        ],
+        "backgroundColor": "rgba(54,162,235,0.7)"
+      },
+      {
+        "type": "line",
+        "label": "Trend",
+        "data": [
+          12,
+          18,
+          16,
+          23,
+          21,
+          28
+        ],
+        "borderColor": "rgb(255,99,132)",
+        "tension": 0.4,
+        "fill": false
+      }
+    ]
+  }
+}

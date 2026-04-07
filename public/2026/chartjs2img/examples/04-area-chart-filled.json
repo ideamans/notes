@@ -1,0 +1,37 @@
+{
+  "type": "line",
+  "data": {
+    "labels": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ],
+    "datasets": [
+      {
+        "label": "2024",
+        "data": [
+          100,
+          150,
+          180,
+          220
+        ],
+        "borderColor": "rgb(54,162,235)",
+        "backgroundColor": "rgba(54,162,235,0.3)",
+        "fill": true
+      },
+      {
+        "label": "2025",
+        "data": [
+          80,
+          120,
+          200,
+          250
+        ],
+        "borderColor": "rgb(255,99,132)",
+        "backgroundColor": "rgba(255,99,132,0.3)",
+        "fill": true
+      }
+    ]
+  }
+}

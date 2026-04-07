@@ -1,0 +1,41 @@
+{
+  "type": "radar",
+  "data": {
+    "labels": [
+      "Speed",
+      "Reliability",
+      "Comfort",
+      "Safety",
+      "Efficiency",
+      "Cost"
+    ],
+    "datasets": [
+      {
+        "label": "Car A",
+        "data": [
+          65,
+          59,
+          90,
+          81,
+          56,
+          55
+        ],
+        "borderColor": "rgb(255,99,132)",
+        "backgroundColor": "rgba(255,99,132,0.2)"
+      },
+      {
+        "label": "Car B",
+        "data": [
+          28,
+          48,
+          40,
+          19,
+          96,
+          87
+        ],
+        "borderColor": "rgb(54,162,235)",
+        "backgroundColor": "rgba(54,162,235,0.2)"
+      }
+    ]
+  }
+}

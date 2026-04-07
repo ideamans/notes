@@ -1,0 +1,28 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "Red",
+      "Blue",
+      "Yellow",
+      "Green",
+      "Purple"
+    ],
+    "datasets": [
+      {
+        "label": "Votes",
+        "data": [
+          12,
+          19,
+          3,
+          5,
+          2
+        ],
+        "backgroundColor": "rgba(54,162,235,0.7)"
+      }
+    ]
+  },
+  "options": {
+    "indexAxis": "y"
+  }
+}

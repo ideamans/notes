@@ -1,0 +1,45 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "東京",
+      "大阪",
+      "名古屋",
+      "福岡",
+      "札幌"
+    ],
+    "datasets": [
+      {
+        "label": "売上高（百万円）",
+        "data": [
+          120,
+          85,
+          60,
+          45,
+          30
+        ],
+        "backgroundColor": "rgba(255,99,132,0.7)"
+      }
+    ]
+  },
+  "options": {
+    "plugins": {
+      "title": {
+        "display": true,
+        "text": "地域別売上高レポート",
+        "font": {
+          "size": 16
+        }
+      },
+      "datalabels": {
+        "display": true,
+        "color": "#333",
+        "font": {
+          "weight": "bold"
+        },
+        "anchor": "end",
+        "align": "top"
+      }
+    }
+  }
+}
