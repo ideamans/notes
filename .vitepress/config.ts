@@ -150,6 +150,13 @@ export default defineConfig({
         async: '1',
         src: 'https://free.ranklet4.com/widgets/JEfB8ZpuktdYw2GQ2auB.js'
       }
+    ],
+    [
+      'script',
+      {
+        src: '/zoomable.js',
+        defer: ''
+      }
     ]
   ],
   buildEnd: async (config) => {
