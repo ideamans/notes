@@ -87,7 +87,7 @@ CLSやLCPはページの読み込みプロセスで評価される値だが、IN
 
 また、関係性があると言われるTBT(Total Blocking Time)も含めたINPの改善術について以下の記事にまとめてある。
 
-- [Core Web Vitalsの実践的な改善術 - INP編 | ideaman's Notes](https://notes.ideamans.com/posts/2024/core-web-vitals-in-actino-inp.html)
+- [Core Web Vitalsの実践的な改善術 - INP編 | ideaman's Notes](https://notes.ideamans.com/posts/2024/core-web-vitals-in-action-inp.html)
 
 ## 各サイトの詳細
 

@@ -5,6 +5,9 @@ import { genFeed } from './genFeed.js'
 import { genLLMs } from './genLLMs.js'
 import { crosslinkPlugin } from './crosslink-plugin.js'
 import { adPlugin } from './ad-plugin.js'
+import { categories as categoryList } from '../categories.js'
+
+const categoryNameByBasename = new Map(categoryList.map((c) => [c.basename, c.name]))
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -66,8 +69,13 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://notes.ideamans.com',
     transformItems: (items) => {
+      // リダイレクト用スタブページ（旧URLを維持しつつ新URLへ転送するページ）
+      const redirectStubs = new Set<string>([
+        'posts/2024/core-web-vitals-in-actino-inp.html'
+      ])
       return items.filter((item) => {
         const url = item.url
+        if (redirectStubs.has(url)) return false
         return (
           url === '' ||
           url === 'index.html' ||
@@ -166,6 +174,12 @@ export default defineConfig({
   transformHead: ({ head, pageData }) => {
     const ogpBgUrl = 'https://notes.ideamans.com/ogp-background.jpg'
     const siteUrl = 'https://notes.ideamans.com'
+
+    // リダイレクト専用ページは独自のhead(frontmatter)のみを使用し、
+    // 共通のOGP/JSON-LDは付与しない（noindex + meta refreshのみが有効）
+    if (pageData.frontmatter?.redirect) {
+      return
+    }
 
     // ページURLの構築
     const relativePath = pageData.relativePath ?? ''
@@ -283,6 +297,55 @@ export default defineConfig({
         'script',
         { type: 'application/ld+json' },
         JSON.stringify(jsonLd)
+      ])
+
+      // 構造化データ (JSON-LD) - BreadcrumbList
+      // ホーム > (カテゴリ) > 記事タイトル
+      const firstCatBasename = Array.isArray(pageData.frontmatter.categories)
+        ? pageData.frontmatter.categories[0]
+        : undefined
+      const firstCatName = firstCatBasename ? categoryNameByBasename.get(firstCatBasename) : undefined
+
+      const breadcrumbItems: Array<{
+        '@type': 'ListItem'
+        position: number
+        name: string
+        item: string
+      }> = [
+        { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${siteUrl}/` }
+      ]
+      if (firstCatBasename && firstCatName) {
+        breadcrumbItems.push({
+          '@type': 'ListItem',
+          position: 2,
+          name: firstCatName,
+          item: `${siteUrl}/categories/${firstCatBasename}.html`
+        })
+        breadcrumbItems.push({
+          '@type': 'ListItem',
+          position: 3,
+          name: title,
+          item: pageUrl
+        })
+      } else {
+        breadcrumbItems.push({
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: pageUrl
+        })
+      }
+
+      const breadcrumbLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbItems
+      }
+
+      head.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(breadcrumbLd)
       ])
     }
   },
