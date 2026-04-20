@@ -2,6 +2,7 @@
 title: Chart.jsのグラフをCLIで画像化するOSSツール「chartjs2img」を公開
 id: miyanaga
 date: 2026-04-07 11:00:00
+description: Chart.jsの設定JSONをコマンド一発で画像化するCLIツール「chartjs2img」をOSSとして公開。AIエージェントによるレポート自動生成で役立つ、Chart.js 4.4と12プラグイン内蔵・セットアップ不要のグラフ画像生成ツール。
 categories:
   - ai
   - development
