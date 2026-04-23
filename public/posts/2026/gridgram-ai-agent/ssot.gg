@@ -1,0 +1,30 @@
+doc {
+  cols: 5,
+  rows: 4,
+  theme: { primary: '#0369a1', secondary: '#059669', accent: '#d97706' },
+}
+
+region @A1:A4 "SSOT（ソース）"  color=accent/15
+region @E1:E4 "派生物"          color=secondary/15
+
+icon :dsl      @A1 tabler/code               "src/gg/dsl.ts"          labelScale=0.8
+icon :args     @A2 tabler/terminal-2         "src/cli/args.ts"        labelScale=0.8
+icon :tmpl     @A3 tabler/file-description   "llm-reference\n.template.md" labelScale=0.72
+icon :examples @A4 tabler/folder-open        "examples/*.gg"          labelScale=0.8
+
+icon :regen    @C2 tabler/refresh            "regen-ai"               sizeScale=1.3
+
+icon :icon_idx @E1 tabler/list-search        "icon-index.json"        labelScale=0.8
+icon :llm_ref  @E2 tabler/file-text          "llm-reference.md"       labelScale=0.8
+icon :llms     @E3 tabler/world              "llms.txt"               labelScale=0.8
+icon :llms_full @E4 tabler/world-upload      "llms-full.txt"          labelScale=0.8
+
+dsl      --> regen  ""
+args     --> regen  ""
+tmpl     --> regen  ""
+examples --> regen  ""
+
+regen --> icon_idx  ""
+regen --> llm_ref   ""
+regen --> llms      ""
+regen --> llms_full ""

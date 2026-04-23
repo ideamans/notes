@@ -1,0 +1,23 @@
+doc {
+  cols: 4,
+  theme: { primary: '#0369a1', secondary: '#0891b2', accent: '#f59e0b' },
+}
+
+region @A1:B2 "作成・編集"   color=accent/20
+region @C1:C2 "変換"         color=secondary/20
+region @D1:D2 "生成物"       color=primary/20
+
+icon :user    @A1 tabler/user          "ユーザー"
+icon :agent   @B1 tabler/robot         "AIエージェント"
+icon :editor  @A2 tabler/pencil        "テキストエディタ"
+icon :ggfile  @B2 tabler/file-code     ".ggファイル"
+icon :ggcmd   @C1 tabler/terminal      "ggコマンド"
+icon :svg     @D1 tabler/vector        "SVG"
+icon :png     @D2 tabler/photo         "PNG"
+
+user   --> agent   "依頼"
+agent  --> ggfile  "生成"
+editor --> ggfile  "直接編集"
+ggfile --> ggcmd   "入力"
+ggcmd  --> svg     "出力"
+ggcmd  --> png     "出力"

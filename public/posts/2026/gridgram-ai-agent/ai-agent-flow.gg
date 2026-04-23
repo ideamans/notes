@@ -1,0 +1,37 @@
+doc {
+  cols: 5,
+  rows: 3,
+  theme: { primary: '#6d28d9', secondary: '#7c3aed', accent: '#059669' },
+}
+
+region @A1:A2 "スキル配布" color=accent/18
+region @C1:C2 "エージェント環境" color=primary/18
+region @D2:E3 "図の生成" color=secondary/18
+
+icon :marketplace @A1 tabler/brand-appstore    "Anthropic Claude\nMarketplace"  labelScale=0.85
+icon :plugin      @A2 tabler/filled/puzzle      "プラグイン"
+icon :gh_cli      @A3 tabler/brand-github      "gh CLI"
+
+icon :skills      @B2 tabler/puzzle            "Skills"            sizeScale=1.1
+
+icon :developer   @C1 tabler/user              "開発者"
+icon :ai_agent    @C2 tabler/robot             "AIエージェント"     sizeScale=1.2
+icon :context7    @D1 tabler/books             "Context7\n(MCP)"   labelScale=0.85
+
+icon :gg_file     @D2 tabler/file-code         ".gg ファイル"       labelScale=0.85
+icon :gg_cmd      @E2 tabler/terminal-2        "gg コマンド"        labelScale=0.85
+icon :svg_out     @D3 tabler/file-type-svg     "SVG"
+icon :png_out     @E3 tabler/photo             "PNG"
+
+marketplace --> plugin    "配布"
+plugin      --> skills    "インストール"
+gh_cli      --> skills    "インストール\n(gh skill)"   labelScale=0.8
+
+developer   --> ai_agent  "依頼"
+ai_agent    --> context7  "MCP"
+ai_agent    --> skills    "使用"
+ai_agent    --> gg_file   "編集"
+
+gg_file     --> gg_cmd    "入力"
+gg_cmd      --> svg_out   "出力"
+gg_cmd      --> png_out   "出力"
