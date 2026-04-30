@@ -39,7 +39,7 @@ export const services: Service[] = [
   {
     id: 'sitespeed-chronicle',
     name: 'サイトスピード 振り返り・競合比較',
-    url: 'https://chronicle.sitespeed.info/',
+    url: 'https://lookback.sitespeed.info/',
     defaultLead: 'CrUXデータを活用し、自社サイトと競合のCore Web Vitalsを5年間にわたって比較・分析できる無料ツールです。',
   },
   {
