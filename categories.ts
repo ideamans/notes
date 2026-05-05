@@ -4,65 +4,28 @@ export interface Category {
 }
 
 const categories: Category[] = [
-  {
-    basename: 'sitespeed',
-    name: 'サイトスピード改善'
-  },
-
-  {
-    basename: 'image-fitness',
-    name: '画像軽量化'
-  },
-
-  {
-    basename: 'development',
-    name: '開発'
-  },
-
-  {
-    basename: 'ai',
-    name: 'AI'
-  },
-
-  {
-    basename: 'automation',
-    name: '自動化'
-  },
-
-  {
-    basename: 'infrastructure',
-    name: 'インフラ'
-  },
-
-  {
-    basename: 'content-management',
-    name: 'コンテンツ管理'
-  },
-
-  {
-    basename: 'business',
-    name: 'ビジネス'
-  },
-
-  {
-    basename: 'ideas',
-    name: 'アイデア'
-  },
-
-  {
-    basename: 'technology',
-    name: '技術解説'
-  },
-
-  {
-    basename: 'research',
-    name: '研究'
-  },
-
-  {
-    basename: 'claude-code',
-    name: 'Claude Code'
-  }
+  { basename: 'sitespeed', name: 'サイトスピード改善' },
+  { basename: 'image-fitness', name: '画像軽量化' },
+  { basename: 'development', name: '開発' },
+  { basename: 'ai', name: 'AI' },
+  { basename: 'automation', name: '自動化' },
+  { basename: 'infrastructure', name: 'インフラ' },
+  { basename: 'content-management', name: 'コンテンツ管理' },
+  { basename: 'business', name: 'ビジネス' },
+  { basename: 'ideas', name: 'アイデア' },
+  { basename: 'technology', name: '技術解説' },
+  { basename: 'research', name: '研究' },
+  { basename: 'claude-code', name: 'Claude Code' }
 ]
+
+const byBasename = new Map(categories.map((c) => [c.basename, c]))
+
+export function getCategoryLabel(basename: string): string {
+  return byBasename.get(basename)?.name ?? basename
+}
+
+export function slugifyTag(tag: string): string {
+  return String(tag).toLowerCase().replace(/\s+/g, '-')
+}
 
 export { categories }

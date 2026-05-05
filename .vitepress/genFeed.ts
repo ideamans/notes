@@ -37,13 +37,12 @@ export async function genFeed(config: SiteConfig) {
         .replaceAll(/\n/g, '')
         .replaceAll('&ZeroWidthSpace;', '')
         .slice(0, 200) + '...'
-    const rewriteUrl = url.replace(/^\/posts\//, '/')
     const author = authorsMap.get(frontmatter.author)
 
     feed.addItem({
       title: frontmatter.title,
-      id: `${baseUrl}${rewriteUrl}`,
-      link: `${baseUrl}${rewriteUrl}`,
+      id: `${baseUrl}${url}`,
+      link: `${baseUrl}${url}`,
       description: text,
       content: text,
       author: [
