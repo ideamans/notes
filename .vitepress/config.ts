@@ -79,8 +79,10 @@ export default defineConfig({
         return (
           url === '' ||
           url === 'index.html' ||
+          url === 'categories.html' ||
           url.startsWith('posts/') ||
-          url.startsWith('categories/')
+          url.startsWith('categories/') ||
+          url.startsWith('monthly/')
         )
       })
     }
@@ -104,6 +106,22 @@ export default defineConfig({
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    [
+      'link',
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: ''
+      }
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap'
+      }
+    ],
     // [
     //   'meta',
     //   {

@@ -18,12 +18,31 @@ export interface Post {
   excerpt: string
   id: string
   date: string
-  categories?: string[]
+  categories: string[]
+  tags: string[]
   ogp?: string
 }
 
 declare const data: Post[]
 export { data }
+
+function normalizeExcerpt(rawExcerpt: string | undefined, fmExcerpt?: string): string {
+  const source = (fmExcerpt && fmExcerpt.trim()) || rawExcerpt || ''
+  if (!source) return ''
+  const text = source
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim()
+  const MAX = 160
+  if (text.length <= MAX) return text
+  return text.slice(0, MAX).replace(/\s+\S*$/, '') + '…'
+}
 
 export default createContentLoader('posts/**/*.md', {
   excerpt: true,
@@ -33,9 +52,10 @@ export default createContentLoader('posts/**/*.md', {
         title: frontmatter.title,
         id: frontmatter.id,
         date: frontmatter.date,
-        categories: frontmatter.categories || [],
+        categories: Array.isArray(frontmatter.categories) ? frontmatter.categories : [],
+        tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
         ogp: frontmatter.ogp,
-        excerpt: excerpt || '',
+        excerpt: normalizeExcerpt(excerpt, frontmatter.excerpt),
         url
       }))
       .sort((a, b) => +parseJstDate(b.date) - +parseJstDate(a.date))

@@ -1,80 +1,100 @@
 <script setup lang="ts">
-import Date from './Date.vue'
-import BudouX from './BudouX.vue'
-import { data as posts } from './posts.data.js'
+import { computed } from 'vue'
 import { useData } from 'vitepress'
-import CategoryTags from './CategoryTags.vue'
-import MainCategoriesMenu from './MainCategoriesMenu.vue'
-import AllCategoriesWidget from './AllCategoriesWidget.vue'
-import Ranklet4Widget from './Ranklet4Widget.vue'
+import Dayjs from 'dayjs'
+import { data as posts } from './posts.data.js'
+import { categories, getCategoryLabel } from '../../categories.js'
 
 const { frontmatter } = useData()
+
+const recentPosts = computed(() => posts.slice(0, 12))
+
+const lastUpdate = computed(() => {
+  const d = posts[0]?.date
+  return d ? Dayjs(d).format('YYYY.MM.DD') : ''
+})
+
+const totalCount = computed(() => posts.length)
+
+const visibleCategoryCount = computed(() =>
+  categories.filter((c) => posts.some((p) => p.categories?.includes(c.basename))).length
+)
+
+const tagCount = computed(() => {
+  const set = new Set<string>()
+  posts.forEach((p) => p.tags?.forEach((t) => set.add(t)))
+  return set.size
+})
+
+const currentYear = computed(() => Dayjs().format('YYYY'))
+const currentMonth = computed(() => Dayjs().format('MM'))
+
+function formatMonthDay(date: string) {
+  const d = Dayjs(date)
+  return `${d.format('M月D日')}`
+}
+
+function formatYear(date: string) {
+  return Dayjs(date).format('YYYY')
+}
+
+function primaryCategoryLabel(p: { categories?: string[] }): string {
+  const c = p.categories?.[0]
+  return c ? getCategoryLabel(c) : ''
+}
 </script>
 
 <template>
-  <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1
-        class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-      >
-        {{ frontmatter.title }}
-      </h1>
-      <p class="text-lg leading-7 text-gray-500 dark:text-white">
-        {{ frontmatter.subtext }}
-      </p>
-      <MainCategoriesMenu />
+  <div class="nb-inner">
+    <h1 class="cover-title">
+      <span class="en">ideaman<span class="amp">&apos;</span>s Notes</span>
+      <span class="sub"><span class="dash">— </span>アイデアマンズの研究ノート</span>
+    </h1>
+    <p class="cover-deck">
+      Webパフォーマンス改善とAI開発の現場メモ。<br />
+      読みかけ、走り書き、思いつきも、そのまま残しておく場所です。
+    </p>
+
+    <div class="cover-meta">
+      <div><span class="lab">since </span><b>2024.05</b></div>
+      <div><span class="lab">entries </span><b>{{ totalCount }}</b></div>
+      <div v-if="lastUpdate"><span class="lab">last update </span><b>{{ lastUpdate }}</b></div>
     </div>
-    <div
-      class="divide-y xl:divide-y-0 divide-gray-200 dark:divide-slate-200/5 xl:grid xl:grid-cols-4 xl:gap-x-10 pb-16 xl:pb-20"
-      style="grid-template-rows: auto 1fr"
-    >
-      <div
-        class="divide-y divide-gray-200 dark:divide-slate-200/5 xl:pb-0 xl:col-span-3 xl:col-start-1 xl:row-span-2"
-      >
-        <div class="py-12">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <li v-for="post of posts.slice(0, 100)" :key="post.url" class="group">
-              <a :href="post.url" class="block">
-                <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-lg transition-shadow">
-                  <img
-                    v-if="post.ogp"
-                    :src="post.ogp"
-                    :alt="post.title"
-                    class="w-full aspect-[1200/630] object-cover"
-                    loading="lazy"
-                  />
-                  <div
-                    v-else
-                    class="w-full aspect-[1200/630] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center p-6"
-                  >
-                    <span class="text-xl font-bold text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-                      <BudouX :text="post.title" />
-                    </span>
-                  </div>
-                </div>
-                <div class="mt-3 space-y-1">
-                  <h2
-                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                  >
-                    <BudouX :text="post.title" />
-                  </h2>
-                  <div class="flex items-center gap-3 flex-wrap">
-                    <Date :date="post.date" />
-                    <CategoryTags :categories="post.categories || []" />
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
+
+    <section>
+      <div class="recent-h">
+        <h2>最近書いたメモ</h2>
+        <span class="en">— recent</span>
+        <span class="meta" v-if="lastUpdate">last update · {{ lastUpdate }}</span>
       </div>
 
-      <footer
-        class="text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-slate-200/5 xl:col-start-4 xl:row-start-2"
-      >
-        <AllCategoriesWidget />
-        <Ranklet4Widget />
-      </footer>
-    </div>
+      <div class="post-list">
+        <a
+          v-for="post in recentPosts"
+          :key="post.url"
+          :href="post.url"
+          class="post-row"
+        >
+          <div class="date">
+            {{ formatMonthDay(post.date) }}
+            <span class="y">{{ formatYear(post.date) }}</span>
+          </div>
+          <div class="body">
+            <h3>{{ post.title }}</h3>
+            <p v-if="post.excerpt" class="ex">{{ post.excerpt }}</p>
+            <div class="tags">
+              <span v-if="primaryCategoryLabel(post)" class="cat">
+                {{ primaryCategoryLabel(post) }}
+              </span>
+              <span v-for="t in (post.tags || []).slice(0, 4)" :key="t" class="tg">
+                {{ t }}
+              </span>
+            </div>
+          </div>
+          <div class="arr">→</div>
+        </a>
+      </div>
+    </section>
+
   </div>
 </template>
