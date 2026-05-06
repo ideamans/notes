@@ -1,0 +1,55 @@
+# textlint 設定（notes 第1段階）
+# - 既存記事への影響を最小化するため、誤検知が多いルールは当面オフ
+#   （no-doubled-joshi / ja-no-successive-word）
+# - notes は である調ベースで分析的にトーンが変わるため no-mix-dearu-desumasu もオフ
+# - コロン終端・em-dash 終端は意図的な修辞として allowPeriodMarks で許可
+# - 書き手向け内部資料は .textlintignore で除外
+# - 既存記事の整理が進んだら第2段階で各ルールを再有効化する
+filters:
+  comments: true
+  allowlist:
+    allow:
+      # 固有名詞
+      - "アイデアマンズ"
+      - "LightFile"
+      - "Ranklet4"
+      - "PageSpeed"
+      - "Core Web Vitals"
+      - "Google"
+      - "ChatGPT"
+      - "Claude"
+      # 修辞記号（em-dash の連続使用は意図的）
+      - "──"
+      - "─"
+      # 慣用表現（同語連続が言葉の本来の形）
+      - "まあまあ"
+rules:
+  preset-ja-technical-writing:
+    # 文の長さ・記号系（運用負荷が高いため当面オフ）
+    sentence-length: false
+    max-comma: false
+    max-ten: false
+    max-kanji-continuous-len: false
+    arabic-kanji-numbers: false
+    no-exclamation-question-mark: false
+    ja-no-weak-phrase: false
+    ja-no-redundant-expression: false
+    # 読みやすさ系（第2段階で再有効化）
+    ja-no-successive-word: false
+    no-doubled-joshi: false
+    # 致命度の高い誤りに絞って検知
+    ja-no-abusage: true
+    ja-unnatural-alphabet: true
+    # である / ですます の混在は notes では許容（分析的記述の混在が自然）
+    no-mix-dearu-desumasu: false
+    # 数式（$$...$$）や VitePress ディレクティブ（:::info）が
+    # textlint から見ると未終端と判定されるため、notes ではオフ
+    ja-no-mixed-period: false
+    no-double-negative-ja: true
+    no-doubled-conjunctive-particle-ga: true
+    no-doubled-conjunction: true
+    no-nfd: true
+    no-invalid-control-character: true
+    no-zero-width-spaces: true
+    no-hankaku-kana: true
+    no-unmatched-pair: true

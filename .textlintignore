@@ -1,0 +1,20 @@
+# 公開記事以外（書き手向けの内部資料・ビルド成果物・動的ルート）を除外
+node_modules/
+.vitepress/
+.git/
+public/
+.claude/
+.cursor/
+.drafts/
+
+# VitePress の動的ルートテンプレート（[xxx].md は実コンテンツではない）
+categories/
+monthly/
+
+# 書き手向け・テンプレート的ページ
+agents/
+mcps/
+categories.md
+ogps.md
+README.md
+CLAUDE.md

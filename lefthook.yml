@@ -1,0 +1,11 @@
+# Lefthook 設定（Git フック自動化）
+# 参考: https://lefthook.dev/configuration/
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: textlint
+      # ステージされた Markdown のみを対象（.textlintignore で除外パスは自動スキップ）
+      glob: "*.md"
+      run: npx textlint {staged_files}
+      fail_text: "textlint でエラーが検出されました。`yarn lint:text:fix` で自動修正できる場合があります。"
