@@ -250,7 +250,7 @@ APIリクエストヘッダ`Authorization`(キーとして変更可能)に、指
 echo "user:password" | base64
 ```
 
-値は特にBase64である必要はなかった。
+値が特にBase64である必要はなかった。
 
 ### ベアラー
 

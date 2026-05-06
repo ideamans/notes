@@ -96,7 +96,7 @@ Difyは多くのコンテナから構成されている。筆者の予想では`
 
 ### Firecrawlの設定
 
-DifyのWeb画面を開き、右上のメニューから`設定` - 設定メニューから`データソース` - Firecrawlについての`設定`ボタンを押す。
+DifyのWeb画面を開き、右上のメニューから`設定`を選び、設定画面で`データソース` - Firecrawlの`設定`ボタンを押す。
 
 <img src="https://assets.ideamans.com/miyanaga/images/2024/10/data-sources-settings.png" alt="データソースの設定画面" width="1600" height="865" />
 

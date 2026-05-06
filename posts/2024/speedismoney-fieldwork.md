@@ -29,7 +29,7 @@ Core Web Vitalsの中で [INP(Interaction to Next Paint)](https://web.dev/articl
 
 開発者ツールのPerformanceタブには [INPを計測し、タイムラインを取得する機能](https://web.dev/articles/manually-diagnose-slow-interactions-in-the-lab?hl=ja) がある。
 
-しかし次の理由で指標が悪い原因を特定するのは容易ではない。
+しかし次の理由で指標が悪い原因を特定するのは難しい。
 
 - 操作の選択肢は多数ある。
 - 状況やタイミングによるところがあり、再現するとは限らない。
@@ -67,7 +67,7 @@ INPは次の図が示すように、**Input delay + Processing Time + Presentati
 また、INPはユーザーの操作に由来するのでその原因も知りたい。
 
 - `Interaction target` 操作の対象となったDOM要素。
-- `Interaction type` 操作の内容。マウスやタッチ操作かキーボード操作か。
+- `Interaction type` 操作の内容。マウス、タッチ、キーボードなどの種別。
 - `Load state` 操作が行われたタイミングのページ読み込み状態。
 
 ### BigQueryに記録される詳細
