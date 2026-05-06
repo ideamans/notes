@@ -1,10 +1,10 @@
-# textlint 設定（notes 第1段階）
-# - 既存記事への影響を最小化するため、誤検知が多いルールは当面オフ
-#   （no-doubled-joshi / ja-no-successive-word）
-# - notes は である調ベースで分析的にトーンが変わるため no-mix-dearu-desumasu もオフ
+# textlint 設定（notes 第2段階）
+# - 読みやすさ系ルール（ja-no-successive-word / no-doubled-joshi）を有効化
+# - notes は である調ベースで分析的にトーンが変わるため no-mix-dearu-desumasu はオフ継続
+# - 数式（$$...$$）や VitePress ディレクティブ（:::info）の誤検知が多いため
+#   ja-no-mixed-period もオフ継続
 # - コロン終端・em-dash 終端は意図的な修辞として allowPeriodMarks で許可
 # - 書き手向け内部資料は .textlintignore で除外
-# - 既存記事の整理が進んだら第2段階で各ルールを再有効化する
 filters:
   comments: true
   allowlist:
@@ -23,6 +23,9 @@ filters:
       - "─"
       # 慣用表現（同語連続が言葉の本来の形）
       - "まあまあ"
+      - "ほどほど"
+      - "一つ一つ"
+      - "ひとつひとつ"
 rules:
   preset-ja-technical-writing:
     # 文の長さ・記号系（運用負荷が高いため当面オフ）
@@ -34,9 +37,9 @@ rules:
     no-exclamation-question-mark: false
     ja-no-weak-phrase: false
     ja-no-redundant-expression: false
-    # 読みやすさ系（第2段階で再有効化）
-    ja-no-successive-word: false
-    no-doubled-joshi: false
+    # 読みやすさ系（第2段階で有効化）
+    ja-no-successive-word: true
+    no-doubled-joshi: true
     # 致命度の高い誤りに絞って検知
     ja-no-abusage: true
     ja-unnatural-alphabet: true
