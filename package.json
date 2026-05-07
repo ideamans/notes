@@ -21,6 +21,8 @@
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "lefthook": "^2.1.6",
+    "markdown-it": "^14.1.1",
+    "markdown-it-cjk-friendly": "^2.0.2",
     "markdown-it-mathjax3": "^5.2.0",
     "mermaid": "^11.2.1",
     "tailwindcss": "^3.4.1",
