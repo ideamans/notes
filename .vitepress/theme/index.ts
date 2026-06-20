@@ -1,4 +1,5 @@
 import './style.css'
+import './math.css'
 import Layout from './Layout.vue'
 import ServiceAd from './ServiceAd.vue'
 import ZoomableImage from './ZoomableImage.vue'

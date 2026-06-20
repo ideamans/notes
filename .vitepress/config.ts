@@ -101,6 +101,26 @@ export default defineConfig({
         }
       })
       md.use(adPlugin)
+
+      // markdown-it-mathjax3 / mathxyjax3 は数式ごとに <span><style>…</style>SVG</span> を出力する。
+      // このインライン <style> は VitePress(dev) の Vue クライアントコンパイルで
+      // 「Tags with side effect (<script> and <style>) are ignored」エラーになるため除去する。
+      // 同等のCSSは theme/math.css でページに一度だけ適用（scripts/gen-math-css.mjs で生成）。
+      const stripMathStyle = (html: string) => html.replace(/<style>[\s\S]*?<\/style>/g, '')
+      for (const rule of ['math_inline', 'math_block'] as const) {
+        const orig = md.renderer.rules[rule]
+        if (orig) {
+          md.renderer.rules[rule] = (...args) => stripMathStyle(orig(...args))
+        }
+      }
+    }
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        // MathJax の <mjx-container> 等をコンポーネント解決させずカスタム要素として扱う
+        isCustomElement: (tag) => tag.startsWith('mjx-')
+      }
     }
   },
   vite: {

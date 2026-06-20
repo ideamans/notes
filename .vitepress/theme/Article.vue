@@ -4,6 +4,7 @@ import { useData, useRoute } from 'vitepress'
 import Dayjs from 'dayjs'
 import { data as posts } from './posts.data.js'
 import { categories, getCategoryLabel, slugifyTag } from '../../categories.js'
+import BudouX from './BudouX.vue'
 
 const { frontmatter } = useData()
 const route = useRoute()
@@ -87,7 +88,7 @@ const readMinutes = computed(() => {
         </template>
         <span>{{ dateFormatted }}</span>
       </div>
-      <h1 class="art-title">{{ frontmatter.title }}</h1>
+      <h1 class="art-title"><BudouX :text="frontmatter.title" /></h1>
       <p v-if="frontmatter.description" class="art-deck">
         {{ frontmatter.description }}
       </p>
