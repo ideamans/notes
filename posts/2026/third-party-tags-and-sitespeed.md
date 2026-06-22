@@ -7,7 +7,7 @@ ogp: /ogp/2026/third-party-tags-and-sitespeed.jpg
 categories:
   - sitespeed
   - technology
-draft: true
+draft: false
 ---
 
 サイトスピードの相談を受けると、ページの作りを見直すという前提で話が進みやすい。何か実装方法が間違っているのだから、それを直せばスピードは上がるはず、と考えるのは自然な話だ。
