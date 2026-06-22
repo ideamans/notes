@@ -178,9 +178,9 @@ import { data as posts } from './posts.data.js'
 1. **genFeed.ts**: RSSフィード生成（最新10件、`/feed.rss`に出力）
 2. **genLLMs.ts**: 全記事を結合したテキストファイル（`/llms-full.txt`に出力）
 
-### OGP画像の動的生成
+### OGP画像の生成
 
-`transformHead`フックで、外部バナーサービス（banners.ideamans.com）を使用してOGP画像URLを動的生成。
+OGP画像は `/ogp-image` スキル（Gemini APIによるマルチモーダル生成）で作成する。記事本文と記事内の代表画像を入力に `public/ogp/{year}/{slug}.jpg` を生成し、frontmatterの `ogp:` でそのパスを指定する。
 
 ## 機能拡張方法
 

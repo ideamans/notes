@@ -950,6 +950,12 @@ body {
   padding-left: 24px;
   margin: 6px 0 18px;
 }
+.art-body ul {
+  list-style: disc outside;
+}
+.art-body ol {
+  list-style: decimal outside;
+}
 .art-body ul li,
 .art-body ol li {
   margin-bottom: 4px;
@@ -1011,6 +1017,7 @@ body {
 .art-body .table-of-contents ul {
   margin: 0;
   padding-left: 16px;
+  list-style: none;
 }
 .art-body .table-of-contents li {
   margin-bottom: 2px;
