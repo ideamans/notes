@@ -39,12 +39,14 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 ## 記事ファイルとURLのマッピング
 
 ```
-/posts/{year}/{slug}.md  →  https://notes.ideamans.com/{year}/{slug}/
+/posts/{year}/{slug}.md  →  https://notes.ideamans.com/posts/{year}/{slug}.html
 ```
 
+> ⚠️ **URLは必ず `/posts/` プレフィックス付き・`.html` 拡張子付き**。本サイトは `cleanUrls: false`（`.vitepress/config.ts`）のため、ソースのパスがそのまま公開URLになる。`https://notes.ideamans.com/{year}/{slug}/`（`/posts/` なし・末尾スラッシュ）は **404**。記事間の相互リンクやSNS原稿でこの形式を使わないこと。
+
 **例:**
-- `/posts/2026/sitespeed-and-tv-ratings.md` → `/2026/sitespeed-and-tv-ratings/`
-- `/posts/2025/blog-renewal.md` → `/2025/blog-renewal/`
+- `/posts/2026/sitespeed-and-tv-ratings.md` → `https://notes.ideamans.com/posts/2026/sitespeed-and-tv-ratings.html`
+- `/posts/2025/blog-renewal.md` → `https://notes.ideamans.com/posts/2025/blog-renewal.html`
 
 **特殊ルート:**
 - `/index.md`（`index: true`をfrontmatterに指定）→ `/`（ホームページ）
