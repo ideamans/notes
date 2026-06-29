@@ -8,7 +8,7 @@ categories:
   - sitespeed
   - research
   - technology
-draft: true
+draft: false
 ---
 
 「自分のPCで見るとそんなに遅くないんですけど」。サイトの表示速度を議論するとき、こういう言葉を耳にすることがある。悪意ではなく本当にそう感じているのだ。

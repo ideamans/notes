@@ -7,8 +7,37 @@ import { genLLMs } from './genLLMs.js'
 import { crosslinkPlugin } from './crosslink-plugin.js'
 import { adPlugin } from './ad-plugin.js'
 import { categories as categoryList } from '../categories.js'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const categoryNameByBasename = new Map(categoryList.map((c) => [c.basename, c.name]))
+
+// 下書き機構: frontmatter に `draft: true` を持つ記事は本番ビルドから除外する。
+// dev サーバーでは除外しないため、通常のURL・レイアウトのままプレビューできる。
+// 判定は「本番ビルドなら除外」に倒す（NODE_ENV か build コマンドを検出）。
+export const isProductionBuild = process.env.NODE_ENV === 'production' || process.argv.includes('build')
+
+const NOTES_SRC_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+
+function collectDraftPaths(dir: string): string[] {
+  const result: string[] = []
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      result.push(...collectDraftPaths(full))
+    } else if (entry.name.endsWith('.md')) {
+      const head = fs.readFileSync(full, 'utf8').slice(0, 1000)
+      const fm = head.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+      if (fm && /(^|\n)draft:\s*true\s*(\r?\n|$)/.test(fm[1])) {
+        result.push(path.relative(NOTES_SRC_DIR, full).split(path.sep).join('/'))
+      }
+    }
+  }
+  return result
+}
+
+const draftExcludes = isProductionBuild ? collectDraftPaths(path.join(NOTES_SRC_DIR, 'posts')) : []
 
 function indexImageUrl(bgUrl: string, subTitle: string): string {
   const ogp = new URL('https://banners.ideamans.com/banners/type-a')
@@ -65,7 +94,7 @@ export default defineConfig({
   description: 'アイデアマンズ株式会社の研究ノート',
   cleanUrls: false,
   ignoreDeadLinks: true,
-  srcExclude: ['CLAUDE.md'],
+  srcExclude: ['CLAUDE.md', ...draftExcludes],
   rewrites: {},
   sitemap: {
     hostname: 'https://notes.ideamans.com',

@@ -12,10 +12,10 @@ export async function genLLMs(config: SiteConfig) {
     render: true
   }).load()
 
-  // 日付で降順にソート
-  const sorted = posts.sort(
-    (a, b) => +Dayjs(b.frontmatter?.date) - +Dayjs(a.frontmatter?.date)
-  )
+  // 下書きを除外し、日付で降順にソート
+  const sorted = posts
+    .filter((p) => !p.frontmatter?.draft)
+    .sort((a, b) => +Dayjs(b.frontmatter?.date) - +Dayjs(a.frontmatter?.date))
 
   let output = ''
 

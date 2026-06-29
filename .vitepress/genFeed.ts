@@ -27,6 +27,7 @@ export async function genFeed(config: SiteConfig) {
   }).load()
 
   const sorted = posts
+    .filter((p) => !p.frontmatter?.draft)
     .sort((a, b) => +Dayjs(b.frontmatter?.date) - +Dayjs(a.frontmatter?.date))
     .slice(0, 10)
 
