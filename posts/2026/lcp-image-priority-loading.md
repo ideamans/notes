@@ -2,12 +2,12 @@
 id: miyanaga
 title: '実例に学ぶサイトスピード改善(1) LCP画像は最優先で読み込ませる'
 description: ファーストビューの最大画像にlazyloadが残っていると、JavaScriptが動くまで画像のダウンロードが始まらず、LCPが数秒単位で悪化する。多くはJS lazyloadの名残や設定の見落としによるものだろう。実在サイトの数値とともに、lazyを外して遅延を取り除く対処法を解説する。preloadは発見されにくい画像向けで、素のimg srcには基本不要という弊社の整理も示す。
-date: 2026-07-02 06:30:00
+date: 2026-07-01 06:30:00
 ogp: /ogp/2026/lcp-image-priority-loading.jpg
 categories:
   - sitespeed
   - technology
-draft: true
+draft: false
 ---
 
 「LCPが遅い」と聞いて、画像の圧縮や次世代フォーマットへの変換を考える人は多い。もちろんそれは有効な場合もあるが、**そもそもブラウザがその画像を「あとで読んでいい」と判断して後回し**にしていたとしたら、軽量化だけでは問題を根本から解決できない。
