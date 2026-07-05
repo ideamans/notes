@@ -7,7 +7,6 @@ ogp: /ogp/2026/images-webp-conversion.jpg
 categories:
   - sitespeed
   - technology
-draft: true
 ---
 
 Lighthouseのレポートを開くと、ほぼ必ずといっていいほど「次世代フォーマットの画像を使用してください」という指摘が並ぶ。そして世の中には「画像を軽くすればLCPが改善する」という解説も多い。
