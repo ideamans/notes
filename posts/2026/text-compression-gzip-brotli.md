@@ -7,7 +7,6 @@ ogp: /ogp/2026/text-compression-gzip-brotli.jpg
 categories:
   - sitespeed
   - technology
-draft: true
 ---
 
 今回はテキストリソースの圧縮配信を取り上げる。[前回のサードパーティタグ](https://notes.ideamans.com/posts/2026/third-party-tags-and-sitespeed.html) は「見えない敵」という意外性があったが、今回はさらに地味だ。コードを一行も書かず、サーバーの設定を変えるだけで効く。しかし実在サイトを調べてみると、この設定が漏れたままのサイトは意外と多い。その多くは単なる設定忘れ、つまりケアレスミスであると思われる。
