@@ -7,7 +7,6 @@ ogp: /ogp/2026/same-domain-resource-delivery.jpg
 categories:
   - sitespeed
   - technology
-draft: true
 ---
 
 外部のパブリックCDNからjQueryを読み込むべきだという説を、かつてよく目にした。世界中にエッジサーバーを持つCDNなら自社サーバーより速いはずだ、という理屈だ。今もその前提でライブラリをパブリックCDNから読み込んでいるサイトは少なくないと思われる。
