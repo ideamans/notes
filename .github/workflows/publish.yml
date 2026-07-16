@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+# ビルド時の日付処理（記事日付・RSS・llms等）を日本時間で行う
+env:
+  TZ: Asia/Tokyo
+
 jobs:
   build:
     runs-on: ubuntu-latest

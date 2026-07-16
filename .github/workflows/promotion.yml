@@ -6,6 +6,10 @@ on:
   #   - cron: '0 6 * * *'
   workflow_dispatch: # 手動実行のみ有効
 
+# 日付に基づく記事ピックアップ等を日本時間で行う
+env:
+  TZ: Asia/Tokyo
+
 jobs:
   build-and-post:
     runs-on: ubuntu-latest
