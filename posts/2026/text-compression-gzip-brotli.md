@@ -16,7 +16,7 @@ categories:
 1. [LCP画像は最優先で読み込ませる](/posts/2026/lcp-image-priority-loading.html)
 2. [画像は次世代フォーマットに移行する](/posts/2026/images-webp-conversion.html)
 3. **テキストはGZIP/Brotliで圧縮する**（本記事）
-4. 重い日本語Webフォントが表示を遅らせる（近日公開）
+4. [重い日本語Webフォントが表示を遅らせる](/posts/2026/japanese-webfont-optimization.html)
 5. [外部CDNは速いとは限らない](/posts/2026/same-domain-resource-delivery.html)
 6. 画像の寸法指定でガクッと動くページを防ぐ（近日公開）
 7. head内の同期スクリプトが描画を止める（近日公開）

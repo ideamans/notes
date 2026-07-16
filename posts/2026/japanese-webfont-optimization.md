@@ -2,13 +2,12 @@
 id: miyanaga
 title: '実例に学ぶサイトスピード改善(4) 重い日本語Webフォントが表示を遅らせる'
 description: 日本語Webフォントは文字種の多さからファイルサイズが英語フォントと桁違いになりやすく、レンダリングブロックと転送コストを通じてFCPとLCPを大きく遅らせることがある。実在ECサイト4例のシミュレーション数値を引きながら、未使用フォントの削除・font-display指定・サブセット化・preconnectを中心に対処を解説する。
-date: 2026-07-11 06:30:00
+date: 2026-07-16 10:00:00
 ogp: /ogp/2026/japanese-webfont-optimization.jpg
 excerpt: 日本語Webフォントは文字種の多さからファイルサイズが英語フォントと桁違いになりやすく、レンダリングブロックと転送コストを通じてFCPとLCPを大きく遅らせることがある。実在ECサイト4例のシミュレーション数値を引きながら、未使用フォントの削除・font-display指定・サブセット化・preconnectを中心に対処を解説する。
 categories:
   - sitespeed
   - technology
-draft: true
 ---
 
 :::info 連載「実例に学ぶサイトスピード改善」
