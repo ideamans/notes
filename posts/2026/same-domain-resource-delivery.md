@@ -18,7 +18,7 @@ categories:
 3. [テキストはGZIP/Brotliで圧縮する](/posts/2026/text-compression-gzip-brotli.html)
 4. [重い日本語Webフォントが表示を遅らせる](/posts/2026/japanese-webfont-optimization.html)
 5. **外部CDNは速いとは限らない**（本記事）
-6. 画像の寸法指定でガクッと動くページを防ぐ（近日公開）
+6. [画像の寸法指定でガクッと動くページを防ぐ](/posts/2026/cls-image-dimensions.html)
 7. head内の同期スクリプトが描画を止める（近日公開）
 :::
 

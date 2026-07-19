@@ -2,7 +2,7 @@
 id: miyanaga
 title: '実例に学ぶサイトスピード改善(7) head内の同期スクリプトが描画を止める'
 description: HTMLのhead内に置かれた同期スクリプトは、ダウンロードと実行が完了するまでHTMLのパースを止める。外部CDNから読み込む場合はDNS解決とTLS接続の分だけ遅延が上乗せされる。実在する国内サイト4例のシミュレーション値をもとに、defer/asyncによる非同期化と読み込み位置の見直しがFCPとパース時間にどう効くかを解説する。
-date: 2026-07-20 06:30:00
+date: 2026-07-22 06:30:00
 ogp: /ogp/2026/render-blocking-scripts.jpg
 excerpt: HTMLのhead内に置かれた同期スクリプトは、ダウンロードと実行が完了するまでHTMLのパースを止める。外部CDNから読み込む場合はDNS解決とTLS接続の分だけ遅延が上乗せされる。実在する国内サイト4例のシミュレーション値をもとに、defer/asyncによる非同期化と読み込み位置の見直しを解説する。
 categories:
@@ -19,7 +19,7 @@ draft: true
 3. [テキストはGZIP/Brotliで圧縮する](/posts/2026/text-compression-gzip-brotli.html)
 4. [重い日本語Webフォントが表示を遅らせる](/posts/2026/japanese-webfont-optimization.html)
 5. [外部CDNは速いとは限らない](/posts/2026/same-domain-resource-delivery.html)
-6. 画像の寸法指定でガクッと動くページを防ぐ（近日公開）
+6. [画像の寸法指定でガクッと動くページを防ぐ](/posts/2026/cls-image-dimensions.html)
 7. **head内の同期スクリプトが描画を止める**（本記事）
 :::
 
