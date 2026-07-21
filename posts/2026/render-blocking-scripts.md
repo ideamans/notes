@@ -8,7 +8,6 @@ excerpt: HTMLのhead内に置かれた同期スクリプトは、ダウンロー
 categories:
   - sitespeed
   - technology
-draft: true
 ---
 
 :::info 連載「実例に学ぶサイトスピード改善」
