@@ -56,6 +56,7 @@ onMounted(() => {
         <a href="/" class="fn-logo" aria-label="ideaman's Notes">
           <img src="/notes-custom-light.svg" alt="ideaman's Notes" class="fn-logo-img" />
         </a>
+        <div data-knowledge-search data-set="notes" data-label="ノート内を検索"></div>
         <nav class="fn-nav">
           <a href="/categories.html">目次・索引</a>
           <span class="sl">/</span>

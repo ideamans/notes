@@ -1,0 +1,413 @@
+/*
+ * ダイアログ本体のスタイル。検索を始めた人だけが読む。
+ *
+ * 配置先のサイトは Tailwind/DaisyUI のバージョンがバラバラ（blog は 3/4、
+ * press は 4/5、notes は独自CSS）なので、**サイト側のスタイルに一切依存しない**。
+ * トリガーのCSSは trigger.css（ローダーへインライン）。
+ */
+
+.iks-dialog {
+  --iks-bg: #ffffff;
+  --iks-fg: #1f2933;
+  --iks-muted: #6b7280;
+  --iks-border: #e5e7eb;
+  --iks-hover: #f3f4f6;
+  --iks-accent: #2563eb;
+  --iks-mark-bg: #fef3c7;
+  --iks-mark-fg: #92400e;
+  --iks-radius: 8px;
+  --iks-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  .iks-dialog {
+    --iks-bg: #1b1f24;
+    --iks-fg: #e6e6e6;
+    --iks-muted: #9aa3ad;
+    --iks-border: #333a42;
+    --iks-hover: #262c33;
+    --iks-accent: #7aa7ff;
+    --iks-mark-bg: #4a3b12;
+    --iks-mark-fg: #ffe9a8;
+    --iks-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* --- ダイアログ --- */
+
+.iks-open {
+  overflow: hidden;
+}
+
+.iks-dialog {
+  width: min(760px, calc(100vw - 2rem));
+  max-width: none;
+  max-height: min(80vh, 720px);
+  padding: 0;
+  margin: 8vh auto auto;
+  color: var(--iks-fg);
+  background: var(--iks-bg);
+  border: 1px solid var(--iks-border);
+  border-radius: 12px;
+  box-shadow: var(--iks-shadow);
+  overflow: hidden;
+}
+
+.iks-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.iks-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.iks-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--iks-border);
+}
+
+.iks-search-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.iks-close {
+  flex: none;
+  padding: 0.3rem 0.5rem;
+  margin-left: 0.2rem;
+  font: inherit;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--iks-muted);
+  background: none;
+  /* 入力クリアの ✕ と隣り合うので、区切り線で役割を分ける */
+  border: none;
+  border-left: 1px solid var(--iks-border);
+  border-radius: 0 6px 6px 0;
+  padding-left: 0.6rem;
+  cursor: pointer;
+}
+
+.iks-close:hover {
+  color: var(--iks-fg);
+  background: var(--iks-hover);
+}
+
+/* InstantSearch の SearchBox */
+.iks-dialog .ais-SearchBox-form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.iks-dialog .iks-input {
+  flex: 1;
+  width: 100%;
+  padding: 0.45rem 0.2rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--iks-fg);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.iks-dialog .ais-SearchBox-reset {
+  padding: 0.2rem;
+  color: var(--iks-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.iks-dialog .ais-SearchBox-reset:hover {
+  opacity: 1;
+}
+
+.iks-dialog .ais-SearchBox-resetIcon {
+  width: 11px;
+  height: 11px;
+}
+
+.iks-dialog .ais-SearchBox-resetIcon {
+  fill: currentColor;
+}
+
+.iks-dialog .ais-SearchBox-loadingIndicator {
+  color: var(--iks-muted);
+}
+
+/* --- 検索範囲の切り替え --- */
+
+.iks-scope {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid var(--iks-border);
+}
+
+.iks-scope-option {
+  padding: 0.25em 0.7em;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--iks-muted);
+  background: none;
+  border: 1px solid var(--iks-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.iks-scope-option:hover {
+  color: var(--iks-fg);
+}
+
+.iks-scope-option.is-active {
+  color: #fff;
+  background: var(--iks-accent);
+  border-color: var(--iks-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .iks-scope-option.is-active {
+    color: #0f1216;
+  }
+}
+
+/* --- 本体 --- */
+
+.iks-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.iks-side {
+  flex: none;
+  width: 190px;
+  padding: 0.8rem;
+  overflow-y: auto;
+  border-right: 1px solid var(--iks-border);
+}
+
+.iks-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.iks-stats {
+  padding: 0.6rem 0.9rem 0;
+  font-size: 0.78rem;
+  color: var(--iks-muted);
+}
+
+.iks-hint {
+  color: var(--iks-muted);
+}
+
+.iks-hits {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.5rem 0.6rem 0.9rem;
+}
+
+.iks-hit-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.iks-hit {
+  margin: 0;
+  padding: 0;
+}
+
+.iks-hit-link {
+  display: block;
+  padding: 0.6rem 0.7rem;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--iks-radius);
+}
+
+.iks-hit-link:hover {
+  background: var(--iks-hover);
+}
+
+.iks-hit-meta {
+  font-size: 0.72rem;
+  color: var(--iks-muted);
+}
+
+.iks-hit-title {
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.iks-hit-snippet {
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--iks-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.iks-hit-tags {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.iks-tag {
+  font-size: 0.68rem;
+  padding: 0.05em 0.45em;
+  color: var(--iks-muted);
+  border: 1px solid var(--iks-border);
+  border-radius: 4px;
+}
+
+.iks-dialog mark {
+  padding: 0 0.1em;
+  color: var(--iks-mark-fg);
+  background: var(--iks-mark-bg);
+  border-radius: 2px;
+}
+
+.iks-empty {
+  padding: 1.5rem 0.8rem;
+  text-align: center;
+  color: var(--iks-muted);
+}
+
+.iks-empty-hint {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+}
+
+/* --- 絞り込み --- */
+
+.iks-facet-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.iks-dialog .ais-RefinementList-item {
+  margin-bottom: 0.15rem;
+}
+
+.iks-facet-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.iks-facet-count {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--iks-muted);
+}
+
+.iks-dialog .ais-RefinementList-showMore {
+  margin-top: 0.4rem;
+  padding: 0.15em 0.5em;
+  font: inherit;
+  font-size: 0.72rem;
+  color: var(--iks-accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- ページ送り --- */
+
+.iks-pagination-wrap {
+  padding: 0.4rem 0.9rem 0.7rem;
+}
+
+.iks-pagination {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.iks-dialog .ais-Pagination-link {
+  display: inline-block;
+  min-width: 1.8em;
+  padding: 0.15em 0.4em;
+  font-size: 0.78rem;
+  text-align: center;
+  color: var(--iks-fg);
+  text-decoration: none;
+  border: 1px solid var(--iks-border);
+  border-radius: 6px;
+}
+
+.iks-dialog .ais-Pagination-item--selected .ais-Pagination-link {
+  color: #fff;
+  background: var(--iks-accent);
+  border-color: var(--iks-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .iks-dialog .ais-Pagination-item--selected .ais-Pagination-link {
+    color: #0f1216;
+  }
+}
+
+.iks-dialog .ais-Pagination-item--disabled {
+  opacity: 0.4;
+}
+
+/* --- フッター --- */
+
+.iks-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.7rem;
+  color: var(--iks-muted);
+  border-top: 1px solid var(--iks-border);
+}
+
+.iks-foot a {
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .iks-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100dvh;
+    height: 100dvh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .iks-side {
+    display: none;
+  }
+
+  .iks-foot-hint {
+    display: none;
+  }
+}
