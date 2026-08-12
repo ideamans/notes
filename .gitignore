@@ -3,3 +3,4 @@ dist
 .vitepress/cache
 
 .env
+knowledge/
