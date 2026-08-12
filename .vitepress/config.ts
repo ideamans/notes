@@ -266,6 +266,8 @@ export default defineConfig({
       map: (page) => {
         const fm = page.frontmatter
         if (fm.draft) return null
+        // OGP画像の一覧ページ。画像の羅列で文章としての知識が無い
+        if (fm.pageType === 'ogps') return null
 
         const categories: string[] = Array.isArray(fm.categories) ? fm.categories : []
         return {

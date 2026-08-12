@@ -1,6 +1,7 @@
 // src/build.ts
+import { existsSync } from "fs";
 import { mkdir, writeFile } from "fs/promises";
-import { dirname, resolve } from "path";
+import { dirname, join, resolve } from "path";
 
 // src/zip.ts
 import { deflateRawSync } from "zlib";
@@ -116,15 +117,21 @@ var DOCS_DIR = "docs";
 var SECTION_FILE = "_index.md";
 async function buildKnowledgePackage(siteConfig, options) {
   const pages = await loadPages(options.include);
+  const published = publishedFilter(siteConfig?.outDir);
   const files = /* @__PURE__ */ new Map();
   const encoder = new TextEncoder();
   let documentCount = 0;
   const seenPaths = /* @__PURE__ */ new Set();
+  const unpublished = [];
   for (const page of pages) {
     const doc = options.map(page);
     if (!doc) continue;
     const url = doc.url ?? page.url;
     validateDocument(options.id, url, doc);
+    if (!published(url)) {
+      unpublished.push(url);
+      continue;
+    }
     const path = docPathFromURL(url);
     if (seenPaths.has(path)) {
       throw new Error(
@@ -135,6 +142,11 @@ URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uF
     seenPaths.add(path);
     files.set(path, encoder.encode(renderDocument({ ...doc, url }, page.body)));
     documentCount++;
+  }
+  if (unpublished.length > 0) {
+    console.log(
+      `[knowledge-indexer] ${options.id}: \u516C\u958B\u3055\u308C\u3066\u3044\u306A\u3044 ${unpublished.length} \u30DA\u30FC\u30B8\u3092\u9664\u5916 (${unpublished.slice(0, 5).join(", ")}${unpublished.length > 5 ? " \u307B\u304B" : ""})`
+    );
   }
   if (documentCount === 0) {
     throw new Error(
@@ -187,20 +199,54 @@ URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uF
   await writeFile(out, zipped);
   return { out, documents: documentCount, generation, bytes: zipped.length };
 }
+function publishedFilter(outDir) {
+  if (!outDir || !existsSync(outDir)) {
+    return () => true;
+  }
+  return (url) => {
+    const rel = url.replace(/^\//, "").split(/[?#]/)[0] ?? "";
+    const candidates = rel.endsWith(".html") ? [rel] : rel === "" || rel.endsWith("/") ? [`${rel}index.html`] : [`${rel}.html`, `${rel}/index.html`];
+    return candidates.some((c) => existsSync(join(outDir, c)));
+  };
+}
 async function loadPages(include) {
   const { createContentLoader } = await import("vitepress");
   const patterns = Array.isArray(include) ? include : [include];
   const loader = createContentLoader(patterns, { includeSrc: true, excerpt: true });
   const raw = await loader.load();
-  return raw.map((item) => ({
-    url: item.url,
-    frontmatter: item.frontmatter ?? {},
-    body: stripFrontmatter(item.src ?? ""),
-    excerpt: item.excerpt,
-    src: item.src
-  }));
+  return raw.map((item) => {
+    const body = stripFrontmatter(item.src ?? "");
+    return {
+      url: item.url,
+      frontmatter: item.frontmatter ?? {},
+      body,
+      // createContentLoader の excerpt は**レンダリング済みHTML**。
+      // そのまま summary にすると <h1 id="..."> などが検索結果に出てしまう。
+      excerpt: toPlainText(item.excerpt),
+      src: item.src,
+      firstHeading: firstHeading(body)
+    };
+  });
+}
+function toPlainText(html) {
+  if (!html) return void 0;
+  const text = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+  return text || void 0;
 }
 var FRONTMATTER_RE = /^﻿?---\r?\n[\s\S]*?\r?\n---\r?\n?/;
+function firstHeading(body) {
+  let inFence = false;
+  for (const line of body.split(/\r?\n/)) {
+    if (/^\s*(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    const m = line.match(/^#{1,3}\s+(.+?)\s*#*\s*$/);
+    if (m?.[1]) return m[1].trim();
+  }
+  return void 0;
+}
 function stripFrontmatter(src) {
   return src.replace(FRONTMATTER_RE, "");
 }
