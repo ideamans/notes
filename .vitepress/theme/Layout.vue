@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, onMounted } from 'vue'
-import { useData, useRoute, useRouter } from 'vitepress'
+import { computed } from 'vue'
+import { useData, useRoute } from 'vitepress'
 import Home from './Home.vue'
 import Article from './Article.vue'
 import Category from './Category.vue'
@@ -16,7 +16,6 @@ import Dayjs from 'dayjs'
 
 const { page, frontmatter } = useData()
 const { path } = useRoute()
-const router = useRouter()
 
 const category = computed(() => {
   const paths = path.split('/')
@@ -38,26 +37,24 @@ const visibleCategories = computed(() =>
   )
 )
 
-const mobileOpen = ref(false)
-
-onMounted(() => {
-  router.onAfterRouteChanged = () => {
-    mobileOpen.value = false
-    window.scrollTo({ top: 0 })
-  }
-})
+// このサイトは MPA（mpa: true）でクライアントJSを一切配信しない。
+// Vue のイベントハンドラは動かないので、モバイルメニューの開閉は
+// チェックボックスとCSSだけで行う（style.css の #fn-mobile-menu-toggle）。
 </script>
 
 <template>
   <div class="nb antialiased min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fn-header">
+      <!-- モバイルメニューの開閉。MPAでJSが無いのでチェックボックスで行う -->
+      <input id="fn-mobile-menu-toggle" type="checkbox" aria-hidden="true" tabindex="-1" />
       <div class="fn-header-inner">
         <a href="/" class="fn-logo" aria-label="ideaman's Notes">
           <img src="/notes-custom-light.svg" alt="ideaman's Notes" class="fn-logo-img" />
         </a>
-        <div data-knowledge-search data-set="notes" data-label="ノート内を検索"></div>
         <nav class="fn-nav">
+          <div data-knowledge-search data-set="notes" data-label="ノート内を検索"></div>
+          <span class="sl">/</span>
           <a href="/categories.html">目次・索引</a>
           <span class="sl">/</span>
           <a href="/feed.rss">RSS</a>
@@ -66,16 +63,20 @@ onMounted(() => {
             アイデアマンズ →
           </a>
         </nav>
-        <button
-          class="fn-mobile-toggle"
-          type="button"
-          aria-label="メニューを開閉"
-          @click="mobileOpen = !mobileOpen"
-        >
-          {{ mobileOpen ? '✕' : '≡' }}
-        </button>
+        <div class="fn-mobile-actions">
+          <div data-knowledge-search data-set="notes" data-label="ノート内を検索"></div>
+          <label
+            for="fn-mobile-menu-toggle"
+            class="fn-mobile-toggle"
+            role="button"
+            aria-label="メニューを開閉"
+          >
+            <span class="fn-mobile-icon-open">≡</span>
+            <span class="fn-mobile-icon-close">✕</span>
+          </label>
+        </div>
       </div>
-      <div class="fn-mobile-menu" :class="{ 'is-open': mobileOpen }">
+      <div class="fn-mobile-menu">
         <ul>
           <li><a href="/">ホーム</a></li>
           <li><a href="/categories.html">目次・索引</a></li>
