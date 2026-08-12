@@ -19,8 +19,9 @@
   --iks-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
 
+/* 既定はライト固定。理由は trigger.css を参照 */
 @media (prefers-color-scheme: dark) {
-  .iks-dialog {
+  .iks-dialog[data-iks-theme='auto'] {
     --iks-bg: #1b1f24;
     --iks-fg: #e6e6e6;
     --iks-muted: #9aa3ad;
@@ -107,6 +108,14 @@
   gap: 0.4rem;
 }
 
+/* input[type=search] にブラウザが出す標準のクリアボタン。
+   閉じる ✕ と並ぶと役割が分からなくなるので消す。 */
+.iks-dialog .iks-input::-webkit-search-cancel-button,
+.iks-dialog .iks-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .iks-dialog .iks-input {
   flex: 1;
   width: 100%;
@@ -176,9 +185,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .iks-scope-option.is-active {
+  .iks-dialog[data-iks-theme='auto'] .iks-scope-option.is-active {
     color: #0f1216;
   }
+}
+
+.iks-dialog[data-iks-theme='dark'] .iks-scope-option.is-active {
+  color: #0f1216;
 }
 
 /* --- 本体 --- */
@@ -368,9 +381,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .iks-dialog .ais-Pagination-item--selected .ais-Pagination-link {
+  .iks-dialog[data-iks-theme='auto'] .ais-Pagination-item--selected .ais-Pagination-link {
     color: #0f1216;
   }
+}
+
+.iks-dialog[data-iks-theme='dark'] .ais-Pagination-item--selected .ais-Pagination-link {
+  color: #0f1216;
 }
 
 .iks-dialog .ais-Pagination-item--disabled {
@@ -410,4 +427,16 @@
   .iks-foot-hint {
     display: none;
   }
+}
+
+.iks-dialog[data-iks-theme='dark'] {
+  --iks-bg: #1b1f24;
+  --iks-fg: #e6e6e6;
+  --iks-muted: #9aa3ad;
+  --iks-border: #333a42;
+  --iks-hover: #262c33;
+  --iks-accent: #7aa7ff;
+  --iks-mark-bg: #4a3b12;
+  --iks-mark-fg: #ffe9a8;
+  --iks-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
