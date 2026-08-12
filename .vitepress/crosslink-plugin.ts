@@ -18,6 +18,7 @@ const OWNED_DOMAINS = [
   'ranklet4.com',
   'speedis.money',
   'sitespeed.info',
+  'receipt-scan.jp',
 ]
 
 /**
