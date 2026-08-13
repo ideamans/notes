@@ -7,6 +7,7 @@ categories: [sitespeed, business]
 ogp: /ogp/2025/ec-speed-potential.jpg
 ads:
   - id: speedismoney
+draft: true
 ---
 
 ::: warning 📢 モデルの改訂について
