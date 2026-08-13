@@ -163,7 +163,8 @@ export default defineConfig(
   },
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
+    // OGP画像を持っているので大きい方。summary だと小さいサムネイルになる
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     [
       'link',
