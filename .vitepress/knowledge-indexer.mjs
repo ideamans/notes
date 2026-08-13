@@ -118,10 +118,7 @@ var SECTION_FILE = "_index.md";
 async function buildKnowledgePackage(siteConfig, options) {
   const pages = await loadPages(options.include);
   const published = publishedFilter(siteConfig?.outDir);
-  const files = /* @__PURE__ */ new Map();
-  const encoder = new TextEncoder();
-  let documentCount = 0;
-  const seenPaths = /* @__PURE__ */ new Set();
+  const documents = [];
   const unpublished = [];
   for (const page of pages) {
     const doc = options.map(page);
@@ -132,25 +129,36 @@ async function buildKnowledgePackage(siteConfig, options) {
       unpublished.push(url);
       continue;
     }
-    const path = docPathFromURL(url);
-    if (seenPaths.has(path)) {
-      throw new Error(
-        `[knowledge-indexer] ${options.id}: \u30D1\u30B9\u304C\u91CD\u8907\u3057\u3066\u3044\u307E\u3059: ${path}
-URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uFF08${url}\uFF09\u3002map \u3067 id \u3092\u660E\u793A\u3059\u308B\u304B\u3001\u5BFE\u8C61\u306E glob \u3092\u898B\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002`
-      );
-    }
-    seenPaths.add(path);
-    files.set(path, encoder.encode(renderDocument({ ...doc, url }, page.body)));
-    documentCount++;
+    documents.push({ ...doc, url, body: page.body });
   }
   if (unpublished.length > 0) {
     console.log(
       `[knowledge-indexer] ${options.id}: \u516C\u958B\u3055\u308C\u3066\u3044\u306A\u3044 ${unpublished.length} \u30DA\u30FC\u30B8\u3092\u9664\u5916 (${unpublished.slice(0, 5).join(", ")}${unpublished.length > 5 ? " \u307B\u304B" : ""})`
     );
   }
+  return buildKnowledgePackageFromDocuments(options, documents);
+}
+async function buildKnowledgePackageFromDocuments(options, documents) {
+  const files = /* @__PURE__ */ new Map();
+  const encoder = new TextEncoder();
+  const seenPaths = /* @__PURE__ */ new Set();
+  let documentCount = 0;
+  for (const doc of documents) {
+    validateDocument(options.id, doc.url, doc);
+    const path = docPathFromURL(doc.url);
+    if (seenPaths.has(path)) {
+      throw new Error(
+        `[knowledge-indexer] ${options.id}: \u30D1\u30B9\u304C\u91CD\u8907\u3057\u3066\u3044\u307E\u3059: ${path}
+URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uFF08${doc.url}\uFF09\u3002map \u3067 id \u3092\u660E\u793A\u3059\u308B\u304B\u3001\u5BFE\u8C61\u306E glob \u3092\u898B\u76F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002`
+      );
+    }
+    seenPaths.add(path);
+    files.set(path, encoder.encode(renderDocument(doc, doc.body ?? "")));
+    documentCount++;
+  }
   if (documentCount === 0) {
     throw new Error(
-      `[knowledge-indexer] ${options.id}: \u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u304C0\u4EF6\u3067\u3059\u3002include (${JSON.stringify(options.include)}) \u3092\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002`
+      `[knowledge-indexer] ${options.id}: \u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u304C0\u4EF6\u3067\u3059\u3002\u53D6\u308A\u8FBC\u307F\u5BFE\u8C61\u306E\u6307\u5B9A\uFF08include / \u30AF\u30ED\u30FC\u30EB\u7BC4\u56F2\uFF09\u3092\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002`
     );
   }
   for (const [dir, body] of Object.entries(options.sections ?? {})) {
@@ -324,5 +332,6 @@ function compactISO(d) {
 }
 export {
   buildKnowledgePackage,
+  buildKnowledgePackageFromDocuments,
   contentHash
 };
