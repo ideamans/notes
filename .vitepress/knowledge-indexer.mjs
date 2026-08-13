@@ -124,12 +124,12 @@ async function buildKnowledgePackage(siteConfig, options) {
     const doc = options.map(page);
     if (!doc) continue;
     const url = doc.url ?? page.url;
-    validateDocument(options.id, url, doc);
     if (!published(url)) {
       unpublished.push(url);
       continue;
     }
-    documents.push({ ...doc, url, body: page.body });
+    validateDocument(options.id, url, doc);
+    documents.push({ ...doc, url, body: doc.body ?? page.body });
   }
   if (unpublished.length > 0) {
     console.log(
@@ -223,7 +223,7 @@ async function loadPages(include) {
   const loader = createContentLoader(patterns, { includeSrc: true, excerpt: true });
   const raw = await loader.load();
   return raw.map((item) => {
-    const body = stripFrontmatter(item.src ?? "");
+    const body = stripSfcBlocks(stripFrontmatter(item.src ?? ""));
     return {
       url: item.url,
       frontmatter: item.frontmatter ?? {},
@@ -257,6 +257,34 @@ function firstHeading(body) {
 }
 function stripFrontmatter(src) {
   return src.replace(FRONTMATTER_RE, "");
+}
+var COMPONENT_TAG_RE = /^\s*<\/?[A-Z][A-Za-z0-9]*(\s[^<>]*)?\/?>\s*$/;
+function stripSfcBlocks(body) {
+  const out = [];
+  let inFence = false;
+  let closing = null;
+  for (const line of body.split(/\r?\n/)) {
+    if (closing) {
+      if (line.includes(closing)) closing = null;
+      continue;
+    }
+    if (/^\s*(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      out.push(line);
+      continue;
+    }
+    if (!inFence) {
+      const open = line.match(/^\s*<(script|style)\b/i);
+      if (open) {
+        const tag = `</${open[1].toLowerCase()}>`;
+        if (!line.toLowerCase().includes(tag)) closing = tag;
+        continue;
+      }
+      if (COMPONENT_TAG_RE.test(line)) continue;
+    }
+    out.push(line);
+  }
+  return out.join("\n").replace(/^\n+/, "").replace(/\s+$/, "");
 }
 function docPathFromURL(url) {
   let p = url.replace(/^\//, "").replace(/\.html$/, "");
