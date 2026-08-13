@@ -37,7 +37,7 @@
     "vitepress": "^1.0.0",
     "vitepress-plugin-mermaid": "^2.0.16",
     "vue": "^3.4.21",
-    "vitepress-machine-readability": "^0.1.0"
+    "vitepress-machine-readability": "^0.2.0"
   },
   "pnpm": {
     "overrides": {
