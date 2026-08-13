@@ -310,10 +310,18 @@ export default defineConfig(
     const params = pageData.params as Record<string, string> | undefined
     if (!params) return
     if (params.year && params.month) {
-      return { title: `${params.year}年${Number(params.month)}月の記事` }
+      const month = Number(params.month)
+      return {
+        title: `${params.year}年${month}月の記事`,
+        description: `${params.year}年${month}月にアイデアマンズの研究ノートで公開した記事の一覧です。サイトスピードや画像最適化について、公開データと社内の実測にもとづく調査メモをまとめています。`
+      }
     }
     if (params.category) {
-      return { title: `${getCategoryLabel(params.category)}の記事` }
+      const label = getCategoryLabel(params.category)
+      return {
+        title: `${label}の記事`,
+        description: `${label}に関する記事の一覧です。アイデアマンズの研究ノートでは、サイトスピードや画像最適化について、公開データと社内の実測にもとづく調査メモをまとめています。`
+      }
     }
   },
 
