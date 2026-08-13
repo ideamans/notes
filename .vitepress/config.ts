@@ -1,14 +1,16 @@
 import Dayjs from 'dayjs'
 import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 // import { defineConfig } from 'vitepress'
+import { withMachineReadability } from 'vitepress-machine-readability'
 import { defineConfig } from 'vitepress'
-import { genFeed } from './genFeed.js'
 import { genLLMs } from './genLLMs.js'
 import { crosslinkPlugin } from './crosslink-plugin.js'
 import { adPlugin } from './ad-plugin.js'
 import { categories as categoryList } from '../categories.js'
 import { getCategoryLabel } from '../categories.js'
 // @ts-ignore ビルド済みの単一ファイル（services/knowledge が配布元）
+import { readFile } from 'node:fs/promises'
+
 import { buildKnowledgePackage } from './knowledge-indexer.mjs'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -90,7 +92,8 @@ function indexTwitterImageUrl(): string {
   return image.href
 }
 
-export default defineConfig({
+export default defineConfig(
+  withMachineReadability({
   mpa: true,
   lang: 'ja',
   title: `ideaman's Notes`,
@@ -250,11 +253,23 @@ export default defineConfig({
     ]
   ],
   buildEnd: async (config) => {
-    await genFeed(config)
     await genLLMs(config)
+
+    // 画像インデックス。knowledge/images.json があれば載せる。
+    //
+    // **中身を作るのはビルドではない。** 画像の説明づけは課金が発生し
+    // 数分かかるので、`yarn images` で別に走らせてコミットしておく
+    // （このビルドは出来上がったものを読むだけ）。
+    let images
+    try {
+      images = JSON.parse(await readFile('knowledge/images.json', 'utf8'))
+    } catch {
+      images = undefined // 無ければ従来どおり記事だけの zip になる
+    }
 
     // ナレッジパッケージ。deploy.sh が knowledge.ideamans.com へ送る。
     const pkg = await buildKnowledgePackage(config, {
+      images,
       id: 'notes',
       title: "ideaman's Notes",
       description: 'アイデアマンズ株式会社の研究ノート。調査と実測にもとづく技術メモ',
@@ -283,9 +298,24 @@ export default defineConfig({
       },
     })
     console.log(
-      `[knowledge] ${pkg.out} (${pkg.documents}件 / ${(pkg.bytes / 1024).toFixed(1)}KB / ${pkg.generation})`
+      `[knowledge] ${pkg.out} (${pkg.documents}件` +
+        (pkg.images ? ` / 画像${pkg.images}件` : '') +
+        ` / ${(pkg.bytes / 1024).toFixed(1)}KB / ${pkg.generation})`
     )
   },
+  // 月別・カテゴリは動的ルートで、テンプレートの frontmatter がそのまま
+  // title になる（41ページが揃って同じ <title> だった）。params から作る。
+  transformPageData: (pageData) => {
+    const params = pageData.params as Record<string, string> | undefined
+    if (!params) return
+    if (params.year && params.month) {
+      return { title: `${params.year}年${Number(params.month)}月の記事` }
+    }
+    if (params.category) {
+      return { title: `${getCategoryLabel(params.category)}の記事` }
+    }
+  },
+
   transformHead: ({ head, pageData }) => {
     const ogpBgUrl = 'https://notes.ideamans.com/ogp-background.jpg'
     const siteUrl = 'https://notes.ideamans.com'
@@ -465,4 +495,23 @@ export default defineConfig({
     }
   },
   appearance: false
-})
+},
+  // 検索エンジンとAIから読める状態にする。既存の transformHead / buildEnd は潰さない
+  {
+    hostname: 'https://notes.ideamans.com/',
+    organization: {
+      name: 'アイデアマンズ株式会社',
+      url: 'https://www.ideamans.com/'
+    },
+    map: { description: ['description','excerpt'] },
+    feed: { pattern: 'posts/**/*.md', title: "ideaman's Notes" },
+    // Markdown の原本も配る（LLMがHTMLから本文を復元しなくて済む）
+    markdownSource: true,
+    lint: {
+      level: 'warn',
+      // URLのタイポを救うためのスタブ。canonical が正しいURLを指すのが
+      // 正しい姿なので、自ページを指していないことを指摘させない
+      exclude: ['posts/2024/core-web-vitals-in-actino-inp.html']
+    }
+  })
+)

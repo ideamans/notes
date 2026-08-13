@@ -114,6 +114,7 @@ function contentHash(files) {
 var PACKAGE_VERSION = "0.1.0";
 var FORMAT_VERSION = 1;
 var DOCS_DIR = "docs";
+var IMAGES_DIR = "images";
 var SECTION_FILE = "_index.md";
 async function buildKnowledgePackage(siteConfig, options) {
   const pages = await loadPages(options.include);
@@ -165,6 +166,24 @@ URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uF
     const path = dir === "." || dir === "" ? `${DOCS_DIR}/${SECTION_FILE}` : `${DOCS_DIR}/${dir}/${SECTION_FILE}`;
     files.set(path, encoder.encode(body.endsWith("\n") ? body : body + "\n"));
   }
+  let imageCount = 0;
+  const seenImageIds = /* @__PURE__ */ new Set();
+  for (const img of options.images ?? []) {
+    const src = (img.src ?? "").trim();
+    if (!src) {
+      throw new Error(`[knowledge-indexer] ${options.id}: \u753B\u50CF\u306E src \u304C\u7A7A\u3067\u3059`);
+    }
+    const id = (img.id ?? imageIdFromSrc(src)).replace(/^\/+/, "");
+    if (seenImageIds.has(id)) {
+      throw new Error(
+        `[knowledge-indexer] ${options.id}: \u753B\u50CFID\u304C\u91CD\u8907\u3057\u3066\u3044\u307E\u3059: ${id}
+\u540C\u3058\u753B\u50CF\u30922\u56DE\u6E21\u3057\u3066\u3044\u308B\u304B\u3001id \u306E\u4ED8\u3051\u65B9\u304C\u885D\u7A81\u3057\u3066\u3044\u307E\u3059\uFF08src: ${src}\uFF09\u3002`
+      );
+    }
+    seenImageIds.add(id);
+    files.set(`${IMAGES_DIR}/${id}.md`, encoder.encode(renderImage(img)));
+    imageCount++;
+  }
   const builtAt = /* @__PURE__ */ new Date();
   const hash = contentHash(files);
   const generation = `${compactISO(builtAt)}-${hash.slice("sha256:".length, "sha256:".length + 7)}`;
@@ -183,6 +202,7 @@ URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uF
     },
     access: options.access ?? "public",
     documents: { count: documentCount },
+    ...imageCount > 0 ? { images: { count: imageCount } } : {},
     search: {
       fields: options.search?.fields,
       facets: options.search?.facets ?? ["category_path", "tags"],
@@ -205,7 +225,7 @@ URL \u304C\u540C\u3058\u30DA\u30FC\u30B8\u304C2\u3064\u3042\u308A\u307E\u3059\uF
   const out = resolve(options.out ?? `knowledge/${options.id}.zip`);
   await mkdir(dirname(out), { recursive: true });
   await writeFile(out, zipped);
-  return { out, documents: documentCount, generation, bytes: zipped.length };
+  return { out, documents: documentCount, images: imageCount, generation, bytes: zipped.length };
 }
 function publishedFilter(outDir) {
   if (!outDir || !existsSync(outDir)) {
@@ -357,6 +377,36 @@ function oneLine(s) {
 }
 function compactISO(d) {
   return d.toISOString().replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
+}
+function renderImage(img) {
+  const lines = ["---"];
+  const push = (key, value) => {
+    if (value === void 0 || value === null || value === "") return;
+    if (Array.isArray(value) && value.length === 0) return;
+    lines.push(`${key}: ${toYAML(value)}`);
+  };
+  push("src", img.src);
+  push("refs", img.refs);
+  push("alt", img.alt && oneLine(img.alt));
+  push("context", img.context && oneLine(img.context));
+  push("width", img.width);
+  push("height", img.height);
+  push("bytes", img.bytes);
+  push("format", img.format);
+  if (img.weight !== void 0 && img.weight !== 1) push("weight", img.weight);
+  lines.push("---", "");
+  const body = (img.description ?? "").trim();
+  return lines.join("\n") + "\n" + (body ? body + "\n" : "");
+}
+function imageIdFromSrc(src) {
+  let p = src;
+  try {
+    if (/^https?:\/\//.test(src)) p = new URL(src).pathname;
+  } catch {
+  }
+  p = (p.split("?")[0] ?? p).split("#")[0] ?? p;
+  p = p.replace(/^\/+/, "").replace(/[^a-zA-Z0-9._/-]/g, "-");
+  return p || "image";
 }
 export {
   buildKnowledgePackage,

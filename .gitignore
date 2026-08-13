@@ -3,4 +3,11 @@ dist
 .vitepress/cache
 
 .env
-knowledge/
+# zip は毎ビルド作り直す派生物なので追跡しない。
+# ただし**画像の説明文のキャッシュは必ずコミットする**。
+# これが無いと、他のマシンやCIでビルドするたびに全画像が再課金される
+# （gemini-image-recognize にキャッシュは無い）。
+# 親ディレクトリを丸ごと無視すると個別の再包含ができないので `knowledge/*` にする。
+knowledge/*
+!knowledge/images.cache.jsonl
+!knowledge/images.json

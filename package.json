@@ -10,7 +10,8 @@
     "x-ai-posting": "tsx agents/x-ai-posting.ts",
     "lint:text": "textlint 'posts/**/*.md' index.md",
     "lint:text:fix": "textlint --fix 'posts/**/*.md' index.md",
-    "prepare": "lefthook install || true"
+    "prepare": "lefthook install || true",
+    "images": "node ../../services/knowledge/packages/image-indexer/collect.mjs --dist .vitepress/dist --origin https://notes.ideamans.com --cache knowledge/images.cache.jsonl --out knowledge/images.json"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
@@ -35,7 +36,8 @@
     "tsx": "^4.19.4",
     "vitepress": "^1.0.0",
     "vitepress-plugin-mermaid": "^2.0.16",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vitepress-machine-readability": "^0.1.0"
   },
   "pnpm": {
     "overrides": {

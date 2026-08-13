@@ -6140,6 +6140,11 @@ vite@^5.2.12:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vitepress-machine-readability@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vitepress-machine-readability/-/vitepress-machine-readability-0.1.0.tgz#5ea593278325cb424ffc2ebc69559f6193d4375b"
+  integrity sha512-YLPLpmwbGoPp26V1GTOykJrF31YX58WkUWOo3bqde0bTiuViOpLn8J+MJMfazyjek6Bdzyk738JleJrG+nwzVQ==
+
 vitepress-plugin-mermaid@^2.0.16:
   version "2.0.16"
   resolved "https://registry.yarnpkg.com/vitepress-plugin-mermaid/-/vitepress-plugin-mermaid-2.0.16.tgz#1b7c5e420da6b95f9d50b69d76bdff473d844d58"
