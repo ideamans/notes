@@ -618,7 +618,7 @@ body {
   line-height: 1;
   flex-shrink: 0;
 }
-.chap-h h3 {
+.chap-h h2 {
   font-family: var(--sans);
   font-weight: 700;
   font-size: 17px;
@@ -627,7 +627,7 @@ body {
   letter-spacing: -0.005em;
 }
 @media (min-width: 768px) {
-  .chap-h h3 {
+  .chap-h h2 {
     font-size: 18px;
   }
 }
@@ -1186,7 +1186,7 @@ body {
   color: inherit;
   display: block;
 }
-.related .it:hover h5 {
+.related .it:hover .t {
   color: var(--red);
 }
 .related .it .d {
@@ -1194,7 +1194,7 @@ body {
   color: var(--ink-mute);
   font-size: 15px;
 }
-.related .it h5 {
+.related .it .t {
   margin: 2px 0 0;
   font-family: var(--sans);
   font-weight: 700;

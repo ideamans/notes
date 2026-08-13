@@ -54,7 +54,7 @@ const tagCount = computed(() => {
     <section class="chap">
       <div class="chap-h">
         <span class="no">ch.</span>
-        <h3>カテゴリーで探す</h3>
+        <h2>カテゴリーで探す</h2>
         <span class="cnt">— by category</span>
       </div>
       <div class="cat-grid">
@@ -72,7 +72,7 @@ const tagCount = computed(() => {
     <section class="chap" v-if="monthlyArchive.length > 0">
       <div class="chap-h">
         <span class="no">log</span>
-        <h3>月別に振り返る</h3>
+        <h2>月別に振り返る</h2>
         <span class="cnt">— by month</span>
       </div>
       <ul class="chap-list">

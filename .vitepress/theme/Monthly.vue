@@ -41,7 +41,7 @@ function dot(date: string) {
     <section class="chap">
       <div class="chap-h">
         <span class="no">{{ year }}.{{ String(month).padStart(2, '0') }}</span>
-        <h3>{{ year }}年{{ month }}月</h3>
+        <h2>{{ year }}年{{ month }}月</h2>
         <span class="cnt">— {{ posts.length }} entries</span>
       </div>
       <ul class="chap-list">

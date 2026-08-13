@@ -135,7 +135,7 @@ const readMinutes = computed(() => {
           class="it"
         >
           <div class="d">{{ Dayjs(rp.date).format('YYYY.MM.DD') }}</div>
-          <h5>{{ rp.title }}</h5>
+          <div class="t">{{ rp.title }}</div>
         </a>
       </div>
     </section>

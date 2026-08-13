@@ -20,14 +20,14 @@ ads:
 
 <table>
   <tr>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=1" /></td>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=2" /></td>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=3" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=1" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=2" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=3" /></td>
   </tr>
   <tr>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=4" /></td>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=5" /></td>
-    <td width="33%"><img src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=6" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=4" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=5" /></td>
+    <td width="33%"><img alt="" src="https://alogorithm2.ideamans.com/v2/inline.svg?seed=6" /></td>
   </tr>
 </table>
 

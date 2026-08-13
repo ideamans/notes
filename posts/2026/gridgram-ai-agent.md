@@ -1,6 +1,6 @@
 ---
 title: GridgramをAIエージェントフレンドリーにする
-description: CLIツールGridgramをAIエージェントから使いやすくするために実施した取り組みを解説する。ドキュメント系（llms.txt・Context7・gg llm）とコマンド系（Skills・gg icons）の2軸で整理し、SSOTからの自動派生による情報の一貫性維持、SKILL.mdの複数エージェント対応設計など、試行錯誤の記録を詳述する。
+description: 'CLIツール Gridgram を AI エージェントから使いやすくするための取り組みを解説する。llms.txt・Context7・gg llm のドキュメント系と、Skills・gg icons のコマンド系の2軸で整理した記録。'
 id: miyanaga
 date: 2026-04-23 13:00:00
 categories:

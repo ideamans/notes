@@ -28,7 +28,7 @@ ads:
 
 本記事をSNSでシェアいただくと、このようなOGP画像(アイキャッチ画像)が自動生成される。
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=OGP%E7%94%BB%E5%83%8F%E3%82%92%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92OSS%E3%81%A7%E5%85%AC%E9%96%8B&amp;texts%5B1%5D.fontSize=5%25&amp;texts%5B1%5D.minWidth=60%25&amp;texts%5B1%5D.maxWidth=90%25&amp;text2=2024-09-23+miyanaga&amp;text%5B2%5D.fontSize=3%25&amp;text%5B2%5D.minWidth=30%25&amp;text%5B2%5D.maxWidth=40%25" width="800">
+<img alt="生成されたOGP画像の例（OGP画像を自動生成するプログラムをOSSで公開）" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=OGP%E7%94%BB%E5%83%8F%E3%82%92%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92OSS%E3%81%A7%E5%85%AC%E9%96%8B&amp;texts%5B1%5D.fontSize=5%25&amp;texts%5B1%5D.minWidth=60%25&amp;texts%5B1%5D.maxWidth=90%25&amp;text2=2024-09-23+miyanaga&amp;text%5B2%5D.fontSize=3%25&amp;text%5B2%5D.minWidth=30%25&amp;text%5B2%5D.maxWidth=40%25" width="800">
 
 画像URLのパラメータに、背景画像のURL、ブログ名、記事タイトル、メタデータを渡すとそれらをプログラムで合成する仕組みだ。
 
@@ -68,7 +68,7 @@ Node.js用に[sharp](https://www.npmjs.com/package/sharp)というグラフィ�
 
 その結果が以下の画像である。
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=OGP%E7%94%BB%E5%83%8F%E3%82%92%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92OSS%E3%81%A7%E5%85%AC%E9%96%8B&amp;texts%5B1%5D.fontSize=5%25&amp;texts%5B1%5D.minWidth=60%25&amp;texts%5B1%5D.maxWidth=90%25&amp;text2=2024-09-23+miyanaga&amp;text%5B2%5D.fontSize=3%25&amp;text%5B2%5D.minWidth=30%25&amp;text%5B2%5D.maxWidth=40%25" width="800">
+<img alt="生成されたOGP画像の例（OGP画像を自動生成するプログラムをOSSで公開）" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=OGP%E7%94%BB%E5%83%8F%E3%82%92%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92OSS%E3%81%A7%E5%85%AC%E9%96%8B&amp;texts%5B1%5D.fontSize=5%25&amp;texts%5B1%5D.minWidth=60%25&amp;texts%5B1%5D.maxWidth=90%25&amp;text2=2024-09-23+miyanaga&amp;text%5B2%5D.fontSize=3%25&amp;text%5B2%5D.minWidth=30%25&amp;text%5B2%5D.maxWidth=40%25" width="800">
 
 デザインのエキスパートからすると文字の配置が甘かったりするかもしれないが、素人目には違和感はない。
 
@@ -84,11 +84,11 @@ Node.js用に[sharp](https://www.npmjs.com/package/sharp)というグラフィ�
 
 1行の場合はテキストが上下左右の中央に配置される。
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=80%25" width="800">
+<img alt="生成されたOGP画像の例" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=80%25" width="800">
 
 2行の場合はメインタイトルとサブタイトルのような見た目になる。
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E3%83%9E%E3%83%B3%E3%82%BA%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%81%AE%E7%A0%94%E7%A9%B6%E3%83%8E%E3%83%BC%E3%83%88&amp;text1width=60%25" width="800">
+<img alt="生成されたOGP画像の例（アイデアマンズ株式会社の研究ノート）" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=ideaman%27s+Notes&amp;text0width=60%25&amp;text1=%E3%82%A2%E3%82%A4%E3%83%87%E3%82%A2%E3%83%9E%E3%83%B3%E3%82%BA%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%81%AE%E7%A0%94%E7%A9%B6%E3%83%8E%E3%83%BC%E3%83%88&amp;text1width=60%25" width="800">
 
 ### フォントサイズの自動調整
 
@@ -98,9 +98,9 @@ Node.js用に[sharp](https://www.npmjs.com/package/sharp)というグラフィ�
 
 最小幅を50%、最大幅を90%とするとテキストの内容によって以下のようなレイアウトとなる。
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=%E7%9F%AD%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88&amp;text%5B0%5D.minWidth=50%25&amp;text%5B0%5D.maxWidth=90%25" width="800">
+<img alt="生成されたOGP画像の例" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=%E7%9F%AD%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88&amp;text%5B0%5D.minWidth=50%25&amp;text%5B0%5D.maxWidth=90%25" width="800">
 
-<img src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88&amp;texts%5B0%5D.minWidth=50%25&amp;texts%5B0%5D.maxWidth=90%25" width="800">
+<img alt="生成されたOGP画像の例" src="https://banners.ideamans.com/banners/type-a?bgUrl=https%3A%2F%2Fnotes.ideamans.com%2Fogp-background.jpg&amp;text0=%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E9%95%B7%E3%81%84%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88&amp;texts%5B0%5D.minWidth=50%25&amp;texts%5B0%5D.maxWidth=90%25" width="800">
 
 ## 残課題
 

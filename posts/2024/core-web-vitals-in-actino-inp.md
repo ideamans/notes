@@ -1,6 +1,6 @@
 ---
 title: 移動しました - Core Web Vitalsの実践的な改善術 - INP編
-description: このページはURL変更のため新URLへ移動しました。
+description: 'このページはURLの変更にともない移動しました。新しいURLへ自動で転送されます。ブックマークをお使いの場合は、移動先のURLへ更新をお願いします。'
 date: 2024-11-21 09:42:00
 redirect: true
 head:

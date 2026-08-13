@@ -127,7 +127,7 @@ Core Web Vitals の 3 つの指標についても同様の確認をおこなっ�
     <tr>
       <th>対数正規分布</th>
       <td>
-        <a href="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-histogram-log-normal.png"><img src="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-histogram-log-normal.png"></a>
+        <a href="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-histogram-log-normal.png"><img alt="LCPの分布と対数正規分布のあてはめ" src="https://assets.ideamans.com/miyanaga/images/2024/12/lcp-histogram-log-normal.png"></a>
       </td>
       <td>
       <a href="https://assets.ideamans.com/miyanaga/images/2024/12/histogram-log-normal-distribution-n23178_2.png"><img src="https://assets.ideamans.com/miyanaga/images/2024/12/histogram-log-normal-distribution-n23178_2.png" alt="サンプル数23178のヒストグラムと対数正規分布の確率密度関数" width="784" height="584" /></a>

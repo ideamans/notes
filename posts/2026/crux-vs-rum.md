@@ -1,7 +1,7 @@
 ---
 id: miyanaga
 title: CrUXはどのくらいあてになるか - Chrome限定の実測値を全ブラウザRUMと突き合わせてみた
-description: CrUXはChromeのオプトインユーザーだけの実測値で、iPhoneのSafariもEdgeも対象外だ。それでも現実のユーザー体験をどこまで映すのか。全ブラウザRUM「Speed is Money」と通販14サイトで突き合わせ、競合の順位やモバイルの水準は信用でき、デスクトップのLCPは楽観的に出る、と用途ごとに線引きした。
+description: 'CrUXはChromeのオプトインユーザーだけの実測値で、iPhoneのSafariもEdgeも対象外だ。全ブラウザRUMの Speed is Money と通販14サイトで突き合わせ、どこまで信用できるかを用途ごとに線引きした。'
 date: 2026-07-19 15:00:00
 ogp: /ogp/2026/crux-vs-rum.jpg
 categories:

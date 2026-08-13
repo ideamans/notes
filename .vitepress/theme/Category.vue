@@ -64,7 +64,7 @@ function dot(date: string) {
 
     <section class="chap">
       <div class="chap-h">
-        <h3>{{ category.name }}</h3>
+        <h2>{{ category.name }}</h2>
         <span class="cnt">— {{ posts.length }} entries</span>
       </div>
       <ul class="chap-list">

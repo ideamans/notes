@@ -307,6 +307,16 @@ export default defineConfig(
   // 月別・カテゴリは動的ルートで、テンプレートの frontmatter がそのまま
   // title になる（41ページが揃って同じ <title> だった）。params から作る。
   transformPageData: (pageData) => {
+    // 長い題の記事からはサイト名の付加を外す。既定の `:title | ideaman's Notes`
+    // は18字を毎ページ食う。日本語の題は Google が全角30字前後で切るので、
+    // その18字は「題が何字表示されるか」に直接効く。
+    // ただし短い題まで外すと今度は下限（15字）を割るので、長さで切り替える。
+    //   42字以下 … 付けても60字に収まる → ブランドを残す
+    //   42字超   … 付けると60字を超える → 外して題だけにする
+    const SUFFIX = " | ideaman's Notes".length // 18
+    if (pageData.filePath?.startsWith('posts/') && (pageData.title?.length ?? 0) > 60 - SUFFIX) {
+      return { titleTemplate: false }
+    }
     const params = pageData.params as Record<string, string> | undefined
     if (!params) return
     if (params.year && params.month) {
