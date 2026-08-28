@@ -2,6 +2,8 @@ import Dayjs from 'dayjs'
 import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 // import { defineConfig } from 'vitepress'
 import { withMachineReadability } from 'vitepress-machine-readability'
+// sitemap は許可リスト方式なので not-found は自動的に外れる
+import { writeNotFoundPage } from './not-found.js'
 import { defineConfig } from 'vitepress'
 import { genLLMs } from './genLLMs.js'
 import { crosslinkPlugin } from './crosslink-plugin.js'
@@ -254,6 +256,10 @@ export default defineConfig(
     ]
   ],
   buildEnd: async (config) => {
+    // ナレッジのインデクサより先に走らせる。ここで not-found.html を消すので
+    // 「出力にあるページだけを採る」インデクサから自動的に外れる
+    writeNotFoundPage(config.outDir)
+
     await genLLMs(config)
 
     // 画像インデックス。knowledge/images.json があれば載せる。
