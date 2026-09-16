@@ -1,5 +1,5 @@
 ---
-title: AIに目を与えるpage-regression-tester
+title: AIにWebフロントエンドの見た目に関する回帰テストの目を与えるOSS page-regression-tester
 description: フロントエンド改変の副作用を機械的に検出するビジュアルリグレッションテストツール page-regression-tester の紹介。動的な変化を抑制したキャプチャとSSIMによる比較で、AIエージェントの試行錯誤に気まぐれにならない検査の目を持たせる。
 id: miyanaga
 date: 2026-09-17 06:52:00
@@ -19,7 +19,7 @@ ads:
 
 そこでAIに目を与えることにした。フロントエンドの変更の前後で見た目の変更がないことを、キャプチャ結果の比較で機械的に行えるようにしたのだ。
 
-それが page-regression-tester である。
+それが page-regression-tester である。MITライセンスのオープンソースとして公開しており、npmから導入できる。
 
 - [ideamans/page-regression-tester](https://github.com/ideamans/page-regression-tester)
 
@@ -100,6 +100,6 @@ SSIMを用いると、アンチエイリアスの揺らぎは見逃しつつ、�
 - 検査自体をLLMに任せると「誤差の範囲です」と見逃すことがある
 - キャプチャでは動的な変化を抑制し、比較ではSSIMで遊びを持たせる
 
-こうしてAIエージェントは、気まぐれにならない検査の目を持つことができる。MITライセンスで公開している。
+こうしてAIエージェントは、気まぐれにならない検査の目を持つことができる。
 
 - [ideamans/page-regression-tester](https://github.com/ideamans/page-regression-tester)
