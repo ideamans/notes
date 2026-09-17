@@ -35,9 +35,9 @@
     "textlint-rule-preset-jtf-style": "^3.0.3",
     "tsx": "^4.19.4",
     "vitepress": "^1.0.0",
+    "vitepress-machine-readability": "^0.2.0",
     "vitepress-plugin-mermaid": "^2.0.16",
-    "vue": "^3.4.21",
-    "vitepress-machine-readability": "^0.2.0"
+    "vue": "^3.4.21"
   },
   "pnpm": {
     "overrides": {

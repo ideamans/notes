@@ -2,6 +2,7 @@ import Dayjs from 'dayjs'
 import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 // import { defineConfig } from 'vitepress'
 import { withMachineReadability } from 'vitepress-machine-readability'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 // sitemap は許可リスト方式なので not-found は自動的に外れる
 import { writeNotFoundPage } from './not-found.js'
 import { defineConfig } from 'vitepress'
@@ -95,8 +96,10 @@ function indexTwitterImageUrl(): string {
 }
 
 export default defineConfig(
-  withMachineReadability({
-  mpa: true,
+  withMachineReadability(
+  withMermaid({
+  // mermaid はクライアントで描くため mpa にはできない（mpa はJSを配信しない）
+  mpa: false,
   lang: 'ja',
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
@@ -519,9 +522,10 @@ export default defineConfig(
       ])
     }
   },
-  appearance: false
-},
-  // 検索エンジンとAIから読める状態にする。既存の transformHead / buildEnd は潰さない
+  appearance: false,
+  mermaid: {}
+}),
+  // 検索エンジンとAIから読める状態にする。mermaid の解決結果を包む
   {
     hostname: 'https://notes.ideamans.com/',
     organization: {
