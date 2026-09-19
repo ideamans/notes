@@ -1,0 +1,70 @@
+name: Publish scheduled drafts
+
+# draft: true の記事のうち、date の日付が今日（日本時間）以前のものを毎朝公開する。
+# 公開の判定は scripts/publish-scheduled.mjs。
+#
+# Actions のトークンで push したコミットでは publish.yml（push 起点）が起動しないので、
+# このワークフローの中でデプロイまで行う。デプロイは publish.yml と同じく deploy.sh。
+
+on:
+  schedule:
+    # 日本時間 9:00（UTC 0:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# ビルド時の日付処理（記事日付・RSS・llms等）を日本時間で行う
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Publish past-due drafts
+        id: publish
+        run: node scripts/publish-scheduled.mjs
+
+      - name: Commit and push
+        if: steps.publish.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts/
+          git commit -m "publish: 予約した下書きを公開 ($(date +%Y-%m-%d))"
+          git push
+
+      - name: Prepare SSH key
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          ID_ED25519: ${{ secrets.ID_ED25519 }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$ID_ED25519\n" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+        shell: bash
+
+      # ビルドとデプロイ（ナレッジの zip の送信を含む）は、手元と同じ deploy.sh で行う
+      - name: Build and deploy
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          DEPLOY_HOST: ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}
+        run: |
+          export RSYNC_RSH="ssh -i $HOME/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+          bash deploy.sh
+        shell: bash
+
+      - name: Remove SSH key
+        if: always()
+        run: rm -f ~/.ssh/id_ed25519

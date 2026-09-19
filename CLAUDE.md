@@ -20,6 +20,9 @@ yarn build
 # ビルドのプレビュー
 yarn serve
 
+# 予約した下書きのうち、今日公開されるものを確かめる（書き換えない）
+yarn publish-scheduled --dry-run
+
 # X(Twitter)へのAI投稿スクリプト
 yarn x-ai-posting
 
@@ -29,7 +32,7 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 
 ## 技術スタック
 
-- VitePress 1.0（MPA mode有効）
+- VitePress 1.0（`mpa: false`。mermaid をクライアントで描くため 2026-09-17 に MPA をやめた）
 - Vue 3（Composition API、`<script setup>`構文）
 - TypeScript
 - Tailwind CSS 3.4 + DaisyUI 4
@@ -69,6 +72,20 @@ ogp: /ogp/2025/slug.jpg
 - `date`は`date`コマンドで現在日時を確認して設定する
 - 日付はJST（日本標準時）として解釈される
 - `ogp`はOGP画像のパス（`/ogp/{year}/{slug}.jpg`形式）。`/ogp-image`スキルで生成
+
+### 下書きと予約公開
+
+`draft: true` を付けた記事は、本番ビルドから外れる（一覧・カテゴリ・RSS・`llms-full.txt` にも出ない）。
+`yarn dev` では除外されないので、本番と同じURLでプレビューできる。
+
+**`draft: true` の記事は、`date` の日付が来たら自動で公開される。** 毎朝9:00（日本時間）に
+`.github/workflows/publish-scheduled.yml` が `scripts/publish-scheduled.mjs` を動かし、
+日付が今日以前の記事から `draft: true` の行を外してコミットし、ビルドしてデプロイする。
+
+- 予約公開したいときは、公開したい日を `date` に入れて `draft: true` を付けておくだけでよい
+- **日付を過ぎたまま寝かせておく下書きは作れない。** 次の朝に公開される。公開しない記事は、下書きにせず削除する
+- 公開の判定は `.vitepress/config.ts` の下書き除外と同じ正規表現。片方だけ変えないこと
+- 手動でも GitHub の Actions 画面から `Publish scheduled drafts` を実行できる
 
 **カテゴリ一覧**（`/categories.ts`で定義）:
 
@@ -232,8 +249,15 @@ buildEnd: async (config) => {
 
 ## デプロイ
 
-- mainブランチへのpushでGitHub Actionsが発火
-- rsyncでサーバーに直接デプロイ
+- mainブランチへのpushでGitHub Actionsが発火（`publish.yml`）
+- 予約した下書きの公開は毎朝9:00の `publish-scheduled.yml`。Actions のトークンで push したコミットでは
+  `publish.yml` が起動しないので、こちらのワークフローの中でデプロイまで行う
+- **デプロイの中身は `deploy.sh` の1か所だけ。** 手元でも Actions でも同じスクリプトを使う。
+  ビルドして、サイトを `--delete` 付きで rsync し、ナレッジの zip（`knowledge/notes.zip`）を
+  knowledge.ideamans.com の `incoming/` へ送る
+- 接続先は `DEPLOY_HOST`（既定は `~/.ssh/config` の `web-g6`）。Actions からはリポジトリ変数の
+  `SSH_USER@SSH_HOST` と、鍵を指定した `RSYNC_RSH` を渡して呼んでいる。デプロイの手順を変えるときは
+  ワークフローではなく `deploy.sh` を直す
 
 ## 環境変数
 

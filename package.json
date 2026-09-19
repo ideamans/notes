@@ -11,7 +11,8 @@
     "lint:text": "textlint 'posts/**/*.md' index.md",
     "lint:text:fix": "textlint --fix 'posts/**/*.md' index.md",
     "prepare": "lefthook install || true",
-    "images": "node ../../services/knowledge/packages/image-indexer/collect.mjs --dist .vitepress/dist --origin https://notes.ideamans.com --cache knowledge/images.cache.jsonl --out knowledge/images.json"
+    "images": "node ../../services/knowledge/packages/image-indexer/collect.mjs --dist .vitepress/dist --origin https://notes.ideamans.com --cache knowledge/images.cache.jsonl --out knowledge/images.json",
+    "publish-scheduled": "node scripts/publish-scheduled.mjs"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
