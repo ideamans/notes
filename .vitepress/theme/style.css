@@ -1,6 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Tailwind CSS 4 は CSS 側で設定する。以前は postcss.config.js に書いていた。 */
+
+/* 走査対象（v3 の content 相当）。VitePress のテーマと記事を見る */
+@source '../theme/**/*.vue';
+@source '../../posts/**/*.md';
+@source '../../index.md';
+
+@plugin '@tailwindcss/typography';
+
+/* daisyUI はライトテーマだけ使う（サイトは appearance: false で明暗の切り替えを持たない） */
+@plugin 'daisyui' {
+  themes: light --default;
+}
+
+/* v3 の darkMode: 'class' 相当。v4 の既定は OS の設定を見るので、クラス指定に戻す */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* --- v3 からの互換 ---------------------------------------------------- */
+
+/* v4 は枠線の既定色が currentColor になり、色を指定していない枠線が濃くなる */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/* v4 はボタンの既定カーソルが default になる */
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* v3 の theme.extend.typography 相当 */
+.prose {
+  font-size: 1.1em;
+}
 
 /* =========================================================================
  * Field Notes — 方眼ノート風デザイン

@@ -35,7 +35,8 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 - VitePress 1.0（`mpa: false`。mermaid をクライアントで描くため 2026-09-17 に MPA をやめた）
 - Vue 3（Composition API、`<script setup>`構文）
 - TypeScript
-- Tailwind CSS 3.4 + DaisyUI 4
+- Tailwind CSS 4 + daisyUI 5（設定は `.vitepress/theme/style.css` に書く。
+  `postcss.config.js` には `@tailwindcss/postcss` を置くだけ）
 - dayjs（日付処理、JSTタイムゾーン対応）
 - mermaid（図表描画）
 

@@ -1,28 +1,7 @@
-import tailwind from 'tailwindcss'
-import tailwindTypography from '@tailwindcss/typography'
-import daisyui from 'daisyui'
-
+// Tailwind CSS 4 は PostCSS プラグインが別パッケージになった。
+// 設定（content・プラグイン・テーマ）は CSS 側（.vitepress/theme/style.css）に移してある。
 export default {
-  plugins: [
-    tailwind({
-      content: ['./.vitepress/theme/**/*.vue', './posts/**/*.md'],
-      plugins: [tailwindTypography, daisyui],
-      darkMode: 'class',
-      daisyui: {
-        darkTheme: 'light',
-        themes: ['light']
-      },
-      theme: {
-        extend: {
-          typography: (theme) => ({
-            DEFAULT: {
-              css: {
-                fontSize: '1.1em'
-              }
-            }
-          })
-        }
-      }
-    })
-  ]
+  plugins: {
+    '@tailwindcss/postcss': {}
+  }
 }

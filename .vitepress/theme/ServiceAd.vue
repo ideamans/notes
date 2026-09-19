@@ -63,7 +63,7 @@ const trackClick = () => {
         <span class="text-xs text-gray-500">アイデアマンズ株式会社</span>
       </div>
       <div class="flex items-start gap-4">
-        <img :src="iconUrl" :alt="service.name" class="w-16 h-16 flex-shrink-0" />
+        <img :src="iconUrl" :alt="service.name" class="w-16 h-16 shrink-0" />
         <div class="flex-1 min-w-0">
           <div class="text-lg font-bold dark:text-white group-hover:text-emerald-400 transition-colors">
             {{ service.name }}
