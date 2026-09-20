@@ -8,7 +8,6 @@ categories:
   - automation
   - development
 ogp: /ogp/2026/apple-app-store-connect-cli.jpg
-draft: true
 ---
 
 弊社では最近、「日本領収書スキャン」という初めてのiOSアプリを作った。領収書やレシートを撮影すると、AIが解析してExcelの一覧にまとめてくれるアプリである。

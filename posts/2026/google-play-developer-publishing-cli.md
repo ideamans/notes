@@ -8,7 +8,6 @@ categories:
   - automation
   - development
 ogp: /ogp/2026/google-play-developer-publishing-cli.jpg
-draft: true
 ---
 
 弊社の「日本領収書スキャン」は、まずiOS版をApp Storeで公開した。そのあとAndroid版もGoogle Playで公開した。
