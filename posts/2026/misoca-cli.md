@@ -8,7 +8,6 @@ categories:
   - automation
   - ai
 ogp: /ogp/2026/misoca-cli.jpg
-draft: true
 ---
 
 見積書や請求書は、かつてはExcelでコツコツ作るか、基幹システムの一機能として用意されたものを使うかのどちらかだった。Excelは柔軟だが、とにかく面倒くさい。基幹システムは簡単な反面、融通がきかない。
