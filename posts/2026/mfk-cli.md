@@ -8,7 +8,6 @@ categories:
   - automation
   - ai
 ogp: /ogp/2026/mfk-cli.jpg
-draft: true
 ---
 
 マネーフォワードケッサイは、いわゆる決済代行サービスである。請求書の発行から入金の確認まで、売掛金を回収する手間を引き受けてくれる。
