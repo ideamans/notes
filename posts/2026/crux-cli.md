@@ -8,7 +8,6 @@ categories:
   - ai
   - development
 ogp: /ogp/2026/crux-cli.jpg
-draft: true
 ---
 
 弊社ではページスピード改善について、主にフロントエンドの改善提案を行っている。そのなかで重宝しているのが、Chromeの実ユーザーの表示速度を集計した Chrome UX Report（CrUX）のデータである。
