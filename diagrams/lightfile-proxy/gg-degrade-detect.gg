@@ -1,0 +1,20 @@
+doc {
+  cellSize: 200,
+  theme: { primary: "#1168bd", secondary: "#64748b", accent: "#b91c1c" },
+}
+
+region @C1:C1 "応答なし" color=accent/14
+
+icon :viewer @A1 tabler/user            "エンドユーザー"   color=secondary
+icon :cf     @B1 tabler/cloud           "CloudFront"      color=secondary
+icon :proxy  @C1 tabler/transform-point "LightFile Proxy" color=secondary
+icon :origin @D1 tabler/server          "オリジンサーバー" color=secondary
+icon :ops    @B2 tabler/user            "運用担当者"       color=secondary
+icon :watch  @C2 tabler/activity        "死活監視"         color=primary
+
+viewer --> cf "画像をリクエスト"
+cf --> proxy "1番目のオリジン"
+proxy --> origin "オリジナルを取得"
+watch ..> proxy "ping.jpgが返らない" color=accent
+watch --> cf "優先順を入れ替える" color=accent
+watch --> ops "ダウンを知らせる" color=accent

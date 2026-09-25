@@ -1,0 +1,214 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "同期変換（1回目）",
+      "同期変換（2回目以降）",
+      "半同期変換（1回目）",
+      "半同期変換（2回目以降）"
+    ],
+    "datasets": [
+      {
+        "label": "オリジナルから取得",
+        "data": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "backgroundColor": "#64748b"
+      },
+      {
+        "label": "変換",
+        "data": [
+          2,
+          0,
+          0,
+          0
+        ],
+        "backgroundColor": "#1168bd"
+      },
+      {
+        "label": "返却",
+        "data": [
+          0.4,
+          0.4,
+          0.7,
+          0.4
+        ],
+        "backgroundColor": "#93c5fd"
+      },
+      {
+        "label": "バックグラウンドで変換",
+        "data": [
+          0,
+          0,
+          2,
+          0
+        ],
+        "backgroundColor": "#e2e8f0"
+      }
+    ]
+  },
+  "options": {
+    "indexAxis": "y",
+    "responsive": false,
+    "layout": {
+      "padding": {
+        "right": 16
+      }
+    },
+    "plugins": {
+      "legend": {
+        "display": false
+      },
+      "title": {
+        "display": true,
+        "text": "エンドユーザーが待つ時間（模式図・実測値ではない）",
+        "font": {
+          "size": 17
+        }
+      },
+      "annotation": {
+        "annotations": {
+          "l1": {
+            "type": "label",
+            "xValue": 0.5,
+            "yValue": "同期変換（1回目）",
+            "content": "オリジナル取得",
+            "color": "#ffffff",
+            "font": {
+              "size": 13,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "l2": {
+            "type": "label",
+            "xValue": 2.0,
+            "yValue": "同期変換（1回目）",
+            "content": "WebPへ変換",
+            "color": "#ffffff",
+            "font": {
+              "size": 13,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "l3": {
+            "type": "label",
+            "xValue": 0.2,
+            "yValue": "同期変換（2回目以降）",
+            "content": "返却",
+            "color": "#1f2937",
+            "font": {
+              "size": 12,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "l4": {
+            "type": "label",
+            "xValue": 1.35,
+            "yValue": "半同期変換（1回目）",
+            "content": "返却",
+            "color": "#1f2937",
+            "font": {
+              "size": 13,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "l5": {
+            "type": "label",
+            "xValue": 2.7,
+            "yValue": "半同期変換（1回目）",
+            "content": "WebPへ変換（バックグラウンド）",
+            "color": "#64748b",
+            "font": {
+              "size": 13,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "l6": {
+            "type": "label",
+            "xValue": 0.2,
+            "yValue": "半同期変換（2回目以降）",
+            "content": "返却",
+            "color": "#1f2937",
+            "font": {
+              "size": 12,
+              "weight": "bold"
+            },
+            "backgroundColor": "rgba(0,0,0,0)"
+          },
+          "sync": {
+            "type": "line",
+            "scaleID": "x",
+            "value": 3.4,
+            "borderColor": "#b91c1c",
+            "borderWidth": 2,
+            "borderDash": [
+              6,
+              4
+            ],
+            "label": {
+              "display": true,
+              "content": "同期変換の1回目の応答",
+              "position": "start",
+              "backgroundColor": "#b91c1c",
+              "color": "#ffffff",
+              "font": {
+                "size": 12
+              }
+            }
+          },
+          "semi": {
+            "type": "line",
+            "scaleID": "x",
+            "value": 1.7,
+            "borderColor": "#1168bd",
+            "borderWidth": 2,
+            "borderDash": [
+              6,
+              4
+            ],
+            "label": {
+              "display": true,
+              "content": "半同期変換の1回目の応答",
+              "position": "end",
+              "backgroundColor": "#1168bd",
+              "color": "#ffffff",
+              "font": {
+                "size": 12
+              }
+            }
+          }
+        }
+      }
+    },
+    "scales": {
+      "x": {
+        "stacked": true,
+        "beginAtZero": true,
+        "title": {
+          "display": true,
+          "text": "時間"
+        },
+        "ticks": {
+          "display": false
+        },
+        "grid": {
+          "display": false
+        }
+      },
+      "y": {
+        "stacked": true,
+        "grid": {
+          "display": false
+        }
+      }
+    }
+  }
+}

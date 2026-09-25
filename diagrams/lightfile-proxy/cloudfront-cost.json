@@ -1,0 +1,131 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      [
+        "画像が転送量の37%",
+        "そのまま配信"
+      ],
+      [
+        "画像が転送量の37%",
+        "画像を半分に"
+      ],
+      [
+        "画像が転送量の70%",
+        "そのまま配信"
+      ],
+      [
+        "画像が転送量の70%",
+        "画像を70%削減"
+      ]
+    ],
+    "datasets": [
+      {
+        "label": "画像以外の転送",
+        "data": [
+          735,
+          735,
+          350,
+          350
+        ],
+        "backgroundColor": "#cbd5e1"
+      },
+      {
+        "label": "画像の転送",
+        "data": [
+          432,
+          216,
+          817,
+          245
+        ],
+        "backgroundColor": "#1168bd"
+      }
+    ]
+  },
+  "options": {
+    "indexAxis": "y",
+    "responsive": false,
+    "layout": {
+      "padding": {
+        "right": 24
+      }
+    },
+    "plugins": {
+      "legend": {
+        "position": "bottom"
+      },
+      "title": {
+        "display": true,
+        "text": "月10TBを配信するサイトのCloudFront料金（東京リージョン・USD）",
+        "font": {
+          "size": 17
+        }
+      },
+      "annotation": {
+        "annotations": {
+          "half": {
+            "type": "line",
+            "scaleID": "x",
+            "value": 951,
+            "borderColor": "#b91c1c",
+            "borderWidth": 2,
+            "borderDash": [
+              6,
+              4
+            ],
+            "label": {
+              "display": true,
+              "content": "18%削減",
+              "position": "end",
+              "backgroundColor": "#b91c1c",
+              "color": "#ffffff",
+              "font": {
+                "size": 13
+              }
+            }
+          },
+          "deep": {
+            "type": "line",
+            "scaleID": "x",
+            "value": 595,
+            "borderColor": "#b91c1c",
+            "borderWidth": 2,
+            "borderDash": [
+              6,
+              4
+            ],
+            "label": {
+              "display": true,
+              "content": "49%削減",
+              "position": "end",
+              "backgroundColor": "#b91c1c",
+              "color": "#ffffff",
+              "font": {
+                "size": 13
+              }
+            }
+          }
+        }
+      }
+    },
+    "scales": {
+      "x": {
+        "stacked": true,
+        "beginAtZero": true,
+        "title": {
+          "display": true,
+          "text": "月額（USD）"
+        },
+        "grid": {
+          "display": false
+        }
+      },
+      "y": {
+        "stacked": true,
+        "grid": {
+          "display": false
+        }
+      }
+    }
+  }
+}

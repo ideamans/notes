@@ -1,0 +1,15 @@
+doc {
+  cellSize: 200,
+  theme: { primary: "#1168bd", secondary: "#64748b", accent: "#b91c1c" },
+}
+
+region @C1:C1 "弊社が運用" color=primary/16
+
+icon :viewer @A1 tabler/user            "エンドユーザー"          color=secondary
+icon :cf     @B1 tabler/cloud           "CloudFront"     color=secondary
+icon :proxy  @C1 tabler/transform-point "LightFile Proxy" color=primary
+icon :origin @D1 tabler/server          "オリジンサーバー"  color=secondary
+
+viewer --> cf "画像をリクエスト"
+cf --> proxy "画像を取りに行く"
+proxy --> origin "オリジナルを取得"

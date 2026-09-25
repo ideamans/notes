@@ -1,0 +1,103 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      [
+        "最小構成",
+        "ノード2・200GB"
+      ],
+      [
+        "アクセスが増える",
+        "ノード4・200GB"
+      ],
+      [
+        "画像が多い",
+        "ノード4・600GB"
+      ],
+      [
+        "CloudFront以外のCDN",
+        "ノード4・600GB"
+      ]
+    ],
+    "datasets": [
+      {
+        "label": "基本料金",
+        "data": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "backgroundColor": "#cbd5e1"
+      },
+      {
+        "label": "ノード数",
+        "data": [
+          6,
+          12,
+          12,
+          12
+        ],
+        "backgroundColor": "#1168bd"
+      },
+      {
+        "label": "キャッシュ容量",
+        "data": [
+          2,
+          2,
+          6,
+          6
+        ],
+        "backgroundColor": "#93c5fd"
+      },
+      {
+        "label": "外部通信実費",
+        "data": [
+          0,
+          0,
+          0,
+          4
+        ],
+        "backgroundColor": "#f59e0b"
+      }
+    ]
+  },
+  "options": {
+    "responsive": false,
+    "plugins": {
+      "legend": {
+        "position": "bottom"
+      },
+      "title": {
+        "display": true,
+        "text": "クラスタ提供の料金は4つの積み上げで決まる（相対・模式図）",
+        "font": {
+          "size": 17
+        }
+      }
+    },
+    "scales": {
+      "x": {
+        "stacked": true,
+        "grid": {
+          "display": false
+        },
+        "ticks": {
+          "font": {
+            "size": 12
+          }
+        }
+      },
+      "y": {
+        "stacked": true,
+        "ticks": {
+          "display": false
+        },
+        "title": {
+          "display": true,
+          "text": "月額（相対）"
+        }
+      }
+    }
+  }
+}

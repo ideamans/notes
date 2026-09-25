@@ -1,0 +1,17 @@
+doc {
+  cellSize: 260,
+  theme: { primary: "#1168bd", secondary: "#64748b", accent: "#b91c1c" },
+}
+
+region @B1:B2 "1つのクラスタ" color=primary/16
+
+icon :cfa   @A1 tabler/cloud           "CloudFront A"    color=secondary
+icon :cfb   @A2 tabler/cloud           "CloudFront B"    color=secondary
+icon :proxy @B1 tabler/transform-point "LightFile Proxy" color=primary
+icon :oa    @C1 tabler/server          "オリジンA"        color=secondary
+icon :ob    @C2 tabler/database        "オリジンB（S3）"   color=secondary
+
+cfa --> proxy "site-aへ"
+cfb --> proxy "site-bへ"
+proxy --> oa "Hostを付け替え"
+proxy --> ob "S3から取得"

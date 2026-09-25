@@ -1,0 +1,93 @@
+{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "そのまま配信",
+      "画像を半分に"
+    ],
+    "datasets": [
+      {
+        "label": "画像以外",
+        "data": [
+          735,
+          735
+        ],
+        "backgroundColor": "#cbd5e1"
+      },
+      {
+        "label": "画像",
+        "data": [
+          432,
+          216
+        ],
+        "backgroundColor": "#1168bd"
+      }
+    ]
+  },
+  "options": {
+    "indexAxis": "y",
+    "responsive": false,
+    "layout": {
+      "padding": {
+        "right": 24
+      }
+    },
+    "plugins": {
+      "legend": {
+        "position": "bottom"
+      },
+      "title": {
+        "display": true,
+        "text": "月10TBを配信・画像が転送量の37%を占めるサイト（東京リージョン）",
+        "font": {
+          "size": 17
+        }
+      },
+      "annotation": {
+        "annotations": {
+          "cut": {
+            "type": "line",
+            "scaleID": "x",
+            "value": 951,
+            "borderColor": "#b91c1c",
+            "borderWidth": 2,
+            "borderDash": [
+              6,
+              4
+            ],
+            "label": {
+              "display": true,
+              "content": "18%削減",
+              "position": "end",
+              "backgroundColor": "#b91c1c",
+              "color": "#ffffff",
+              "font": {
+                "size": 13
+              }
+            }
+          }
+        }
+      }
+    },
+    "scales": {
+      "x": {
+        "stacked": true,
+        "beginAtZero": true,
+        "max": 1250,
+        "title": {
+          "display": true,
+          "text": "月額（USD）"
+        },
+        "grid": {
+          "display": false
+        }
+      },
+      "y": {
+        "stacked": true,
+        "grid": {
+          "display": false
+        }
+      }
+    }
+  }
+}

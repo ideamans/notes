@@ -1,0 +1,20 @@
+doc {
+  cellSize: 170,
+  theme: { primary: "#1168bd", secondary: "#64748b" },
+}
+
+region @B1:B2 "お客様のCloudFront" color=secondary/18
+region @C1:C2 "LightFile Proxy"    color=primary/16
+
+icon :viewer  @A1 tabler/user            "エンドユーザー"           color=secondary
+icon :cf      @B1 tabler/cloud           "エッジ"           color=secondary
+icon :cfcache @B2 tabler/database        "エッジのキャッシュ" color=secondary
+icon :proxy   @C1 tabler/transform-point "プロキシ"         color=primary
+icon :lfcache @C2 tabler/database        "変換キャッシュ"     color=primary
+icon :origin  @D1 tabler/server          "オリジンサーバー"   color=secondary
+
+viewer --> cf "画像をリクエスト"
+cf --> proxy "無ければ取りに行く"
+proxy --> origin "更新を確かめる"
+cf --- cfcache "短い期間で入れ替わる"
+proxy --- lfcache "変換済みを持ち続ける"
