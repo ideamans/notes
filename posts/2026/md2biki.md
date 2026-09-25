@@ -7,7 +7,6 @@ categories:
   - content-management
   - development
 ogp: /ogp/2026/md2biki.jpg
-draft: true
 ---
 
 案件によって、プロジェクト管理のBacklogに参加することがある。
