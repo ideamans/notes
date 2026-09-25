@@ -164,7 +164,10 @@ export default defineConfig(
     }
   },
   vite: {
-    assetsInclude: ['**/*.mp4']
+    assetsInclude: ['**/*.mp4'],
+    // 連載のリンク（SeriesNav）が「公開済みか」を判定する基準時刻。
+    // ブラウザ側の時計を使うとSSRとずれるので、ビルド時刻に固定する。
+    define: { __SERIES_NOW__: Date.now() }
   },
   head: [
     ['meta', { name: 'twitter:site', content: '@ideamans' }],

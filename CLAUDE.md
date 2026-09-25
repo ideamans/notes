@@ -88,6 +88,34 @@ ogp: /ogp/2025/slug.jpg
 - 公開の判定は `.vitepress/config.ts` の下書き除外と同じ正規表現。片方だけ変えないこと
 - 手動でも GitHub の Actions 画面から `Publish scheduled drafts` を実行できる
 
+### 連載（シリーズ）の相互リンク
+
+複数回にわたる連載の記事一覧は、**記事本文に手で並べない**。`/series.ts` に定義して
+`<SeriesNav id="..." />` を1行置く。
+
+```markdown
+<SeriesNav id="lightfile-proxy" />
+```
+
+- **`/series.ts`** — 連載の定義。`id` / `title` / `description` と、各記事の
+  `url`（`.html` まで）・`title`・`date`（日本時間）
+- **`.vitepress/theme/SeriesLinks.vue`** — 表示だけを受け持つ。どの連載かは知らない。
+  公開済みはリンク、これからは「（M月D日公開予定）」を添えたテキストにする
+- **`.vitepress/theme/SeriesNav.vue`** — `id` から `series.ts` を引いて `SeriesLinks` に渡す。
+  いま読んでいる記事は `useRoute()` のパスで見分けるので、記事側で指定しなくてよい
+- **`.vitepress/theme/SeriesRef.vue`** — 本文中から連載の別記事を指すときに使う。
+  `<SeriesRef url="/posts/2026/xxx.html">見出し</SeriesRef>`。未公開ならリンクにしない
+- **`.vitepress/theme/seriesState.ts`** — 公開済みかどうかの判定。両方が共有する
+
+**判定はビルド時刻で固定している**（`.vitepress/config.ts` の `define: { __SERIES_NOW__ }`）。
+`new Date()` をそのまま使うと、SSRで描いたHTMLとブラウザでの再評価がずれて、
+**まだ配信していない記事へのリンクが出て404になる**。あわせて、下書きは
+`posts.data.ts` に出てこないことも条件にしている。
+
+**`series.ts` の `date` は、予約公開の9:00より前の時刻にする。** 9:00ちょうどや
+それ以降にすると、その日のビルドの時点ではまだ未公開と判定され、公開されたのに
+リンクにならない。各記事の frontmatter の `date` ともそろえること。
+
 **カテゴリ一覧**（`/categories.ts`で定義）:
 
 | basename | 表示名 |
