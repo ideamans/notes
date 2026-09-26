@@ -79,7 +79,7 @@ ogp: /ogp/2025/slug.jpg
 `draft: true` を付けた記事は、本番ビルドから外れる（一覧・カテゴリ・RSS・`llms-full.txt` にも出ない）。
 `yarn dev` では除外されないので、本番と同じURLでプレビューできる。
 
-**`draft: true` の記事は、`date` の日付が来たら自動で公開される。** 毎朝9:00（日本時間）に
+**`draft: true` の記事は、`date` の日付が来たら自動で公開される。** 毎朝8:00（日本時間）に
 `.github/workflows/publish-scheduled.yml` が `scripts/publish-scheduled.mjs` を動かし、
 日付が今日以前の記事から `draft: true` の行を外してコミットし、ビルドしてデプロイする。
 
@@ -112,8 +112,8 @@ ogp: /ogp/2025/slug.jpg
 **まだ配信していない記事へのリンクが出て404になる**。あわせて、下書きは
 `posts.data.ts` に出てこないことも条件にしている。
 
-**`series.ts` の `date` は、予約公開の9:00より前の時刻にする。** 9:00ちょうどや
-それ以降にすると、その日のビルドの時点ではまだ未公開と判定され、公開されたのに
+**`series.ts` の `date` は、予約公開の8:00以前の時刻にする。** 8:00より後に
+すると、その日のビルドの時点ではまだ未公開と判定され、公開されたのに
 リンクにならない。各記事の frontmatter の `date` ともそろえること。
 
 **カテゴリ一覧**（`/categories.ts`で定義）:
@@ -279,7 +279,7 @@ buildEnd: async (config) => {
 ## デプロイ
 
 - mainブランチへのpushでGitHub Actionsが発火（`publish.yml`）
-- 予約した下書きの公開は毎朝9:00の `publish-scheduled.yml`。Actions のトークンで push したコミットでは
+- 予約した下書きの公開は毎朝8:00の `publish-scheduled.yml`。Actions のトークンで push したコミットでは
   `publish.yml` が起動しないので、こちらのワークフローの中でデプロイまで行う
 - **デプロイの中身は `deploy.sh` の1か所だけ。** 手元でも Actions でも同じスクリプトを使う。
   ビルドして、サイトを `--delete` 付きで rsync し、ナレッジの zip（`knowledge/notes.zip`）を

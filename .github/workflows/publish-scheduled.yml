@@ -8,8 +8,8 @@ name: Publish scheduled drafts
 
 on:
   schedule:
-    # 日本時間 9:00（UTC 0:00）
-    - cron: '0 0 * * *'
+    # 日本時間 8:00（UTC 23:00）。SNS の投稿（9:00）より前に公開を済ませておく
+    - cron: '0 23 * * *'
   workflow_dispatch: {}
 
 permissions:
