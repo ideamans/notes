@@ -1,5 +1,7 @@
 import './style.css'
 import './math.css'
+// mermaid の図のスタイル（scripts/render-mermaid.mjs が生成）
+import './mermaid.css'
 import Layout from './Layout.vue'
 import ServiceAd from './ServiceAd.vue'
 import ZoomableImage from './ZoomableImage.vue'

@@ -17,6 +17,9 @@ yarn dev
 # プロダクションビルド
 yarn build
 
+# 記事中の ```mermaid を SVG に焼く（図を足したり直したときだけ）
+yarn mermaid
+
 # ビルドのプレビュー
 yarn serve
 
@@ -32,13 +35,44 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 
 ## 技術スタック
 
-- VitePress 1.0（`mpa: false`。mermaid をクライアントで描くため 2026-09-17 に MPA をやめた）
+- VitePress 1.0（**`mpa: true`**。クライアントJSを配信しない）
 - Vue 3（Composition API、`<script setup>`構文）
 - TypeScript
 - Tailwind CSS 4 + daisyUI 5（設定は `.vitepress/theme/style.css` に書く。
   `postcss.config.js` には `@tailwindcss/postcss` を置くだけ）
 - dayjs（日付処理、JSTタイムゾーン対応）
-- mermaid（図表描画）
+- mermaid（**ビルド前に SVG へ焼く**。クライアントでは描かない。後述）
+
+## mermaid の図は「焼いて」から使う
+
+**このサイトは `mpa: true`（クライアントJSを配信しない）。** mermaid をブラウザで
+描くことはできないので、**ビルドとは別に SVG へ焼いて、その SVG をコミットする。**
+
+```bash
+yarn mermaid          # 足りない図だけ焼く
+yarn mermaid --force  # 全部焼き直す
+```
+
+記事の書き方は今までどおり ` ```mermaid ` のままでよい。焼く側と貼る側が
+中身のハッシュで対応するので、図を直せば自動的に焼き直しの対象になる。
+
+| ファイル | 役割 |
+|---|---|
+| `scripts/render-mermaid.mjs` | playwright で焼く。**手元でだけ動かす** |
+| `.vitepress/mermaid-source.mjs` | 図の在処とハッシュの規則（焼く側と貼る側で共有） |
+| `.vitepress/mermaid-static.ts` | ` ```mermaid ` を焼いた SVG に差し替える markdown-it プラグイン |
+| `.vitepress/mermaid/*.svg` `*.css` | 焼いた結果（**コミットする**） |
+| `.vitepress/theme/mermaid.css` | 各図のCSSを1枚にまとめたもの（**生成物・手で編集しない**） |
+
+- **CI（`publish.yml`）はブラウザを持たない。** `yarn install && yarn build` しか
+  しないので、焼いた SVG がコミットされていないとビルドが落ちる。
+  落ちるときは「どの記事のどの図が足りないか」を名指しする
+- **SVG の中の `<style>` は抜いて `theme/mermaid.css` に集めている。** インラインの
+  `<style>` は Vue のテンプレートコンパイラが「Tags with side effect」として
+  捨ててしまうため。数式（MathJax）でも同じことをしている（`scripts/gen-math-css.mjs`）
+- **貼り付けは `v-pre` で包む。** 図の中に `{{ }}` があってもVueの式として
+  評価させないため
+- 図は `theme: 'default'`・ライト固定で焼く（サイトが `appearance: false` なので）
 
 ## 記事ファイルとURLのマッピング
 

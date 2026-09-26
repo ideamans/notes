@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vitepress --open",
     "build": "vitepress build",
+    "mermaid": "node scripts/render-mermaid.mjs",
     "serve": "vitepress serve",
     "x-ai-posting": "tsx agents/x-ai-posting.ts",
     "lint:text": "textlint 'posts/**/*.md' index.md",
@@ -28,6 +29,7 @@
     "markdown-it-cjk-friendly": "^2.0.2",
     "markdown-it-mathjax3": "^5.2.0",
     "mermaid": "^11.2.1",
+    "playwright": "^1.63.0",
     "tailwindcss": "^4",
     "textlint": "^15.6.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
@@ -38,7 +40,6 @@
     "tsx": "^4.19.4",
     "vitepress": "^1.0.0",
     "vitepress-machine-readability": "^0.2.0",
-    "vitepress-plugin-mermaid": "^2.0.16",
     "vue": "^3.4.21"
   },
   "pnpm": {

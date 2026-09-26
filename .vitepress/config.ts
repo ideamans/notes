@@ -2,7 +2,7 @@ import Dayjs from 'dayjs'
 import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 // import { defineConfig } from 'vitepress'
 import { withMachineReadability } from 'vitepress-machine-readability'
-import { withMermaid } from 'vitepress-plugin-mermaid'
+import { mermaidStaticPlugin } from './mermaid-static.js'
 // sitemap は許可リスト方式なので not-found は自動的に外れる
 import { writeNotFoundPage } from './not-found.js'
 import { defineConfig } from 'vitepress'
@@ -97,9 +97,10 @@ function indexTwitterImageUrl(): string {
 
 export default defineConfig(
   withMachineReadability(
-  withMermaid({
-  // mermaid はクライアントで描くため mpa にはできない（mpa はJSを配信しない）
-  mpa: false,
+  {
+  // mermaid は `yarn mermaid` でビルド前に SVG へ焼き、.vitepress/mermaid-static.ts が
+  // 貼り付ける。クライアントで描かないので mpa: true に戻せる
+  mpa: true,
   lang: 'ja',
   title: `ideaman's Notes`,
   description: 'アイデアマンズ株式会社の研究ノート',
@@ -141,6 +142,8 @@ export default defineConfig(
         }
       })
       md.use(adPlugin)
+      // ```mermaid を、焼いておいた SVG に差し替える（クライアントで描かない）
+      md.use(mermaidStaticPlugin)
 
       // markdown-it-mathjax3 / mathxyjax3 は数式ごとに <span><style>…</style>SVG</span> を出力する。
       // このインライン <style> は VitePress(dev) の Vue クライアントコンパイルで
@@ -525,10 +528,9 @@ export default defineConfig(
       ])
     }
   },
-  appearance: false,
-  mermaid: {}
-}),
-  // 検索エンジンとAIから読める状態にする。mermaid の解決結果を包む
+  appearance: false
+  },
+  // 検索エンジンとAIから読める状態にする
   {
     hostname: 'https://notes.ideamans.com/',
     organization: {
