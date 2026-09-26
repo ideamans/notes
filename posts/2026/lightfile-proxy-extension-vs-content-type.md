@@ -6,7 +6,6 @@ date: 2026-09-26 08:00:00
 categories:
   - image-fitness
   - technology
-draft: true
 ---
 
 LightFile Proxyでは、URLの拡張子を`.jpg`や`.png`としたまま、データの中身を軽量な次世代画像フォーマットのWebPに変換して配信する。このアプローチによって、従来のHTMLに変更を加えず、画像だけを最適化できるのだが、人によっては「気持ち悪い」と感じるかもしれない。

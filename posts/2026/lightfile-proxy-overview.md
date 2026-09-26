@@ -6,7 +6,6 @@ date: 2026-09-25 08:00:00
 categories:
   - image-fitness
   - sitespeed
-draft: true
 ---
 
 一般的にWebサイトは転送量の多くを画像が占める。この画像を従来フォーマットのJPEG/PNG/GIFから次世代フォーマットのWebPに変えるだけで転送量が減り、CloudFrontの料金も下がる。しかし既存のサイトをWebPに対応させるには、システムの改修やデザイナーの画像ファイル出力作業の変更が必要になる。
