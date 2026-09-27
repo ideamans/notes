@@ -6,7 +6,6 @@ date: 2026-09-28 08:00:00
 categories:
   - image-fitness
   - business
-draft: true
 ---
 
 画像をWebPにするとどのくらい軽くなるのか。導入を決める前にいちばん知りたいのはここだと思う。
