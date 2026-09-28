@@ -6,7 +6,6 @@ date: 2026-09-29 08:00:00
 categories:
   - image-fitness
   - technology
-draft: true
 ---
 
 LightFile ProxyはCloudFrontの後ろに入り、画像をWebPに変換して配信する。システムと運用に手を入れずに導入できるが、勝手に変換されるのだから画質がどうなるかは気になるところだと思う。
