@@ -6,7 +6,6 @@ date: 2026-09-30 08:00:00
 categories:
   - image-fitness
   - infrastructure
-draft: true
 ---
 
 LightFile Proxyは既存システムに後付けで導入される手軽さの一方、**画像配信の単一障害点にもなる**。仮にLightFile Proxyが落ちると、CloudFrontにキャッシュされていない画像がまったく表示されないという重大事故を引き起こす。
