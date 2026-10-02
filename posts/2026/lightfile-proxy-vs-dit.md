@@ -6,7 +6,6 @@ date: 2026-10-03 08:00:00
 categories:
   - image-fitness
   - technology
-draft: true
 ---
 
 LightFile Proxyは、**CloudFrontにおける画像最適化オプションの標準的な地位**を目指している。ただしAWSも公式に[Dynamic Image Transformation for Amazon CloudFront](https://aws.amazon.com/solutions/implementations/dynamic-image-transformation-for-amazon-cloudfront/)（以下DIT）を提供していて、画像をWebPに変換してCloudFrontから配信するという一点では同じことができる。CloudFormationのテンプレートが公開されていて、自分のAWSアカウントに建てられる。ソフトウェア自体は無料だ。

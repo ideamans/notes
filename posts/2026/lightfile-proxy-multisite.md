@@ -6,7 +6,6 @@ date: 2026-10-02 08:00:00
 categories:
   - image-fitness
   - infrastructure
-draft: true
 ---
 
 この連載ではここまで、LightFile Proxyの主要な機能について説明を展開してきた。本記事ではそれら以外の細かな特徴についてまとめて解説をしたい。ひとつのLightFile Proxyクラスタで複数のサイトをカバーする仕組み、プライベートなS3バケットをオリジンにする場合の認証、レポート機能を解説する。
