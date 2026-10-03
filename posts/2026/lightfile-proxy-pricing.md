@@ -6,7 +6,6 @@ date: 2026-10-04 08:00:00
 categories:
   - image-fitness
   - business
-draft: true
 ---
 
 LightFile Proxyの料金体系は大きく2つある。現行の**クラスタ提供**と、今後検討している**成果報酬型**だ。
