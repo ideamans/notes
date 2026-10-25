@@ -8,7 +8,7 @@ categories:
   - technology
 ---
 
-LightFile Proxyは、**CloudFrontにおける画像最適化オプションの標準的な地位**を目指している。ただしAWSも公式に[Dynamic Image Transformation for Amazon CloudFront](https://aws.amazon.com/solutions/implementations/dynamic-image-transformation-for-amazon-cloudfront/)（以下DIT）を提供していて、画像をWebPに変換してCloudFrontから配信するという一点では同じことができる。CloudFormationのテンプレートが公開されていて、自分のAWSアカウントに建てられる。ソフトウェア自体は無料だ。
+LightFile Proxyは**CloudFrontにおける画像最適化オプションの標準的な地位**を目指している。一方でAWSも公式に[Dynamic Image Transformation for Amazon CloudFront](https://aws.amazon.com/solutions/implementations/dynamic-image-transformation-for-amazon-cloudfront/)（以下DIT）を提供していて、画像をWebPに変換してCloudFrontから配信するという一点では同じことができる。CloudFormationのテンプレートが公開されていて、自分のAWSアカウントに建てられる。ソフトウェア自体は無料だ。
 
 ただし**DITは自前でシステムを構築する感覚に近く、LightFile ProxyのようにSaaS感覚では利用できない**。初期設定や運用で相応に手間がかかることになる。
 
@@ -32,7 +32,7 @@ DITには2つの構成がある。Lambda版はS3の画像を変換する。2025�
 | Hostを付け替えて取得 | × | 仕組みが無い | ○ |
 | Basic認証のかかったオリジン | × | 送信ヘッダの欄に自分で組み立てて入れる | ○（専用の設定。パスワードは暗号化して保管）|
 
-弊社が本番で預かっているオリジンをこの表に当てはめると、**半数以上はDITに載せられない**。`http://`のWebサーバーだからだ。
+弊社が本番で預かっているオリジンをこの表に当てはめると、`http://`のWebサーバーであるために**半数以上はDITに載せられない**。
 
 HTTPS化すれば済むと思われるかもしれないが、その先にもう一段ある。HTTP系のオリジンの9割近くは「接続先とは別のHostを付けて取りに行く」形で使っている（<SeriesRef url="/posts/2026/lightfile-proxy-multisite.html">(8)</SeriesRef>）。CDNの裏にホスティング事業者のサーバーやALBがあり、公開ドメインのHostで来たリクエストしか正しく扱えない、という構成だ。DITのECS版にHostを付け替える仕組みはない。
 

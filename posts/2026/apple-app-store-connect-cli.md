@@ -44,7 +44,7 @@ ogp: /ogp/2026/apple-app-store-connect-cli.jpg
 
 ## 申請作業の前にCLIを用意した
 
-まず用意したのは、認証とAPIの呼び出しを引き受ける土台である。
+まず用意したのは、認証とAPIの呼び出しを引き受ける部分である。
 
 ```bash
 # App Store Connectで発行したAPIキー（.p8）を登録する

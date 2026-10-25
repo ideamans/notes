@@ -10,7 +10,7 @@ categories:
 ogp: /ogp/2026/google-play-developer-publishing-cli.jpg
 ---
 
-弊社の「日本領収書スキャン」は、まずiOS版をApp Storeで公開した。そのあとAndroid版もGoogle Playで公開した。
+弊社の「日本領収書スキャン」はまずiOS版をApp Storeで公開した。そのあとAndroid版もGoogle Playで公開した。
 
 iOS版の申請では、App Store Connect APIを操作するCLIを先に作り、入力作業をAIエージェントに任せた。
 
@@ -28,7 +28,7 @@ iOS版の申請では、App Store Connect APIを操作するCLIを先に作り�
 
 ## iOS版と同じ流れで進める
 
-Android版の入稿原稿も、iOS版と同じくMarkdownで持っている。具体例をみてみよう。日本領収書スキャンのリポジトリの `google-play/` はこうなっている。
+Android版の入稿原稿もiOS版と同じくMarkdownで持っている。具体例をみてみよう。日本領収書スキャンのリポジトリの `google-play/` はこうなっている。
 
 | ファイル | 内容 | Play Consoleの画面 |
 |---|---|---|
@@ -39,7 +39,7 @@ Android版の入稿原稿も、iOS版と同じくMarkdownで持っている。�
 | `content-rating.md` | コンテンツレーティングの回答案 | アプリのコンテンツ > コンテンツのレーティング |
 | `review.md` | 審査向けメモ・テスト手順 | アプリのコンテンツ > アプリのアクセス権 |
 
-`README.md` には、iOS版との違いもまとめてある。保存先がGoogleドライブになる、サインインがGoogleアカウントになる、審査の代わりにデータセーフティとコンテンツレーティングの申告が要る、といった違いに合わせて原稿を書き分けた。
+`README.md` にはiOS版との違いもまとめてある。保存先がGoogleドライブになる、サインインがGoogleアカウントになる、審査の代わりにデータセーフティとコンテンツレーティングの申告が要る、といった違いに合わせて原稿を書き分けた。
 
 原稿はAIと相談しながら書き、できたら「Google Playに反映して」と頼む。この流れはiOS版と変わらない。
 

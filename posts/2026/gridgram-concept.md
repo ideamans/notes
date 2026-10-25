@@ -10,9 +10,9 @@ categories:
 ogp: /ogp/2026/gridgram-concept.jpg
 ---
 
-業務では、物事の関係図や概念図——いわゆるポンチ絵——を作る場面がよくある。PowerPointやKeynote上でマウス操作によりチクチク作ると、案外手間と時間がかかる。構造は数分で頭に浮かんでいても、それを絵にする作業だけで30分、1時間と溶けることは珍しくない。
+業務では、物事の関係図や概念図（いわゆるポンチ絵）を作る場面がよくある。PowerPointやKeynote上でマウス操作によりチクチク作ると、案外手間と時間がかかる。構造は数分で頭に浮かんでいても、それを絵にする作業だけで30分、1時間とかかってしまうことは珍しくない。
 
-AIがあらゆる文章やプログラムを生成できるようになった今でも、図の生成についてはまだ少し手間を感じる。コードやテキスト生成ではAI活用で生産性が上がっているものの、図作成についてはぴったりのソリューションがまだない、というのが現状の印象だ。
+AIがあらゆる文章やプログラムを生成できるようになった今でも、図の生成についてはまだ少し手間を感じる。コードやテキスト生成ではAI活用で生産性が上がっているものの、図作成についてはぴったりの道具がまだない、というのが現状の印象だ。
 
 そこで、テキストDSL（`.gg`ファイル）からSVGとPNGを生成するCLIツール「**Gridgram**」を開発し、オープンソースで公開した。Gridgramを使うと、次のような図をテキストベースで生成できる。
 
@@ -26,7 +26,7 @@ AIがあらゆる文章やプログラムを生成できるようになった今
 
 ### GraphVizからMermaid、そしてD2へ
 
-FaC——IaC（Infrastructure as Code）をもじった造語で、Figures as Code の略——にはかねてから関心があった。コードで図解を記述するというアプローチだ。
+FaCにはかねてから関心があった。IaC（Infrastructure as Code）をもじった造語で、Figures as Code の略だ。コードで図解を記述するというアプローチである。
 
 最初に触れたのはGraphVizだった。その後[Mermaid](https://mermaid.js.org/)を試し、最近は[D2](https://d2lang.com/)を本格的に使っている。D2については[以前このブログにも書いた](/posts/2026/d2-and-freepik-agent-concept)。コンテナのネストやSVGアイコンの埋め込みができ、AIエージェントとの連携にも使いやすいツールだ。
 
@@ -46,11 +46,11 @@ FaC——IaC（Infrastructure as Code）をもじった造語で、Figures as Co
 
 ### まずグリッドに配置するという発想
 
-Gridgramのアプローチは、**まずオブジェクトをグリッド（Excel風のマス目）上に配置する**ところから始まる。これがGridgramの出発点だ。
+Gridgramのアプローチは**まずオブジェクトをグリッド（Excel風のマス目）上に配置する**ところから始まる。
 
 ユーザーは各ノード（アイコン）をA1・B2のようなセル座標で配置する。その上で、記述したいコネクタ（矢印）やラベルをテキストで定義すると、**グリッドの隙間を決定論的なアルゴリズムで埋めるように、互いの衝突を回避しながら自動配置**される。
 
-このアプローチには大きな利点がある。**描画空間（アスペクト比）を事前に決められる**ことだ。たとえば「4列2行のグリッドに収める」と決めれば、2:1の画角で出力が得られる。Mermaid/D2のように「気付いたら横/縦に延びすぎていた」という事態が起こらない。
+このアプローチの大きな利点は**描画空間（アスペクト比）を事前に決められる**ことだ。たとえば「4列2行のグリッドに収める」と決めれば、2:1の画角で出力が得られる。Mermaid/D2のように「気付いたら横/縦に延びすぎていた」という事態が起こらない。
 
 そのうえで、[Tabler Icons](https://tabler.io/icons)という6000種類以上のオープンソースアイコンライブラリを組み込んでいるため、テキストだけでなくアイコンで視覚的に装飾でき、**寂しくない見た目**を作れる。
 
@@ -154,6 +154,6 @@ Gridgramは「スペースを先に決めてから図を描く」という発想
 - 公式ドキュメント（日本語）: [https://gridgram.ideamans.com/ja/?utm_source=notes.ideamans.com&utm_medium=owned_media&utm_campaign=regular&utm_content=gridgram-concept](https://gridgram.ideamans.com/ja/?utm_source=notes.ideamans.com&utm_medium=owned_media&utm_campaign=regular&utm_content=gridgram-concept)
 - GitHub: [https://github.com/ideamans/gridgram](https://github.com/ideamans/gridgram)
 
-Gridgramでは、AIエージェントとの親和性を高めるためにいくつかの試みを行っている。Claude Codeプラグイン対応、`gh`コマンドのSkill Command対応、Context7へのドキュメント登録、`gg llm`サブコマンドやアイコン検索の設計など、コーディング系AIエージェントがGridgramを自律的に扱えるようにする工夫だ。詳細は次の記事で紹介する。
+GridgramではAIエージェントとの親和性を高めるためにいくつかの試みを行っている。Claude Codeプラグイン対応、`gh`コマンドのSkill Command対応、Context7へのドキュメント登録、`gg llm`サブコマンドやアイコン検索の設計など、コーディング系AIエージェントがGridgramを自律的に扱えるようにする工夫だ。詳細は次の記事で紹介する。
 
 [GridgramをAIエージェントフレンドリーにする](/posts/2026/gridgram-ai-agent)

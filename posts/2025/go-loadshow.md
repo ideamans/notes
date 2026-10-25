@@ -79,16 +79,16 @@ loadshow record -o output.mp4 --columns 2 https://example.com
 
 しかしNode.js版には以下の問題があった。
 
-1. **依存関係が多い** - Node.jsランタイム、FFmpeg、Chrome/Chromiumブラウザが事前に必要
-2. **動作がもっさり** - Node.jsを経由した処理のオーバーヘッド
+1. Node.jsランタイム、FFmpeg、Chrome/Chromiumブラウザが事前に必要で、依存関係が多い
+2. Node.jsを経由した処理のオーバーヘッドがあり、動作がもっさりしている
 
 今回のGo言語版では、AIの力も借りながらこれらの課題を解決した。
 
-- **単一バイナリ** - Windows/macOSではほぼ依存なしで動作
-- **軽快な動作** - ネイティブバイナリによる高速な処理
-- **ブラウザの自動調達** - Playwrightの機能を活用し、Chromeが未インストールでも自動でダウンロード
+- 単一バイナリで、Windows/macOSではほぼ依存なしで動作する
+- ネイティブバイナリによる高速な処理で、動作が軽快
+- Playwrightの機能を活用し、Chromeが未インストールでもブラウザを自動でダウンロードする
 
-## 技術的な裏話：H.264と特許問題
+## H.264と特許問題をめぐる技術的な裏話
 
 最も苦労したのが動画フォーマットの選定だ。
 
@@ -100,8 +100,8 @@ loadshow record -o output.mp4 --columns 2 https://example.com
 
 幸いなことに、WindowsとmacOSにはH.264エンコードを支援するOS機能が備わっている。
 
-- **Windows**: Media Foundation
-- **macOS**: VideoToolbox
+- Windows: Media Foundation
+- macOS: VideoToolbox
 
 これらを活用することで、特許ライセンスの問題をクリアしつつH.264動画を出力できる。
 
