@@ -4,7 +4,7 @@ name: Publish scheduled drafts
 # 公開の判定は scripts/publish-scheduled.mjs。
 #
 # Actions のトークンで push したコミットでは publish.yml（push 起点）が起動しないので、
-# このワークフローの中でデプロイまで行う。デプロイは publish.yml と同じく deploy.sh。
+# このワークフローの中でデプロイまで行う（手順は publish.yml と同じ）。
 
 on:
   schedule:
@@ -45,26 +45,33 @@ jobs:
           git commit -m "publish: 予約した下書きを公開 ($(date +%Y-%m-%d))"
           git push
 
-      - name: Prepare SSH key
+      - name: Install dependencies
         if: steps.publish.outputs.changed == 'true'
-        env:
-          ID_ED25519: ${{ secrets.ID_ED25519 }}
+        run: yarn install
+
+      - name: Build
+        if: steps.publish.outputs.changed == 'true'
+        run: yarn build
+
+      - name: Setup SSH key
+        if: steps.publish.outputs.changed == 'true'
         run: |
           mkdir -p ~/.ssh
-          echo "$ID_ED25519\n" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-        shell: bash
+          echo "${{ secrets.WEB_G6_DEPLOY_KEY }}" > ~/.ssh/web-g6-deploy
+          chmod 600 ~/.ssh/web-g6-deploy
+          # web-g6 のホスト鍵を固定する（ssh-keyscan で取ると、なりすましたサーバーにも繋いでしまう）
+          echo "66.42.39.68 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/AE8mcqA55qtO8MaQyAaSaWWF7355fPCEtuEzOQSmX" > ~/.ssh/known_hosts
 
-      # ビルドとデプロイ（ナレッジの zip の送信を含む）は、手元と同じ deploy.sh で行う
-      - name: Build and deploy
+      # 鍵は web-g6 側で rrsync に縛ってあり、このサイトの html/ にしか書けない。宛先はその中からの相対。
+      # ナレッジの zip（knowledge.ideamans.com/incoming/）は送れないので、手元の deploy.sh が送る
+      - name: Deploy via rsync
         if: steps.publish.outputs.changed == 'true'
-        env:
-          DEPLOY_HOST: ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}
         run: |
-          export RSYNC_RSH="ssh -i $HOME/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-          bash deploy.sh
-        shell: bash
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/web-g6-deploy -o IdentitiesOnly=yes" \
+            .vitepress/dist/ \
+            root@66.42.39.68:
 
       - name: Remove SSH key
         if: always()
-        run: rm -f ~/.ssh/id_ed25519
+        run: rm -f ~/.ssh/web-g6-deploy

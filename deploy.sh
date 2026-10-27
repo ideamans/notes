@@ -2,9 +2,9 @@
 
 set -e -x
 
-# 接続先。手元では ~/.ssh/config の web-g6 を使う。
-# GitHub Actions からは DEPLOY_HOST（root@web-g6.ideamans.com）と、
-# 鍵を指定した RSYNC_RSH を渡して、このスクリプトをそのまま呼ぶ。
+# 手元から公開するときに使う（接続先は ~/.ssh/config の web-g6）。
+# GitHub Actions はこのスクリプトを使わず、html/ にしか書けない専用鍵で dist だけを送る。
+# ナレッジの zip を送るのはこのスクリプトだけ。
 DEPLOY_HOST="${DEPLOY_HOST:-web-g6}"
 
 # 一時的な通信の失敗に備えて、5回までやり直す

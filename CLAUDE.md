@@ -315,12 +315,13 @@ buildEnd: async (config) => {
 - mainブランチへのpushでGitHub Actionsが発火（`publish.yml`）
 - 予約した下書きの公開は毎朝8:00の `publish-scheduled.yml`。Actions のトークンで push したコミットでは
   `publish.yml` が起動しないので、こちらのワークフローの中でデプロイまで行う
-- **デプロイの中身は `deploy.sh` の1か所だけ。** 手元でも Actions でも同じスクリプトを使う。
-  ビルドして、サイトを `--delete` 付きで rsync し、ナレッジの zip（`knowledge/notes.zip`）を
-  knowledge.ideamans.com の `incoming/` へ送る
-- 接続先は `DEPLOY_HOST`（既定は `~/.ssh/config` の `web-g6`）。Actions からはリポジトリ変数の
-  `SSH_USER@SSH_HOST` と、鍵を指定した `RSYNC_RSH` を渡して呼んでいる。デプロイの手順を変えるときは
-  ワークフローではなく `deploy.sh` を直す
+- **Actions からは、サイトの `html/` にしか書けない専用鍵で送る**（secret `WEB_G6_DEPLOY_KEY`、2026-10-27〜）。
+  鍵は web-g6 の `authorized_keys` で `rrsync -wo /root/web/vhosts/notes.ideamans.com/html` に縛ってあり、
+  宛先は `root@66.42.39.68:`（その `html/` からの相対）。ホスト鍵はワークフローに固定で書いてある。
+  2つのワークフローは同じ手順（ビルド → `--delete` 付きで rsync）なので、変えるときは両方直す
+- **ナレッジの zip（`knowledge/notes.zip`）は Actions からは送れない。** 送り先が `html/` の外にあるため。
+  手元の `./deploy.sh`（`~/.ssh/config` の `web-g6`）がビルド・サイトの rsync・zip の送信をまとめて行うので、
+  記事を足したら一度は手元から `./deploy.sh` を実行して検索とナレッジに反映させる
 
 ## 環境変数
 
