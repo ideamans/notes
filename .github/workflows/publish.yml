@@ -36,14 +36,18 @@ jobs:
           # web-g6 のホスト鍵を固定する（ssh-keyscan で取ると、なりすましたサーバーにも繋いでしまう）
           echo "66.42.39.68 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/AE8mcqA55qtO8MaQyAaSaWWF7355fPCEtuEzOQSmX" > ~/.ssh/known_hosts
 
-      # 鍵は web-g6 側で rrsync に縛ってあり、このサイトの html/ にしか書けない。宛先はその中からの相対。
-      # ナレッジの zip（knowledge.ideamans.com/incoming/）は送れないので、手元の deploy.sh が送る
+      # 鍵は web-g6 側で rrsync に縛ってあり、このサイトの html/ にしか書けない。宛先はその中からの相対
       - name: Deploy via rsync
         run: |
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/web-g6-deploy -o IdentitiesOnly=yes" \
             .vitepress/dist/ \
             root@66.42.39.68:
+
+      # ナレッジの zip（検索・LLM向け）。同じ鍵で送る。web-g6 の門番（/root/web/bin/deploy-gate）が
+      # knowledge の incoming/notes.zip だけを置き換える（他のセットの zip には書けない）
+      - name: Send knowledge zip
+        run: ssh -i ~/.ssh/web-g6-deploy -o IdentitiesOnly=yes root@66.42.39.68 knowledge-zip < knowledge/notes.zip
 
       - name: Remove SSH key
         if: always()

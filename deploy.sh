@@ -3,8 +3,7 @@
 set -e -x
 
 # 手元から公開するときに使う（接続先は ~/.ssh/config の web-g6）。
-# GitHub Actions はこのスクリプトを使わず、html/ にしか書けない専用鍵で dist だけを送る。
-# ナレッジの zip を送るのはこのスクリプトだけ。
+# GitHub Actions はこのスクリプトを使わず、専用鍵（WEB_G6_DEPLOY_KEY）で dist と zip を送る。
 DEPLOY_HOST="${DEPLOY_HOST:-web-g6}"
 
 # 一時的な通信の失敗に備えて、5回までやり直す
