@@ -43,12 +43,12 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 - dayjs（日付処理、JSTタイムゾーン対応）
 - mermaid（**ビルド前に SVG へ焼く**。クライアントでは描かない。後述）
 
-**パッケージは yarn（`yarn.lock`）だけ。** CI は `yarn install`（**Node 20**）。2026-11-06 に古い
-pnpm-lock.yaml を消した。依存を上げるときの注意:
+**パッケージは yarn（`yarn.lock`）だけ。** CI は `yarn install`（**Node 24**。2026-11-07 に 20 から上げた）。
+2026-11-06 に古い pnpm-lock.yaml を消した。依存を上げるときの注意:
 
-- **Node 22 以上を要求する版は入れられない**（CI の Node 20 で `yarn install` が止まる）。
-  `@google/genai` は 3 が Node 22 必須なので 2.x に留めている。jtf-style 配下の
-  `textlint-rule-prh` は 6.1.1 以降が prh 6（Node 22 必須）を引くので `resolutions` で 6.1.0 に固定
+- **`@google/genai` は 2.x に留めている。** 3 は Node 22 必須に加え、Gemini API の既定の版が
+  `v1beta` から `v1` に変わった（`agents/x-ai-posting.ts` の `gemini-3-pro-preview` が `v1` で
+  引けるか未確認）。上げるときは `apiVersion: 'v1beta'` を渡すか、実際に投稿を試してから
 - **mermaid を上げたら焼き直しの結果が変わりうる。** ビルドはコミット済みの SVG しか見ないので
   サイトは変わらないが、次に `yarn mermaid --force` したときに既存の図の見た目が動くことがある
 
