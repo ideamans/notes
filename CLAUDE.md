@@ -43,7 +43,7 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 - dayjs（日付処理、JSTタイムゾーン対応）
 - mermaid（**ビルド前に SVG へ焼く**。クライアントでは描かない。後述）
 
-**パッケージは yarn（`yarn.lock`）だけ。** CI は `yarn install`（**Node 24**。2026-11-07 に 20 から上げた）。
+**パッケージは yarn（`yarn.lock`）だけ。** CI は `yarn install`（**Node 26**。2026-11-07 に 20 から上げた）。
 2026-11-06 に古い pnpm-lock.yaml を消した。依存を上げるときの注意:
 
 - **`@google/genai` は 2.x に留めている。** 3 は Node 22 必須に加え、Gemini API の既定の版が
