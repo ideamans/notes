@@ -26,9 +26,6 @@ yarn serve
 # 予約した下書きのうち、今日公開されるものを確かめる（書き換えない）
 yarn publish-scheduled --dry-run
 
-# X(Twitter)へのAI投稿スクリプト
-yarn x-ai-posting
-
 # Qiitaへの下書き投稿（ビルド後に実行）
 QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.md
 ```
@@ -44,11 +41,9 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 - mermaid（**ビルド前に SVG へ焼く**。クライアントでは描かない。後述）
 
 **パッケージは yarn（`yarn.lock`）だけ。** CI は `yarn install`（**Node 26**。2026-11-07 に 20 から上げた）。
-2026-11-06 に古い pnpm-lock.yaml を消した。依存を上げるときの注意:
+2026-11-06 に古い pnpm-lock.yaml を消した。
+2026-11-07 に X への AI 自動投稿（`agents/x-ai-posting.ts`・`promotion.yml`、2026-02 から停止）を削除した。SNS は `plans/social` の月次計画で回している。依存を上げるときの注意:
 
-- **`@google/genai` は 2.x に留めている。** 3 は Node 22 必須に加え、Gemini API の既定の版が
-  `v1beta` から `v1` に変わった（`agents/x-ai-posting.ts` の `gemini-3-pro-preview` が `v1` で
-  引けるか未確認）。上げるときは `apiVersion: 'v1beta'` を渡すか、実際に投稿を試してから
 - **mermaid を上げたら焼き直しの結果が変わりうる。** ビルドはコミット済みの SVG しか見ないので
   サイトは変わらないが、次に `yarn mermaid --force` したときに既存の図の見た目が動くことがある
 
@@ -336,13 +331,8 @@ buildEnd: async (config) => {
 ## 環境変数
 
 ```bash
-# X(Twitter)投稿用
+# 画像生成のスキル（.claude/skills/nanobanana・ogp-image）用
 GEMINI_API_KEY=...
-TWITTER_APP_KEY=...
-TWITTER_APP_SECRET=...
-TWITTER_ACCESS_TOKEN=...
-TWITTER_ACCESS_SECRET=...
-X_AI_POSTING_PROD=1  # 本番投稿を有効化
 
 # Qiita投稿用
 QIITA_ACCESS_TOKEN=...

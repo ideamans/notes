@@ -8,7 +8,6 @@
     "build": "vitepress build",
     "mermaid": "node scripts/render-mermaid.mjs",
     "serve": "vitepress serve",
-    "x-ai-posting": "tsx agents/x-ai-posting.ts",
     "lint:text": "textlint 'posts/**/*.md' index.md",
     "lint:text:fix": "textlint --fix 'posts/**/*.md' index.md",
     "prepare": "lefthook install || true",
@@ -41,9 +40,6 @@
     "vue": "^3.5.45"
   },
   "dependencies": {
-    "@google/genai": "^2.32.0",
-    "budoux": "^0.7.0",
-    "dotenv": "^16.6.1",
-    "twitter-api-v2": "^1.31.0"
+    "budoux": "^0.7.0"
   }
 }
