@@ -26,6 +26,10 @@ export function adPlugin(md: MarkdownIt) {
   if (originalRender) return
 
   md.core.ruler.push('ad_insert', (state) => {
+    // renderInline / parseInline でも core のルールは走る。VitePress 2 はカスタムコンテナ
+    // （::: info など）の見出しを env 付きの renderInline で描くので、ここで弾かないと
+    // コンテナごとに広告が差し込まれる
+    if (state.inlineMode) return
     const env = state.env
     if (!env?.frontmatter?.ads || !Array.isArray(env.frontmatter.ads)) {
       return
