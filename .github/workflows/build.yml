@@ -1,0 +1,38 @@
+name: Build
+
+# PR ではビルドだけ確かめる（デプロイは main への push で publish.yml が行う）。
+# Dependabot や依存更新の PR を、マージ前にビルドが通るかで確かめるため
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+# ビルド時の日付処理（記事日付・RSS・llms等）を日本時間で行う
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Check outputs
+        run: |
+          test -s .vitepress/dist/index.html
+          test -s .vitepress/dist/404.html
+          test -s .vitepress/dist/sitemap.xml
+          test -s knowledge/notes.zip

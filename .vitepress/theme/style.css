@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+/* vite 8（VitePress 2）の CSS の @import は、パッケージ名だけの 'tailwindcss' を解決できず
+   ENOENT でビルドが落ちる（@tailwindcss/postcss 経由のとき）。exports の ./index.css を直接指す */
+@import 'tailwindcss/index.css';
 
 /* Tailwind CSS 4 は CSS 側で設定する。以前は postcss.config.js に書いていた。 */
 

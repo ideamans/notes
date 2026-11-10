@@ -32,11 +32,13 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 
 ## 技術スタック
 
-- VitePress 1.0（**`mpa: true`**。クライアントJSを配信しない）
+- VitePress 2（2.0.0-alpha、vite 8。**`mpa: true`**。クライアントJSを配信しない）。2026-11 に 1.6 から移行
 - Vue 3（Composition API、`<script setup>`構文）
 - TypeScript
 - Tailwind CSS 4 + daisyUI 5（設定は `.vitepress/theme/style.css` に書く。
-  `postcss.config.js` には `@tailwindcss/postcss` を置くだけ）
+  `postcss.config.js` には `@tailwindcss/postcss` を置くだけ）。
+  **`style.css` の先頭は `@import 'tailwindcss/index.css'`。** vite 8 は `@import 'tailwindcss'` を解決できず
+  ビルドが ENOENT で落ちる
 - dayjs（日付処理、JSTタイムゾーン対応）
 - mermaid（**ビルド前に SVG へ焼く**。クライアントでは描かない。後述）
 
@@ -44,6 +46,11 @@ QIITA_ACCESS_TOKEN=xxx npx tsx skills/qiita/post-to-qiita.ts posts/2025/example.
 2026-11-06 に古い pnpm-lock.yaml を消した。
 2026-11-07 に X への AI 自動投稿（`agents/x-ai-posting.ts`・`promotion.yml`、2026-02 から停止）を削除した。SNS は `plans/social` の月次計画で回している。依存を上げるときの注意:
 
+- **markdown-it のプラグインを core のルールで書くときは `state.inlineMode` を弾く。** VitePress 2 は
+  `::: info` などの見出しを env 付きの `renderInline` で描くので、core のルールがコンテナごとに走る
+  （`ad-plugin.ts` がコンテナの数だけ広告を余分に差し込んでいた）
+- **HTML からテキストを起こす処理は見出しアンカーのゼロ幅スペースを消す。** VitePress 1 は
+  `&ZeroWidthSpace;`、2 は `&#8203;` で出す（`genLLMs.ts`・`posts.data.ts` の抜粋で両方を消している）
 - **mermaid を上げたら焼き直しの結果が変わりうる。** ビルドはコミット済みの SVG しか見ないので
   サイトは変わらないが、次に `yarn mermaid --force` したときに既存の図の見た目が動くことがある
 
@@ -316,6 +323,7 @@ buildEnd: async (config) => {
 
 ## デプロイ
 
+- PR では `build.yml` がビルドだけを確かめる（デプロイしない）
 - mainブランチへのpushでGitHub Actionsが発火（`publish.yml`）
 - 予約した下書きの公開は毎朝8:00の `publish-scheduled.yml`。Actions のトークンで push したコミットでは
   `publish.yml` が起動しないので、こちらのワークフローの中でデプロイまで行う

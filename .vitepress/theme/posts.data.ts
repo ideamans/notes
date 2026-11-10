@@ -31,6 +31,9 @@ function normalizeExcerpt(rawExcerpt: string | undefined, fmExcerpt?: string): s
   if (!source) return ''
   const text = source
     .replace(/<[^>]+>/g, ' ')
+    // 見出しアンカーのゼロ幅スペース（VitePress 1 は &ZeroWidthSpace;、2 は &#8203;）。
+    // 消さないと一覧の抜粋に文字のまま出る
+    .replace(/&ZeroWidthSpace;|&#8203;|\u200b/g, '')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')

@@ -33,7 +33,9 @@ export async function genLLMs(config: SiteConfig) {
     // HTMLからテキストを抽出
     const text = (html || '')
       .replaceAll(/<[^>]*>/g, '')
+      // 見出しアンカーのゼロ幅スペース。VitePress 1 は &ZeroWidthSpace;、2 は &#8203; で出す
       .replaceAll('&ZeroWidthSpace;', '')
+      .replaceAll('&#8203;', '')
 
     output += text + '\n\n'
     output += '---\n\n'
