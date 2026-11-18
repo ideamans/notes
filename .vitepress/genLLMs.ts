@@ -1,6 +1,6 @@
 import path from 'path'
 import { writeFileSync } from 'fs'
-import Dayjs from 'dayjs'
+import { jstWall } from './jst-date'
 import { createContentLoader, type SiteConfig } from 'vitepress'
 import { authors } from '../authors.js'
 
@@ -15,7 +15,7 @@ export async function genLLMs(config: SiteConfig) {
   // 下書きを除外し、日付で降順にソート
   const sorted = posts
     .filter((p) => !p.frontmatter?.draft)
-    .sort((a, b) => +Dayjs(b.frontmatter?.date) - +Dayjs(a.frontmatter?.date))
+    .sort((a, b) => jstWall(b.frontmatter?.date).localeCompare(jstWall(a.frontmatter?.date)))
 
   let output = ''
 
@@ -23,7 +23,7 @@ export async function genLLMs(config: SiteConfig) {
     const author = authorsMap.get(frontmatter.id)
 
     output += `# ${frontmatter.title}\n\n`
-    output += `- 公開日: ${frontmatter.date}\n`
+    output += `- 公開日: ${jstWall(frontmatter.date)}\n`
     output += `- 著者: ${author?.username || frontmatter.author}\n`
     if (frontmatter.categories) {
       output += `- カテゴリー: ${frontmatter.categories.join(', ')}\n`

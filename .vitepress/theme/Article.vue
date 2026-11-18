@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import Dayjs from 'dayjs'
+import { jstWall } from '../jst-date'
 import { data as posts } from './posts.data.js'
 import { categories, getCategoryLabel, slugifyTag } from '../../categories.js'
 import BudouX from './BudouX.vue'
@@ -22,7 +23,7 @@ const olderPost = computed(() =>
     : null
 )
 
-const date = computed(() => current.value?.date ?? frontmatter.value.date ?? '')
+const date = computed(() => jstWall(current.value?.date ?? frontmatter.value.date))
 const dateFormatted = computed(() =>
   date.value ? Dayjs(date.value).format('YYYY.MM.DD') : ''
 )

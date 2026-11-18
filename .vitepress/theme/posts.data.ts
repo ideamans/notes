@@ -2,6 +2,7 @@ import { createContentLoader } from 'vitepress'
 import Dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import { jstWall } from '../jst-date'
 
 Dayjs.extend(utc)
 Dayjs.extend(timezone)
@@ -59,7 +60,7 @@ export default createContentLoader('posts/**/*.md', {
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
         id: frontmatter.id,
-        date: frontmatter.date,
+        date: jstWall(frontmatter.date),
         categories: Array.isArray(frontmatter.categories) ? frontmatter.categories : [],
         tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
         ogp: frontmatter.ogp,

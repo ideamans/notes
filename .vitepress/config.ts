@@ -1,4 +1,5 @@
 import Dayjs from 'dayjs'
+import { jstIso, jstWall } from './jst-date'
 import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 // import { defineConfig } from 'vitepress'
 import { withMachineReadability } from 'vitepress-machine-readability'
@@ -304,7 +305,7 @@ export default defineConfig(
         return {
           title: fm.title,
           summary: fm.description ?? page.excerpt,
-          published_at: fm.date,
+          published_at: jstIso(fm.date),
           category_path: categories,
           category_labels: categories.map(getCategoryLabel),
           // このサイトは著者IDを id で持つ（authorId ではない）
@@ -401,7 +402,7 @@ export default defineConfig(
       // 記事ページ
       const title = pageData.frontmatter.title
       const id = pageData.frontmatter.id
-      const date = Dayjs(pageData.frontmatter.date).format('YYYY/MM/DD')
+      const date = Dayjs(jstWall(pageData.frontmatter.date)).format('YYYY/MM/DD')
       const customOgp = pageData.frontmatter.ogp
       const description = pageData.frontmatter.description || pageData.description || ''
 
@@ -449,7 +450,7 @@ export default defineConfig(
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: title,
-        datePublished: Dayjs(pageData.frontmatter.date).format('YYYY-MM-DD'),
+        datePublished: Dayjs(jstWall(pageData.frontmatter.date)).format('YYYY-MM-DD'),
         author: {
           '@type': 'Person',
           name: '宮永 邦彦',
