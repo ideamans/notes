@@ -2,7 +2,7 @@
 title: 決まった時間に立ち仕事を強制する電動昇降デスクハック
 description: ESP32で電動昇降デスクを操作し、毎日14:30に立ち仕事を強制するハックをした。プログラムはClaude Codeが書いてくれるのはもちろん、写真を見せるとChatGPTが家庭教師をしてくれる。今やAIのおかげで、素人でもハードウェア、物理世界にアクセスできるのだ。
 id: miyanaga
-date: 2026-11-18 16:15:00
+date: 2026-11-18 08:00:00
 ogp: /ogp/2026/esp32-updown-desk.jpg
 categories:
   - development
