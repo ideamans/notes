@@ -7,6 +7,7 @@ import ServiceAd from './ServiceAd.vue'
 import ZoomableImage from './ZoomableImage.vue'
 import SeriesNav from './SeriesNav.vue'
 import SeriesRef from './SeriesRef.vue'
+import LinkCard from './LinkCard.vue'
 
 export default {
   Layout,
@@ -15,5 +16,6 @@ export default {
     app.component('ZoomableImage', ZoomableImage)
     app.component('SeriesNav', SeriesNav)
     app.component('SeriesRef', SeriesRef)
+    app.component('LinkCard', LinkCard)
   },
 }

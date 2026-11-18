@@ -161,6 +161,19 @@ ogp: /ogp/2025/slug.jpg
 すると、その日のビルドの時点ではまだ未公開と判定され、公開されたのに
 リンクにならない。各記事の frontmatter の `date` ともそろえること。
 
+### リンクカード
+
+本文中のリンクが埋もれるとき（記事の主役になるリポジトリ・製品など）は、カードにして目立たせる。
+
+```markdown
+<LinkCard href="https://github.com/owner/repo" title="owner/repo" description="一行の説明" />
+```
+
+- **`.vitepress/theme/LinkCard.vue`**。SSR で描いた HTML と CSS だけで出す（MPA でも動く）
+- **外部の OGP は取りに行かない。** タイトルと説明は記事側で書く。github.com なら GitHub のマーク、
+  それ以外は汎用のリンクのアイコンを出す
+- 置く場所は導入の直後が多い（記事末尾のリンクは読まれにくい）
+
 **カテゴリ一覧**（`/categories.ts`で定義）:
 
 | basename | 表示名 |
