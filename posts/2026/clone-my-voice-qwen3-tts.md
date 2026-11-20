@@ -2,8 +2,7 @@
 title: ローカルLLMに自分の声をまねさせてみた（Qwen3-TTS）
 description: 余っていたGPUで組んでいるローカルLLM環境で、音声合成モデルQwen3-TTSに自分の声をまねさせた。30秒の録音を見本に渡すだけで、本人の録音とかなり聴き分けにくい声が出る。見本の長さと渡し方を変えて、声の近さを測ってみた。
 id: miyanaga
-date: 2026-11-21 08:00:00
-draft: true
+date: 2026-11-20 18:06:00
 categories:
   - ai
   - research
