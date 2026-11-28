@@ -8,8 +8,6 @@ categories:
   - automation
   - technology
 ogp: /ogp/2025/google-spreadsheet-tables.jpg
-ads:
-  - id: ai-coaching
 ---
 
 TypeScriptによるプログラムで、Zodで型を規定しつつ、Googleスプレッドシートを簡易的なデータベースとして利用できるモジュールを開発した。

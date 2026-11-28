@@ -7,8 +7,6 @@ categories:
   - ai
   - infrastructure
 ogp: /ogp/2024/my-aws-dify-stack.jpg
-ads:
-  - id: ai-coaching
 ---
 
 DifyのソースコードにはDocker Composeプロジェクトが同梱されている。

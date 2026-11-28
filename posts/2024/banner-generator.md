@@ -8,8 +8,6 @@ categories:
   - technology
   - automation
 ogp: /ogp/2024/banner-generator.jpg
-ads:
-  - id: ai-coaching
 ---
 
 このブログでも、[はてなブログ](https://hatena.blog/)や[Qiita](https://qiita.com/)のようにタイトルなどからOGP画像(SNSシェア用のアイキャッチ画像)を自動生成するようにした。

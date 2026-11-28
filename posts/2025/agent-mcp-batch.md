@@ -5,8 +5,6 @@ description: Mastra・Playwright MCP・Googleスプレッドシートを組み�
 date: 2025-04-20 06:33:00
 categories: ['ai', 'automation', 'technology', 'business']
 ogp: /ogp/2025/agent-mcp-batch.jpg
-ads:
-  - id: ai-coaching
 ---
 
 グリム兄弟の「小人のくつ屋さん」を聞いたことがあるだろう。寝静まった真夜中に不思議な小人たちが靴を仕上げてくれる童話だ。

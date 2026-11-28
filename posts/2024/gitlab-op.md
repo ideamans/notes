@@ -7,8 +7,6 @@ categories:
   - infrastructure
   - development
 ogp: /ogp/2024/gitlab-op.jpg
-ads:
-  - id: ai-coaching
 ---
 
 弊社ではクライアントとのソースコードやWikiによるドキュメント共有に、自前のGitLabを使うことがある。
