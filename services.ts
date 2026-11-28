@@ -55,12 +55,6 @@ export const services: Service[] = [
     defaultLead: 'GA4データと連携して人気ページランキングをサイトに簡単表示。無料で利用できます。',
   },
   {
-    id: 'ai-coaching',
-    name: 'AI開発コーチング',
-    url: 'https://ai-coaching.ideamans.com/',
-    defaultLead: '自走するAI中心チームをあなたの組織に。週1回の継続セッションでAI活用を組織に定着させます。',
-  },
-  {
     id: 'b2b-top-research',
     name: 'B2Bトップページ研究 — 設計の定石',
     url: 'https://b2b-top.whitepapers.ideamans.com/',

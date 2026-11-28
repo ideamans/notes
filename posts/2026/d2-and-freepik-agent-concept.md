@@ -8,8 +8,6 @@ categories:
   - claude-code
   - development
 ogp: /ogp/2026/d2-and-freepik-agent-concept.jpg
-ads:
-  - id: ai-coaching
 ---
 
 ポンチ絵、つまり概念図やアーキテクチャ図を描くのは、ずっと面倒な作業だった。PowerPointやKeynoteで四角や矢印を並べ、位置を微調整し、画像として書き出す。たったひとつの図に30分、1時間とかかることもざらである。

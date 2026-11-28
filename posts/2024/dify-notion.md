@@ -7,8 +7,6 @@ categories:
   - ai
   - content-management
 ogp: /ogp/2024/dify-notion.jpg
-ads:
-  - id: ai-coaching
 ---
 
 セルフホストしたDifyから[Notion](https://www.notion.so/ja)に接続するには少し工夫が必要だった。
